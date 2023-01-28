@@ -14,6 +14,16 @@
 		66B4A96F2984D1D70033A10D /* IT_Talent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66B4A96D2984D1D70033A10D /* IT_Talent.xcdatamodeld */; };
 		66B4A9712984D1D80033A10D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A9702984D1D80033A10D /* Assets.xcassets */; };
 		66B4A9742984D1D80033A10D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A9722984D1D80033A10D /* LaunchScreen.storyboard */; };
+		66B4A9902984DD400033A10D /* nunitosans_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A9842984DA9E0033A10D /* nunitosans_light.ttf */; };
+		66B4A9912984DD600033A10D /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A98E2984DA9F0033A10D /* NunitoSans-Regular.ttf */; };
+		66B4A9922984DD860033A10D /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A98A2984DA9F0033A10D /* NunitoSans-SemiBold.ttf */; };
+		66B4A9932984DDBF0033A10D /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A9872984DA9E0033A10D /* NunitoSans-Bold.ttf */; };
+		66B4A9942984DDD80033A10D /* NunitoSansBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A98B2984DA9F0033A10D /* NunitoSansBlack.ttf */; };
+		66B4A99F2984DE130033A10D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A99A2984DE130033A10D /* Montserrat-Light.ttf */; };
+		66B4A9A02984DE130033A10D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A99B2984DE130033A10D /* Montserrat-SemiBold.ttf */; };
+		66B4A9A12984DE130033A10D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A99C2984DE130033A10D /* Montserrat-Regular.ttf */; };
+		66B4A9A22984DE130033A10D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A99D2984DE130033A10D /* Montserrat-Medium.ttf */; };
+		66B4A9A32984DE130033A10D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B4A99E2984DE130033A10D /* Montserrat-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,16 @@
 		66B4A9702984D1D80033A10D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66B4A9732984D1D80033A10D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66B4A9752984D1D80033A10D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66B4A9842984DA9E0033A10D /* nunitosans_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nunitosans_light.ttf; sourceTree = "<group>"; };
+		66B4A9872984DA9E0033A10D /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
+		66B4A98A2984DA9F0033A10D /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		66B4A98B2984DA9F0033A10D /* NunitoSansBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NunitoSansBlack.ttf; sourceTree = "<group>"; };
+		66B4A98E2984DA9F0033A10D /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		66B4A99A2984DE130033A10D /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		66B4A99B2984DE130033A10D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		66B4A99C2984DE130033A10D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		66B4A99D2984DE130033A10D /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		66B4A99E2984DE130033A10D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				66B4A9632984D1D70033A10D /* IT Talent */,
+				66B4A96D2984D1D70033A10D /* IT_Talent.xcdatamodeld */,
 				66B4A9622984D1D70033A10D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +79,7 @@
 		66B4A9632984D1D70033A10D /* IT Talent */ = {
 			isa = PBXGroup;
 			children = (
+				66B4A97B2984D5EA0033A10D /* Main */,
 				66B4A9642984D1D70033A10D /* AppDelegate.swift */,
 				66B4A9662984D1D70033A10D /* SceneDelegate.swift */,
 				66B4A9682984D1D70033A10D /* ViewController.swift */,
@@ -65,9 +87,65 @@
 				66B4A9702984D1D80033A10D /* Assets.xcassets */,
 				66B4A9722984D1D80033A10D /* LaunchScreen.storyboard */,
 				66B4A9752984D1D80033A10D /* Info.plist */,
-				66B4A96D2984D1D70033A10D /* IT_Talent.xcdatamodeld */,
+				66B4A97F2984DA6D0033A10D /* Resources */,
 			);
 			path = "IT Talent";
+			sourceTree = "<group>";
+		};
+		66B4A97B2984D5EA0033A10D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				66B4A97E2984D60C0033A10D /* ViewModel */,
+				66B4A97D2984D6050033A10D /* View */,
+				66B4A97C2984D5FB0033A10D /* Model */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		66B4A97C2984D5FB0033A10D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66B4A97D2984D6050033A10D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66B4A97E2984D60C0033A10D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		66B4A97F2984DA6D0033A10D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66B4A9802984DA7C0033A10D /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		66B4A9802984DA7C0033A10D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				66B4A99E2984DE130033A10D /* Montserrat-Bold.ttf */,
+				66B4A99A2984DE130033A10D /* Montserrat-Light.ttf */,
+				66B4A99D2984DE130033A10D /* Montserrat-Medium.ttf */,
+				66B4A99C2984DE130033A10D /* Montserrat-Regular.ttf */,
+				66B4A99B2984DE130033A10D /* Montserrat-SemiBold.ttf */,
+				66B4A98B2984DA9F0033A10D /* NunitoSansBlack.ttf */,
+				66B4A9872984DA9E0033A10D /* NunitoSans-Bold.ttf */,
+				66B4A9842984DA9E0033A10D /* nunitosans_light.ttf */,
+				66B4A98E2984DA9F0033A10D /* NunitoSans-Regular.ttf */,
+				66B4A98A2984DA9F0033A10D /* NunitoSans-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +207,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B4A9742984D1D80033A10D /* LaunchScreen.storyboard in Resources */,
+				66B4A9A12984DE130033A10D /* Montserrat-Regular.ttf in Resources */,
+				66B4A9932984DDBF0033A10D /* NunitoSans-Bold.ttf in Resources */,
+				66B4A9902984DD400033A10D /* nunitosans_light.ttf in Resources */,
+				66B4A9A32984DE130033A10D /* Montserrat-Bold.ttf in Resources */,
+				66B4A99F2984DE130033A10D /* Montserrat-Light.ttf in Resources */,
+				66B4A9A02984DE130033A10D /* Montserrat-SemiBold.ttf in Resources */,
+				66B4A9912984DD600033A10D /* NunitoSans-Regular.ttf in Resources */,
+				66B4A9922984DD860033A10D /* NunitoSans-SemiBold.ttf in Resources */,
 				66B4A9712984D1D80033A10D /* Assets.xcassets in Resources */,
+				66B4A9942984DDD80033A10D /* NunitoSansBlack.ttf in Resources */,
+				66B4A9A22984DE130033A10D /* Montserrat-Medium.ttf in Resources */,
 				66B4A96C2984D1D70033A10D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,11 +382,12 @@
 				DEVELOPMENT_TEAM = CSK7WHSMHW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IT Talent/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "IT Talent";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +395,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mx.mauriciogs.IT-Talent";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,11 +414,12 @@
 				DEVELOPMENT_TEAM = CSK7WHSMHW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IT Talent/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "IT Talent";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,6 +427,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mx.mauriciogs.IT-Talent";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
