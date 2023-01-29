@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		668ADB2B2985D27E006EDEC3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */; };
+		668ADB2D2985DC9F006EDEC3 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */; };
+		668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2F2985E1DF006EDEC3 /* MyColors.swift */; };
+		668ADB332985E684006EDEC3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB322985E684006EDEC3 /* UserModel.swift */; };
 		66B4A9652984D1D70033A10D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4A9642984D1D70033A10D /* AppDelegate.swift */; };
 		66B4A9672984D1D70033A10D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4A9662984D1D70033A10D /* SceneDelegate.swift */; };
 		66B4A9692984D1D70033A10D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4A9682984D1D70033A10D /* SignInViewController.swift */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
+		668ADB2F2985E1DF006EDEC3 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
+		668ADB322985E684006EDEC3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		66B4A9612984D1D70033A10D /* IT Talent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IT Talent.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B4A9642984D1D70033A10D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66B4A9662984D1D70033A10D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,9 +70,11 @@
 		668ADB272985D232006EDEC3 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				668ADB312985E675006EDEC3 /* Model */,
 				668ADB292985D247006EDEC3 /* SignIn */,
 				668ADB282985D241006EDEC3 /* SignUp */,
 				668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */,
+				668ADB2E2985E1C7006EDEC3 /* Utils */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -74,6 +82,7 @@
 		668ADB282985D241006EDEC3 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -84,6 +93,22 @@
 				66B4A9682984D1D70033A10D /* SignInViewController.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		668ADB2E2985E1C7006EDEC3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				668ADB2F2985E1DF006EDEC3 /* MyColors.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		668ADB312985E675006EDEC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				668ADB322985E684006EDEC3 /* UserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		66B4A9582984D1D70033A10D = {
@@ -256,10 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668ADB2D2985DC9F006EDEC3 /* SignUp1ViewController.swift in Sources */,
 				66B4A9692984D1D70033A10D /* SignInViewController.swift in Sources */,
+				668ADB332985E684006EDEC3 /* UserModel.swift in Sources */,
 				668ADB2B2985D27E006EDEC3 /* WelcomeViewController.swift in Sources */,
 				66B4A9652984D1D70033A10D /* AppDelegate.swift in Sources */,
 				66B4A96F2984D1D70033A10D /* IT_Talent.xcdatamodeld in Sources */,
+				668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */,
 				66B4A9672984D1D70033A10D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +439,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IT Talent/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "IT Talent";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -443,6 +472,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IT Talent/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "IT Talent";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

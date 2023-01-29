@@ -13,8 +13,10 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var viewCardContainer: UIView!
     @IBOutlet weak var imageUserType: UIImageView!
     @IBOutlet weak var textUserType: UILabel!
+    @IBOutlet weak var btnContinue: UIButton!
+    @IBOutlet weak var btnAlreadyRegistered: UIButton!
     
-    private var userType = 0
+    private var userType = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +45,21 @@ class WelcomeViewController: UIViewController {
             imageUserType.image = UIImage(named: "ReclutadorIcon")
             textUserType.text = "Busco el mejor talento para una empresa o proyecto."
         }
-        
-        print(userType)
     }
 
+    @IBAction func goToSignUp(_ sender: Any) {
+        performSegue(withIdentifier: "toSignUp", sender: self)
+    }
+    
+    @IBAction func goToSignIn(_ sender: Any) {
+        performSegue(withIdentifier: "toSignIn", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSignUp" {
+            if let destino = segue.destination as? SignUp1ViewController {
+                destino.userType = userType
+            }
+        }
+    }
 }

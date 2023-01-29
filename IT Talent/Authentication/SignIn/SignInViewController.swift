@@ -16,12 +16,11 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     
-    private let disableColor = UIColor(red: 167/255, green: 167/255, blue: 167/255, alpha: 1)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataContainerView.layer.borderColor = disableColor.cgColor
+        // Container correo y contraseña
+        dataContainerView.layer.borderColor = Colors.disableColor.cgColor
         dataContainerView.layer.borderWidth = 1
         dataContainerView.layer.cornerRadius = 10
         dataContainerView.clipsToBounds = true
