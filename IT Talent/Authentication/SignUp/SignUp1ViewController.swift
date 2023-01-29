@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUp1ViewController: UIViewController {
     
@@ -83,6 +84,36 @@ class SignUp1ViewController: UIViewController {
         }
     }
     
+    @IBAction func signUpUser(_ sender: Any) {
+        Auth.auth().createUser(withEmail: userEmail, password: userPass) { (result, error) in
+            if let result = result, error == nil {
+                if self.userType == 1 {
+                    self.performSegue(withIdentifier: "toRegisterTal", sender: self)
+                } else {
+                    self.performSegue(withIdentifier: "toRegisterRec", sender: self)
+                }
+            } else {
+                let alertController = UIAlertController(title: "Error", message: "Se ha producido un error al registrar", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destino = segue.destination as? SignUp2ViewController {
+            destino.userEmail = userEmail
+            destino.userType = userType
+            destino.title = "¡Bienvenido Talento!"
+        }
+        if let destino = segue.destination as? RegisterProfileRecViewController {
+            destino.userEmail = userEmail
+            destino.userType = userType
+            destino.title = "¡Bienvenido Reclutador!"
+        }
+    }
+    
     func showAlert(_ errorMesssage: String) {
         // create the alert
         let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
@@ -92,10 +123,6 @@ class SignUp1ViewController: UIViewController {
 
         // show the alert
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func signUpUser(_ sender: Any) {
-        
     }
 
 }

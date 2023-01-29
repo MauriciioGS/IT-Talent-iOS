@@ -10,17 +10,23 @@ import Foundation
 public struct UserProfile: Codable {
     let userType: Int
     let email: String
-    let fullName: String
-    let country: String
-    let city: String
-    let age: Int
-    let phoneNumber: String
-    let resume: String
-    let profRole: String
-    let photoUrl: String
-    let xpLevel: String
-    let skills: [String]
-    let experiences: [Experience]
+    var fullName: String
+    var country: String
+    var city: String
+    var age: Int
+    var phoneNumber: String
+    var resume: String
+    var profRole: String
+    var photoUrl: String
+    var xpLevel: String
+    var skills: [String]
+    var experiences: [Experience]?
+    
+    // Recruiter
+    var enterprise: String
+    var role: String
+    
+    var store: String = "App Store"
 }
 
 public struct Experience: Codable {

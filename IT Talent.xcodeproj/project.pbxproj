@@ -23,6 +23,10 @@
 		668ADB4829860718006EDEC3 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 668ADB4729860718006EDEC3 /* FirebaseFirestoreSwift */; };
 		668ADB4A29860718006EDEC3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 668ADB4929860718006EDEC3 /* FirebaseStorage */; };
 		668ADB4C29860718006EDEC3 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 668ADB4B29860718006EDEC3 /* FirebaseStorageCombine-Community */; };
+		66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A06185298622EE008C5390 /* SignUp2ViewController.swift */; };
+		66A0618829862829008C5390 /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A0618729862829008C5390 /* Arrays.swift */; };
+		66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */; };
+		66A0618D2986319F008C5390 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A0618C2986319F008C5390 /* SignUpViewModel.swift */; };
 		66B4A9652984D1D70033A10D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4A9642984D1D70033A10D /* AppDelegate.swift */; };
 		66B4A9672984D1D70033A10D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4A9662984D1D70033A10D /* SceneDelegate.swift */; };
 		66B4A9692984D1D70033A10D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4A9682984D1D70033A10D /* SignInViewController.swift */; };
@@ -48,6 +52,10 @@
 		668ADB2F2985E1DF006EDEC3 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
 		668ADB322985E684006EDEC3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		668ADB342985FDB2006EDEC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		66A06185298622EE008C5390 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
+		66A0618729862829008C5390 /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
+		66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProfileRecViewController.swift; sourceTree = "<group>"; };
+		66A0618C2986319F008C5390 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		66B4A9612984D1D70033A10D /* IT Talent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IT Talent.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B4A9642984D1D70033A10D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66B4A9662984D1D70033A10D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +114,10 @@
 		668ADB282985D241006EDEC3 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				66A0618B29863159008C5390 /* ViewModel */,
 				668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */,
+				66A06185298622EE008C5390 /* SignUp2ViewController.swift */,
+				66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -123,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				668ADB2F2985E1DF006EDEC3 /* MyColors.swift */,
+				66A0618729862829008C5390 /* Arrays.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -133,6 +145,14 @@
 				668ADB322985E684006EDEC3 /* UserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		66A0618B29863159008C5390 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				66A0618C2986319F008C5390 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		66B4A9582984D1D70033A10D = {
@@ -327,10 +347,14 @@
 				66B4A9692984D1D70033A10D /* SignInViewController.swift in Sources */,
 				668ADB332985E684006EDEC3 /* UserModel.swift in Sources */,
 				668ADB2B2985D27E006EDEC3 /* WelcomeViewController.swift in Sources */,
+				66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */,
 				66B4A9652984D1D70033A10D /* AppDelegate.swift in Sources */,
+				66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */,
 				66B4A96F2984D1D70033A10D /* IT_Talent.xcdatamodeld in Sources */,
 				668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */,
 				66B4A9672984D1D70033A10D /* SceneDelegate.swift in Sources */,
+				66A0618D2986319F008C5390 /* SignUpViewModel.swift in Sources */,
+				66A0618829862829008C5390 /* Arrays.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
