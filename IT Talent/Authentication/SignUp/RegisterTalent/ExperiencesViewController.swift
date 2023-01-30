@@ -35,7 +35,7 @@ class ExperiencesViewController: UIViewController {
     private var jobMonthEnd = String()
     private var jobYearEnd = String()
     private var nowadays = Bool()
-    private var experience: Experience?
+    private var experiences: [Experience] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +63,7 @@ class ExperiencesViewController: UIViewController {
             UIAction(title: "Híbrido", handler: optionModal),
             UIAction(title: "Remoto", handler: optionModal)
         ])
+        jobMode = "Presencial"
     }
     
     private func initTypeMenu() {
@@ -79,6 +80,7 @@ class ExperiencesViewController: UIViewController {
             UIAction(title: "Temporal", handler: optionType),
             UIAction(title: "Becario/Trainee", handler: optionType)
         ])
+        jobType = "Tiempo Completo"
     }
     
     private func initMontInMenu() {
@@ -99,8 +101,8 @@ class ExperiencesViewController: UIViewController {
             UIAction(title: "Octubre", handler: optionMonth),
             UIAction(title: "Noviembre", handler: optionMonth),
             UIAction(title: "Diciembre", handler: optionMonth),
-            
         ])
+        jobMonthIn = "Enero"
     }
     
     private func initMontEndMenu() {
@@ -121,8 +123,38 @@ class ExperiencesViewController: UIViewController {
             UIAction(title: "Octubre", handler: optionMonth),
             UIAction(title: "Noviembre", handler: optionMonth),
             UIAction(title: "Diciembre", handler: optionMonth),
-            
         ])
+        jobMonthEnd = "Enero"
+    }
+    
+    @IBAction func getJob(_ sender: Any) {
+        if let text = chargeTextField.text {
+            if text.isEmpty {
+                showAlert("Ingresa un cargo")
+            } else {
+                job = text
+            }
+        }
+    }
+    
+    @IBAction func getEnterprise(_ sender: Any) {
+        if let text = enterpriseTextField.text {
+            if text.isEmpty {
+                showAlert("Ingresa la empresa en la que trabajaste")
+            } else {
+                enterprise = text
+            }
+        }
+    }
+    
+    @IBAction func getCountry(_ sender: Any) {
+        if let text = countryTextField.text {
+            if text.isEmpty {
+                showAlert("Ingresa el país, ciudad, región donde trabajaste. En caso de trabajar remoto desde donde lo hiciste")
+            } else {
+                jobCountry = text
+            }
+        }
     }
     
     @IBAction func endYearInEdit(_ sender: Any) {
@@ -145,7 +177,78 @@ class ExperiencesViewController: UIViewController {
         }
     }
     
-    func showAlert(_ errorMesssage: String) {
+    @IBAction func continueRegister(_ sender: Any) {
+        self.textFieldShouldReturn(yearTextField)
+        self.textFieldShouldReturn(yearEndTextField)
+        jobAchievements = logrosTextView.text
+        if !correctFields() {
+            showAlert("Rellena todos los campos")
+        } else {
+            let jobPeriod = "\(jobMonthIn) \(jobYearIn) - \(jobMonthEnd) \(jobYearEnd)"
+            let jobYears = DateTime().getYearsBetweenTwoDates(montI: jobMonthIn, yearI: jobYearIn, montF: jobMonthEnd, yearF: jobYearEnd)
+            let newExperience = Experience(charge: job, enterprise: enterprise, city: jobCountry, mode: jobMode, type: jobType, period: jobPeriod, yearsXp: jobYears, achievements: jobAchievements)
+            experiences.append(newExperience)
+            userProfile?.experiences = experiences
+            showSuccessfull()
+        }
+    }
+    
+    func correctFields() -> Bool {
+        if job.isEmpty {
+            showAlert("Ingresa un cargo")
+            return false
+        }
+        if enterprise.isEmpty {
+            showAlert("Ingresa la empresa en la que trabajaste")
+            return false
+        }
+        if jobCountry.isEmpty {
+            showAlert("Ingresa el país, ciudad, región donde trabajaste. En caso de trabajar remoto desde donde lo hiciste")
+            return false
+        }
+        if jobAchievements.isEmpty {
+            showAlert("Ingresa tus logros, experiencias, retos, aprendizajes")
+            return false
+        }
+        if jobMode.isEmpty || jobType.isEmpty {
+            return false
+        }
+        if jobMonthEnd.isEmpty || jobYearEnd.isEmpty {
+            return false
+        }
+        if jobMonthIn.isEmpty || jobYearIn.isEmpty {
+            return false
+        }
+        return true
+    }
+    
+    private func showSuccessfull() {
+        // create the alert
+        let alert = UIAlertController(title: "Experiencia guardada", message: "¿Deseas registrar otra experiencia laboral?", preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "Si", style: UIAlertAction.Style.default, handler: { action in
+            self.resetForm()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: { action in
+            self.performSegue(withIdentifier: "toProfileReg", sender: self)
+        }))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func resetForm() {
+        chargeTextField.becomeFirstResponder()
+        chargeTextField.text = ""
+        countryTextField.text = ""
+        enterpriseTextField.text = ""
+        yearTextField.text = ""
+        yearEndTextField.text = ""
+        logrosTextView.text = ""
+    }
+    
+    private func showAlert(_ errorMesssage: String) {
         // create the alert
         let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
 
@@ -154,6 +257,12 @@ class ExperiencesViewController: UIViewController {
 
         // show the alert
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destino = segue.destination as? RegisterProfileTalViewController {
+            destino.userProfile = userProfile
+        }
     }
     
 }
@@ -168,6 +277,10 @@ extension ExperiencesViewController: UITextFieldDelegate {
         case chargeTextField:
             self.enterpriseTextField.becomeFirstResponder()
         case countryTextField:
+            textField.resignFirstResponder()
+        case yearTextField:
+            textField.resignFirstResponder()
+        case yearEndTextField:
             textField.resignFirstResponder()
         default:
             textField.resignFirstResponder()

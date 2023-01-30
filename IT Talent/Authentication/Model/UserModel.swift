@@ -18,7 +18,7 @@ public struct UserProfile: Codable {
     var profRole: String
     var xpLevel: String
     var skills: [String]
-    var experiences: [Experience]?
+    var experiences: [Experience] = []
     
     // Recruiter
     var enterprise: String
@@ -52,7 +52,6 @@ public struct Experience: Codable {
     let type: String
     let period: String
     let yearsXp: Int
-    let nowadays: Bool
     let achievements: String
     
     enum CodingKeys: String, CodingKey {
@@ -63,7 +62,6 @@ public struct Experience: Codable {
         case type
         case period
         case yearsXp
-        case nowadays
         case achievements
     }
 }
