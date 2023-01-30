@@ -426,6 +426,7 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3oD-BI-Ruj">
                                 <rect key="frame" x="16" y="177" width="382" height="34"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -544,6 +545,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGi-oI-EFy">
                                 <rect key="frame" x="16" y="275" width="382" height="22"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <menu key="menu" id="w9b-Lt-doW">
                                     <children>
                                         <command title="Item 1" id="v94-lX-gnr"/>
@@ -655,6 +657,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNb-Or-oNF">
                                 <rect key="frame" x="16" y="258" width="382" height="22"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <menu key="menu" id="fga-4p-PWE">
                                     <children>
                                         <command title="Item 1" id="bKC-aO-dE8"/>
@@ -771,6 +774,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cargo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1S-7m-MVI">
                                                 <rect key="frame" x="16" y="166" width="382" height="34"/>
+                                                <color key="backgroundColor" name="MainColor"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -779,6 +783,7 @@
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Empresa / Nombre del proyecto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nH0-gB-Ino">
                                                 <rect key="frame" x="16" y="216" width="382" height="34"/>
+                                                <color key="backgroundColor" name="MainColor"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -787,6 +792,7 @@
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="País / Ciudad / Región" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kc2-0u-cT8">
                                                 <rect key="frame" x="16" y="266" width="382" height="34"/>
+                                                <color key="backgroundColor" name="MainColor"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -795,7 +801,7 @@
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Redacta brevemente tus logros, aprendizajes, etc." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e28-mU-3NU">
                                                 <rect key="frame" x="16" y="316" width="382" height="128"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="MainColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="ZrI-yi-C8i"/>
                                                 </constraints>
@@ -1069,12 +1075,79 @@
                                     <segment title="Perfil"/>
                                 </segments>
                             </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="upl-e1-Dl5">
+                                <rect key="frame" x="16" y="155" width="382" height="34"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getFullName:" destination="s0x-Sw-dEz" eventType="editingDidEnd" id="IGN-v0-chF"/>
+                                </connections>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-XG-IxD">
+                                <rect key="frame" x="16" y="217" width="382" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="yQf-sx-uoJ"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona un país" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCP-M0-g2U">
+                                <rect key="frame" x="16" y="197" width="382" height="20"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ciudad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ku-XR-s2H">
+                                <rect key="frame" x="16" y="342" width="382" height="34"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getCity:" destination="s0x-Sw-dEz" eventType="editingDidEnd" id="eGv-uL-ATM"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número telefónico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pb-Vd-L1m">
+                                <rect key="frame" x="16" y="392" width="382" height="34"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                <connections>
+                                    <action selector="getPhoneNum:" destination="s0x-Sw-dEz" eventType="editingDidEnd" id="OWp-eM-7IE"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Cuéntanos de tí" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9oz-TZ-GJm">
+                                <rect key="frame" x="16" y="442" width="382" height="128"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="khT-qh-jo0"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5n9-Kj-eyp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="upl-e1-Dl5" secondAttribute="trailing" constant="16" id="2mU-Il-oPo"/>
+                            <constraint firstItem="vCP-M0-g2U" firstAttribute="top" secondItem="upl-e1-Dl5" secondAttribute="bottom" constant="8" id="4M3-To-UOW"/>
+                            <constraint firstItem="2Pb-Vd-L1m" firstAttribute="top" secondItem="0ku-XR-s2H" secondAttribute="bottom" constant="16" id="7dL-Qb-asy"/>
                             <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="9k6-Bs-mFu" secondAttribute="trailing" constant="16" id="7hN-DX-Fux"/>
+                            <constraint firstItem="9oz-TZ-GJm" firstAttribute="top" secondItem="2Pb-Vd-L1m" secondAttribute="bottom" constant="16" id="Aob-5J-xpB"/>
+                            <constraint firstItem="Jsd-XG-IxD" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="Ckv-ge-KGJ"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="0ku-XR-s2H" secondAttribute="trailing" constant="16" id="EOc-jc-I6V"/>
+                            <constraint firstItem="upl-e1-Dl5" firstAttribute="top" secondItem="9k6-Bs-mFu" secondAttribute="bottom" constant="16" id="FQU-FA-erj"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="Jsd-XG-IxD" secondAttribute="trailing" constant="16" id="RSa-7X-6L9"/>
+                            <constraint firstItem="upl-e1-Dl5" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="Snl-Ff-IXi"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="vCP-M0-g2U" secondAttribute="trailing" constant="16" id="VPn-qR-RZg"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="9oz-TZ-GJm" secondAttribute="trailing" constant="16" id="WmV-gk-HGO"/>
+                            <constraint firstItem="Jsd-XG-IxD" firstAttribute="top" secondItem="vCP-M0-g2U" secondAttribute="bottom" id="Wx1-eN-ZQa"/>
+                            <constraint firstItem="0ku-XR-s2H" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="Xe2-OI-LEr"/>
+                            <constraint firstItem="9oz-TZ-GJm" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="ZBx-5J-Ftc"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="2Pb-Vd-L1m" secondAttribute="trailing" constant="16" id="cYM-Xv-VME"/>
                             <constraint firstItem="9k6-Bs-mFu" firstAttribute="top" secondItem="5n9-Kj-eyp" secondAttribute="top" constant="16" id="eeU-ti-bDf"/>
+                            <constraint firstItem="0ku-XR-s2H" firstAttribute="top" secondItem="Jsd-XG-IxD" secondAttribute="bottom" id="fxx-tH-gR6"/>
+                            <constraint firstItem="vCP-M0-g2U" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="gJb-Vs-Ljo"/>
+                            <constraint firstItem="2Pb-Vd-L1m" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="kY3-42-sPa"/>
                             <constraint firstItem="9k6-Bs-mFu" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="wCy-Lk-xZm"/>
                         </constraints>
                     </view>
@@ -1094,6 +1167,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GoI-1M-8eu">
                                 <rect key="frame" x="16" y="108" width="382" height="34"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1114,6 +1188,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ciudad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x3a-CH-C0x">
                                 <rect key="frame" x="16" y="295" width="382" height="34"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1122,6 +1197,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número telefónico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzS-wf-iVN">
                                 <rect key="frame" x="16" y="345" width="382" height="34"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                 <connections>
@@ -1130,7 +1206,7 @@
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Cuéntanos de tí" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0sR-4e-RnX">
                                 <rect key="frame" x="16" y="395" width="382" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="osC-DG-qqA"/>
                                 </constraints>
@@ -1208,6 +1284,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de la empresa / organización" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aX6-l5-bSU">
                                 <rect key="frame" x="16" y="161" width="382" height="34"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1228,6 +1305,7 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rol que desempeñas" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uka-Ji-4sF">
                                 <rect key="frame" x="16" y="255" width="382" height="34"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
