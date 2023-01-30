@@ -25,6 +25,8 @@
 		668ADB4C29860718006EDEC3 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 668ADB4B29860718006EDEC3 /* FirebaseStorageCombine-Community */; };
 		6696E47829871F8000437177 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696E47729871F8000437177 /* JobsViewController.swift */; };
 		6696E47A2987201800437177 /* RegisterEnterpriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696E4792987201800437177 /* RegisterEnterpriseViewController.swift */; };
+		6696E480298785C500437177 /* SkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696E47F298785C500437177 /* SkillsViewController.swift */; };
+		6696E4822987937C00437177 /* Skills2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696E4812987937C00437177 /* Skills2ViewController.swift */; };
 		66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A06185298622EE008C5390 /* SignUp2ViewController.swift */; };
 		66A0618829862829008C5390 /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A0618729862829008C5390 /* Arrays.swift */; };
 		66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */; };
@@ -56,6 +58,8 @@
 		668ADB342985FDB2006EDEC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6696E47729871F8000437177 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		6696E4792987201800437177 /* RegisterEnterpriseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEnterpriseViewController.swift; sourceTree = "<group>"; };
+		6696E47F298785C500437177 /* SkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsViewController.swift; sourceTree = "<group>"; };
+		6696E4812987937C00437177 /* Skills2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills2ViewController.swift; sourceTree = "<group>"; };
 		66A06185298622EE008C5390 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		66A0618729862829008C5390 /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
 		66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProfileRecViewController.swift; sourceTree = "<group>"; };
@@ -118,11 +122,10 @@
 		668ADB282985D241006EDEC3 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				6696E47C2987526100437177 /* RegisterTalent */,
+				6696E47B2987524900437177 /* RegisterRecruiter */,
 				66A0618B29863159008C5390 /* ViewModel */,
 				668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */,
-				66A06185298622EE008C5390 /* SignUp2ViewController.swift */,
-				66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */,
-				6696E4792987201800437177 /* RegisterEnterpriseViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -158,6 +161,25 @@
 				6696E47729871F8000437177 /* JobsViewController.swift */,
 			);
 			path = Jobs;
+			sourceTree = "<group>";
+		};
+		6696E47B2987524900437177 /* RegisterRecruiter */ = {
+			isa = PBXGroup;
+			children = (
+				6696E4792987201800437177 /* RegisterEnterpriseViewController.swift */,
+				66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */,
+			);
+			path = RegisterRecruiter;
+			sourceTree = "<group>";
+		};
+		6696E47C2987526100437177 /* RegisterTalent */ = {
+			isa = PBXGroup;
+			children = (
+				66A06185298622EE008C5390 /* SignUp2ViewController.swift */,
+				6696E47F298785C500437177 /* SkillsViewController.swift */,
+				6696E4812987937C00437177 /* Skills2ViewController.swift */,
+			);
+			path = RegisterTalent;
 			sourceTree = "<group>";
 		};
 		66A0618B29863159008C5390 /* ViewModel */ = {
@@ -363,11 +385,13 @@
 				668ADB2B2985D27E006EDEC3 /* WelcomeViewController.swift in Sources */,
 				66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */,
 				66B4A9652984D1D70033A10D /* AppDelegate.swift in Sources */,
+				6696E480298785C500437177 /* SkillsViewController.swift in Sources */,
 				66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */,
 				6696E47829871F8000437177 /* JobsViewController.swift in Sources */,
 				66B4A96F2984D1D70033A10D /* IT_Talent.xcdatamodeld in Sources */,
 				668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */,
 				6696E47A2987201800437177 /* RegisterEnterpriseViewController.swift in Sources */,
+				6696E4822987937C00437177 /* Skills2ViewController.swift in Sources */,
 				66B4A9672984D1D70033A10D /* SceneDelegate.swift in Sources */,
 				66A0618D2986319F008C5390 /* SignUpViewModel.swift in Sources */,
 				66A0618829862829008C5390 /* Arrays.swift in Sources */,

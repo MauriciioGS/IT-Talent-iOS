@@ -37,17 +37,35 @@ class SignUp2ViewController: UIViewController {
             if !text.isEmpty {
                 userFullName = text
                 welcomeText.text = "\(userFullName.split(separator: " ")[0]), ¿En qué rol te desenvuelves como profesional de TI?"
+            } else {
+                showAlert("Por favor, ingresa tu nombre completo")
             }
         }
     }
     
     @IBAction func continueRegister(_ sender: Any) {
-        print(userFullName)
-        print(userEmail)
-        print(userType)
-        print(profesionalRole)
-        print(profesionalLevel)
-        // Crea usuario y pasarlo entre las siguientes pantallas
+        if (!userFullName.isEmpty) {
+            self.performSegue(withIdentifier: "toSkills", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destino = segue.destination as? SkillsViewController {
+            // Crea usuario y pasarlo entre las siguientes pantallas
+            let userProfile = UserProfile(userType: userType, email: userEmail, fullName: userFullName, country: "", city: "", phoneNumber: "", resume: "", profRole: profesionalRole, xpLevel: profesionalLevel, skills: [""], enterprise: "", role: "")
+            destino.userProfile = userProfile
+        }
+    }
+    
+    func showAlert(_ errorMesssage: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

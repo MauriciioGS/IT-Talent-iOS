@@ -86,7 +86,7 @@ class SignUp1ViewController: UIViewController {
     
     @IBAction func signUpUser(_ sender: Any) {
         Auth.auth().createUser(withEmail: userEmail, password: userPass) { (result, error) in
-            if let result = result, error == nil {
+            if let _ = result, error == nil {
                 if self.userType == 1 {
                     self.performSegue(withIdentifier: "toRegisterTal", sender: self)
                 } else {
