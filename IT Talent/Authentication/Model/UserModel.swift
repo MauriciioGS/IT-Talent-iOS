@@ -13,11 +13,9 @@ public struct UserProfile: Codable {
     var fullName: String
     var country: String
     var city: String
-    var age: Int
     var phoneNumber: String
     var resume: String
     var profRole: String
-    var photoUrl: String
     var xpLevel: String
     var skills: [String]
     var experiences: [Experience]?
@@ -27,6 +25,23 @@ public struct UserProfile: Codable {
     var role: String
     
     var store: String = "App Store"
+    
+    enum CodingKeys: String, CodingKey {
+        case userType
+        case email
+        case fullName
+        case country
+        case city
+        case phoneNumber
+        case resume
+        case profRole
+        case xpLevel
+        case skills
+        case experiences
+        case enterprise
+        case role
+        case store
+    }
 }
 
 public struct Experience: Codable {
@@ -39,4 +54,16 @@ public struct Experience: Codable {
     let yearsXp: Int
     let nowadays: Bool
     let achievements: String
+    
+    enum CodingKeys: String, CodingKey {
+        case charge
+        case enterprise
+        case city
+        case mode
+        case type
+        case period
+        case yearsXp
+        case nowadays
+        case achievements
+    }
 }

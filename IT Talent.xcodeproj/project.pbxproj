@@ -23,6 +23,8 @@
 		668ADB4829860718006EDEC3 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 668ADB4729860718006EDEC3 /* FirebaseFirestoreSwift */; };
 		668ADB4A29860718006EDEC3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 668ADB4929860718006EDEC3 /* FirebaseStorage */; };
 		668ADB4C29860718006EDEC3 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 668ADB4B29860718006EDEC3 /* FirebaseStorageCombine-Community */; };
+		6696E47829871F8000437177 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696E47729871F8000437177 /* JobsViewController.swift */; };
+		6696E47A2987201800437177 /* RegisterEnterpriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696E4792987201800437177 /* RegisterEnterpriseViewController.swift */; };
 		66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A06185298622EE008C5390 /* SignUp2ViewController.swift */; };
 		66A0618829862829008C5390 /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A0618729862829008C5390 /* Arrays.swift */; };
 		66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */; };
@@ -52,6 +54,8 @@
 		668ADB2F2985E1DF006EDEC3 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
 		668ADB322985E684006EDEC3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		668ADB342985FDB2006EDEC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6696E47729871F8000437177 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
+		6696E4792987201800437177 /* RegisterEnterpriseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEnterpriseViewController.swift; sourceTree = "<group>"; };
 		66A06185298622EE008C5390 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		66A0618729862829008C5390 /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
 		66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProfileRecViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */,
 				66A06185298622EE008C5390 /* SignUp2ViewController.swift */,
 				66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */,
+				6696E4792987201800437177 /* RegisterEnterpriseViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -145,6 +150,14 @@
 				668ADB322985E684006EDEC3 /* UserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6696E47629871F1200437177 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				6696E47729871F8000437177 /* JobsViewController.swift */,
+			);
+			path = Jobs;
 			sourceTree = "<group>";
 		};
 		66A0618B29863159008C5390 /* ViewModel */ = {
@@ -177,6 +190,7 @@
 			children = (
 				66B4A9642984D1D70033A10D /* AppDelegate.swift */,
 				66B4A9662984D1D70033A10D /* SceneDelegate.swift */,
+				6696E47629871F1200437177 /* Jobs */,
 				668ADB272985D232006EDEC3 /* Authentication */,
 				66B4A96A2984D1D70033A10D /* Main.storyboard */,
 				66B4A9722984D1D80033A10D /* LaunchScreen.storyboard */,
@@ -350,8 +364,10 @@
 				66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */,
 				66B4A9652984D1D70033A10D /* AppDelegate.swift in Sources */,
 				66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */,
+				6696E47829871F8000437177 /* JobsViewController.swift in Sources */,
 				66B4A96F2984D1D70033A10D /* IT_Talent.xcdatamodeld in Sources */,
 				668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */,
+				6696E47A2987201800437177 /* RegisterEnterpriseViewController.swift in Sources */,
 				66B4A9672984D1D70033A10D /* SceneDelegate.swift in Sources */,
 				66A0618D2986319F008C5390 /* SignUpViewModel.swift in Sources */,
 				66A0618829862829008C5390 /* Arrays.swift in Sources */,

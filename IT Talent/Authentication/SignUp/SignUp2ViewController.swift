@@ -14,8 +14,6 @@ class SignUp2ViewController: UIViewController {
     @IBOutlet weak var profRolePicker: UIPickerView!
     @IBOutlet weak var levelPicker: UIPickerView!
     
-    private let signUpViewModel = SignUpViewModel()
-    
     var userType = 0
     var userEmail = String()
     private var userFullName = String()
@@ -44,12 +42,12 @@ class SignUp2ViewController: UIViewController {
     }
     
     @IBAction func continueRegister(_ sender: Any) {
-        signUpViewModel.saveProfesional(userType: userType, email: userEmail, name: userFullName, profRole: profesionalRole, profLevel: profesionalLevel)
         print(userFullName)
         print(userEmail)
         print(userType)
         print(profesionalRole)
         print(profesionalLevel)
+        // Crea usuario y pasarlo entre las siguientes pantallas
     }
     
 }

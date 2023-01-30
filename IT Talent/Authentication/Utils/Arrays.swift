@@ -41,3 +41,28 @@ public struct ProfRoles {
         "Trainee"
     ]
 }
+
+public struct Countries {
+    
+    static let countries = [
+        "México",
+        "Estados Unidos",
+        "Colombia",
+        "Argentina",
+        "Chile",
+        "Uruguay",
+        "Costa Rica",
+        "Perú",
+        "Paraguay",
+        "Panamá",
+        "Venezuela",
+        "Ecuador",
+        "Bolivia",
+        "Cuba",
+        "El Salvador",
+        "Honduras",
+        "Guatemala",
+        "Nicaragua",
+        "España"
+    ]
+}

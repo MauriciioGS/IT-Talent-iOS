@@ -6,17 +6,38 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class SignUpViewModel {
     
     var userProfile: UserProfile?
+    private let db = Firestore.firestore()
     
-    func saveProfesional(userType: Int, email: String, name: String, profRole: String, profLevel: String) {
-        userProfile = UserProfile(userType: userType, email: email, fullName: name, country: "", city: "", age: 0, phoneNumber: "", resume: "", profRole: profRole, photoUrl: "", xpLevel: profLevel, skills: [""], enterprise: "", role: "")
+    var signUpUiState : (() -> ()) = { }
+    
+    var isSaved: Bool? {
+        didSet {
+            signUpUiState()
+        }
     }
     
-    func saveRecruiter(enterprise: String, role: String) {
-        userProfile?.enterprise = enterprise
-        userProfile?.role = role
+    func saveUserProfile(user: UserProfile) {
+        userProfile = user
+        guard let newUser = userProfile else { return }
+        print(userProfile!)
+        do {
+            try db.collection("users").document(userProfile!.email).setData(from: newUser) { err in
+                if let err = err {
+                    self.isSaved = false
+                    print("Error guardando los datos en el servidor: \(err.localizedDescription)")
+                } else {
+                    self.isSaved = true
+                }
+            }
+        } catch let error {
+            print("Error guardando los datos en el servidor: \(error.localizedDescription)")
+        }
     }
+    
 }
