@@ -64,7 +64,7 @@ class Skills2ViewController: UIViewController {
             userSoftSkills.forEach{ item in
                 userProfile?.skills.append(item)
             }
-            print(userProfile!.skills)
+            self.performSegue(withIdentifier: "toExperienceReg", sender: self)
         }
     }
     
@@ -77,6 +77,12 @@ class Skills2ViewController: UIViewController {
 
         // show the alert
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destino = segue.destination as? ExperiencesViewController {
+            destino.userProfile = userProfile
+        }
     }
 
 }

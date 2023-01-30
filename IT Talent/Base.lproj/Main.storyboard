@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V3j-u1-Aej">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J3e-aL-2eR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -20,6 +20,9 @@
         </array>
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
+        </array>
+        <array key="NunitoSans-Bold.ttf">
+            <string>NunitoSans-Bold</string>
         </array>
         <array key="NunitoSans-SemiBold.ttf">
             <string>NunitoSans-SemiBold</string>
@@ -725,17 +728,17 @@
                         <outlet property="popUpSkillsButton" destination="qNb-Or-oNF" id="8mR-wp-Oiq"/>
                         <outlet property="segmControl" destination="nVE-Jo-ekP" id="kdV-o2-SEn"/>
                         <outlet property="tableView" destination="C5J-Nr-oh7" id="rah-19-KhV"/>
-                        <segue destination="J3e-aL-2eR" kind="show" id="u6V-zy-0DY"/>
+                        <segue destination="J3e-aL-2eR" kind="show" identifier="toExperienceReg" id="u6V-zy-0DY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQg-dW-Nym" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2062" y="-100"/>
         </scene>
-        <!--View Controller-->
+        <!--Experiencia-->
         <scene sceneID="UGl-F3-CNZ">
             <objects>
-                <viewController id="J3e-aL-2eR" sceneMemberID="viewController">
+                <viewController title="Experiencia" id="J3e-aL-2eR" customClass="ExperiencesViewController" customModule="IT_Talent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sZn-je-vOQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -743,93 +746,295 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdj-Od-NSQ">
                                 <rect key="frame" x="0.0" y="92" width="414" height="804"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bA8-Tj-U6G">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="806"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bA8-Tj-U6G" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="960"/>
                                         <subviews>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qXt-yt-tp8">
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DIj-OC-oZg">
                                                 <rect key="frame" x="16" y="16" width="382" height="32"/>
                                                 <segments>
-                                                    <segment title="First"/>
-                                                    <segment title="Second"/>
+                                                    <segment title="Skills"/>
+                                                    <segment title="Experiencia"/>
+                                                    <segment title="Perfil"/>
                                                 </segments>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experiencia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82m-If-neE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experiencia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2L-UB-Kda">
                                                 <rect key="frame" x="16" y="63" width="382" height="27.5"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="20"/>
                                                 <color key="textColor" name="TextBold"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cargo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5O6-8F-bK1">
-                                                <rect key="frame" x="16" y="166" width="382" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa los puestos / proyectos en los que has estado, cuéntale brevemente a los reclutadores sobre tus experiencias." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYQ-gH-GhF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa los puestos / proyectos en los que has estado, cuéntale brevemente a los reclutadores sobre tus experiencias." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZu-FB-G0v">
                                                 <rect key="frame" x="16" y="98.5" width="382" height="51.5"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Empresa / Nombre del proyecto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iog-EG-PkF">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cargo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1S-7m-MVI">
+                                                <rect key="frame" x="16" y="166" width="382" height="34"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Empresa / Nombre del proyecto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nH0-gB-Ino">
                                                 <rect key="frame" x="16" y="216" width="382" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="País / Ciudad / Región" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SU8-RV-0GO">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="País / Ciudad / Región" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kc2-0u-cT8">
                                                 <rect key="frame" x="16" y="266" width="382" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hd1-5D-PNK">
-                                                <rect key="frame" x="159" y="348" width="97" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Redacta brevemente tus logros, aprendizajes, etc." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e28-mU-3NU">
+                                                <rect key="frame" x="16" y="316" width="382" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="ZrI-yi-C8i"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modalidad el empleo:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJQ-RI-acs">
+                                                <rect key="frame" x="16" y="460" width="382" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U6c-SD-IRx">
+                                                <rect key="frame" x="16" y="493.5" width="382" height="30"/>
+                                                <color key="backgroundColor" name="MainColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Jea-4t-Uqu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="18"/>
+                                                <color key="tintColor" name="Icon"/>
+                                                <menu key="menu" id="y0W-53-c2b">
+                                                    <children>
+                                                        <command title="Item 1" id="hzV-cL-zDn"/>
+                                                        <command title="Item 2" id="svV-Ce-h1a"/>
+                                                    </children>
+                                                </menu>
+                                                <state key="normal" title="Modalidad">
+                                                    <color key="titleColor" name="Primary"/>
+                                                    <imageReference key="image" image="eye.fill" catalog="system" symbolScale="medium"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de empleo:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPU-KP-IAN">
+                                                <rect key="frame" x="16" y="539.5" width="382" height="18"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gdu-Tb-eu6">
+                                                <rect key="frame" x="16" y="573.5" width="382" height="30"/>
+                                                <color key="backgroundColor" name="MainColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="oT8-Rn-IVK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="18"/>
+                                                <color key="tintColor" name="Icon"/>
+                                                <menu key="menu" id="YKU-pT-Ets">
+                                                    <children>
+                                                        <command title="Item 1" id="Sfo-sh-wZe"/>
+                                                        <command title="Item 2" id="vXw-cr-isv"/>
+                                                    </children>
+                                                </menu>
+                                                <state key="normal" title="Tipo">
+                                                    <color key="titleColor" name="Primary"/>
+                                                    <imageReference key="image" image="eye.fill" catalog="system" symbolScale="medium"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de inicio:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJq-hb-wTb">
+                                                <rect key="frame" x="16" y="619.5" width="382" height="18"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbo-O9-nFR">
+                                                <rect key="frame" x="16" y="653.5" width="382" height="30"/>
+                                                <color key="backgroundColor" name="MainColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="ncO-Ub-Wmw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="18"/>
+                                                <color key="tintColor" name="Icon"/>
+                                                <menu key="menu" id="s6e-I1-XxL">
+                                                    <children>
+                                                        <command title="Mes" id="Tsi-sF-6OM"/>
+                                                    </children>
+                                                </menu>
+                                                <state key="normal" title="MesIn" image="calendar" catalog="system">
+                                                    <color key="titleColor" name="Primary"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de finalización:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8k-gy-G9v">
+                                                <rect key="frame" x="16" y="749.5" width="382" height="18"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTy-A1-wv1">
+                                                <rect key="frame" x="16" y="783.5" width="382" height="30"/>
+                                                <color key="backgroundColor" name="MainColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="3t4-FW-CEX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="18"/>
+                                                <color key="tintColor" name="Icon"/>
+                                                <menu key="menu" id="XAv-A0-xYe">
+                                                    <children>
+                                                        <command title="Mes" id="F3X-9W-pPB"/>
+                                                    </children>
+                                                </menu>
+                                                <state key="normal" title="MesFin" image="calendar" catalog="system">
+                                                    <color key="titleColor" name="Primary"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRi-KJ-61f">
+                                                <rect key="frame" x="16" y="892" width="382" height="36"/>
+                                                <color key="tintColor" name="Primary"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Button">
+                                                    <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                                    <color key="baseBackgroundColor" name="Primary"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Año" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cEZ-vK-6wj">
+                                                <rect key="frame" x="16" y="699.5" width="382" height="34"/>
+                                                <color key="backgroundColor" name="MainColor"/>
+                                                <color key="tintColor" name="TextBold"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="endYearInEdit:" destination="J3e-aL-2eR" eventType="editingDidEnd" id="DEO-ro-SG8"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Año" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kW3-Jy-wGj">
+                                                <rect key="frame" x="16" y="829.5" width="382" height="34"/>
+                                                <color key="backgroundColor" name="MainColor"/>
+                                                <color key="tintColor" name="TextBold"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="endYearEdit:" destination="J3e-aL-2eR" eventType="editingDidEnd" id="ZvW-fk-mCV"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" name="Background"/>
                                         <constraints>
-                                            <constraint firstItem="SU8-RV-0GO" firstAttribute="top" secondItem="iog-EG-PkF" secondAttribute="bottom" constant="16" id="5fb-Go-229"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZYQ-gH-GhF" secondAttribute="trailing" constant="16" id="877-bO-zTY"/>
-                                            <constraint firstAttribute="trailing" secondItem="qXt-yt-tp8" secondAttribute="trailing" constant="16" id="9xc-5f-Z0t"/>
-                                            <constraint firstItem="5O6-8F-bK1" firstAttribute="top" secondItem="ZYQ-gH-GhF" secondAttribute="bottom" constant="16" id="BG4-bW-OYo"/>
-                                            <constraint firstItem="iog-EG-PkF" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="GWM-v1-Dkd"/>
-                                            <constraint firstAttribute="trailing" secondItem="82m-If-neE" secondAttribute="trailing" constant="16" id="Ihe-MH-QgP"/>
-                                            <constraint firstAttribute="trailing" secondItem="iog-EG-PkF" secondAttribute="trailing" constant="16" id="Q0O-N6-FSO"/>
-                                            <constraint firstAttribute="trailing" secondItem="SU8-RV-0GO" secondAttribute="trailing" constant="16" id="SXW-z5-kfd"/>
-                                            <constraint firstItem="qXt-yt-tp8" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="aOm-xL-USO"/>
-                                            <constraint firstItem="82m-If-neE" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="cEX-23-ZQY"/>
-                                            <constraint firstItem="82m-If-neE" firstAttribute="top" secondItem="qXt-yt-tp8" secondAttribute="bottom" constant="16" id="dju-zn-2zl"/>
-                                            <constraint firstItem="ZYQ-gH-GhF" firstAttribute="top" secondItem="82m-If-neE" secondAttribute="bottom" constant="8" id="fbx-0X-D9H"/>
-                                            <constraint firstItem="SU8-RV-0GO" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="hV2-Ns-Tpz"/>
-                                            <constraint firstItem="ZYQ-gH-GhF" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="iZL-Y9-Epn"/>
-                                            <constraint firstItem="qXt-yt-tp8" firstAttribute="top" secondItem="bA8-Tj-U6G" secondAttribute="top" constant="16" id="mc8-iZ-Sp5"/>
-                                            <constraint firstItem="5O6-8F-bK1" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="pcM-HS-7Nf"/>
-                                            <constraint firstItem="iog-EG-PkF" firstAttribute="top" secondItem="5O6-8F-bK1" secondAttribute="bottom" constant="16" id="uJr-Oz-Rqa"/>
-                                            <constraint firstAttribute="trailing" secondItem="5O6-8F-bK1" secondAttribute="trailing" constant="16" id="vEs-Qz-9JX"/>
+                                            <constraint firstAttribute="trailing" secondItem="U6c-SD-IRx" secondAttribute="trailing" constant="16" id="39j-eB-m10"/>
+                                            <constraint firstItem="l1S-7m-MVI" firstAttribute="top" secondItem="WZu-FB-G0v" secondAttribute="bottom" constant="16" id="5Xt-xh-c8n"/>
+                                            <constraint firstAttribute="trailing" secondItem="fTy-A1-wv1" secondAttribute="trailing" constant="16" id="64x-6L-jHe"/>
+                                            <constraint firstItem="fTy-A1-wv1" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="82b-l1-brB"/>
+                                            <constraint firstAttribute="trailing" secondItem="pbo-O9-nFR" secondAttribute="trailing" constant="16" id="8Y1-cK-MMQ"/>
+                                            <constraint firstItem="kc2-0u-cT8" firstAttribute="top" secondItem="nH0-gB-Ino" secondAttribute="bottom" constant="16" id="9OV-gU-oBX"/>
+                                            <constraint firstAttribute="trailing" secondItem="kW3-Jy-wGj" secondAttribute="trailing" constant="16" id="9ep-9R-Luv"/>
+                                            <constraint firstItem="l1S-7m-MVI" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="9hp-Zn-ml4"/>
+                                            <constraint firstAttribute="trailing" secondItem="cEZ-vK-6wj" secondAttribute="trailing" constant="16" id="AlU-MU-mcQ"/>
+                                            <constraint firstItem="kW3-Jy-wGj" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="B8P-FZ-ev7"/>
+                                            <constraint firstItem="cEZ-vK-6wj" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="CbN-sH-ASN"/>
+                                            <constraint firstItem="Gdu-Tb-eu6" firstAttribute="top" secondItem="NPU-KP-IAN" secondAttribute="bottom" constant="16" id="DDM-Ot-4sS"/>
+                                            <constraint firstAttribute="trailing" secondItem="cJq-hb-wTb" secondAttribute="trailing" constant="16" id="DOc-n6-sg5"/>
+                                            <constraint firstAttribute="trailing" secondItem="nJQ-RI-acs" secondAttribute="trailing" constant="16" id="Ec6-Mt-O4N"/>
+                                            <constraint firstAttribute="bottom" secondItem="cRi-KJ-61f" secondAttribute="bottom" constant="32" id="FXf-7Q-F69"/>
+                                            <constraint firstAttribute="trailing" secondItem="nH0-gB-Ino" secondAttribute="trailing" constant="16" id="G2T-VC-g4N"/>
+                                            <constraint firstItem="e28-mU-3NU" firstAttribute="top" secondItem="kc2-0u-cT8" secondAttribute="bottom" constant="16" id="H4A-G8-uKu"/>
+                                            <constraint firstItem="k8k-gy-G9v" firstAttribute="top" secondItem="cEZ-vK-6wj" secondAttribute="bottom" constant="16" id="Hll-Zz-nd0"/>
+                                            <constraint firstItem="pbo-O9-nFR" firstAttribute="top" secondItem="cJq-hb-wTb" secondAttribute="bottom" constant="16" id="Hns-mw-7N2"/>
+                                            <constraint firstAttribute="trailing" secondItem="NPU-KP-IAN" secondAttribute="trailing" constant="16" id="Hy0-NI-m9R"/>
+                                            <constraint firstItem="pbo-O9-nFR" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="Kp7-1m-llP"/>
+                                            <constraint firstItem="WZu-FB-G0v" firstAttribute="top" secondItem="b2L-UB-Kda" secondAttribute="bottom" constant="8" id="L9c-iu-DCx"/>
+                                            <constraint firstItem="b2L-UB-Kda" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="LNl-am-90h"/>
+                                            <constraint firstAttribute="trailing" secondItem="cRi-KJ-61f" secondAttribute="trailing" constant="16" id="Lja-lk-Umf"/>
+                                            <constraint firstAttribute="trailing" secondItem="DIj-OC-oZg" secondAttribute="trailing" constant="16" id="Lxm-oU-CaF"/>
+                                            <constraint firstItem="WZu-FB-G0v" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="MLe-TX-JoB"/>
+                                            <constraint firstAttribute="height" constant="960" id="NCM-Rk-aBt"/>
+                                            <constraint firstItem="NPU-KP-IAN" firstAttribute="top" secondItem="U6c-SD-IRx" secondAttribute="bottom" constant="16" id="PEv-JS-Oeq"/>
+                                            <constraint firstItem="DIj-OC-oZg" firstAttribute="top" secondItem="bA8-Tj-U6G" secondAttribute="top" constant="16" id="S2j-LR-7fO"/>
+                                            <constraint firstItem="fTy-A1-wv1" firstAttribute="top" secondItem="k8k-gy-G9v" secondAttribute="bottom" constant="16" id="SCb-0i-v0c"/>
+                                            <constraint firstItem="U6c-SD-IRx" firstAttribute="top" secondItem="nJQ-RI-acs" secondAttribute="bottom" constant="16" id="Vte-dn-3iG"/>
+                                            <constraint firstItem="nJQ-RI-acs" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="WEM-nH-DM1"/>
+                                            <constraint firstAttribute="trailing" secondItem="WZu-FB-G0v" secondAttribute="trailing" constant="16" id="WyB-4I-E47"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gdu-Tb-eu6" secondAttribute="trailing" constant="16" id="Ybg-1p-plp"/>
+                                            <constraint firstItem="nH0-gB-Ino" firstAttribute="top" secondItem="l1S-7m-MVI" secondAttribute="bottom" constant="16" id="Yw7-yP-8GL"/>
+                                            <constraint firstItem="cEZ-vK-6wj" firstAttribute="top" secondItem="pbo-O9-nFR" secondAttribute="bottom" constant="16" id="b8k-JR-XfE"/>
+                                            <constraint firstAttribute="trailing" secondItem="l1S-7m-MVI" secondAttribute="trailing" constant="16" id="cZj-34-8Cn"/>
+                                            <constraint firstItem="cRi-KJ-61f" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="dTS-6r-vfq"/>
+                                            <constraint firstItem="U6c-SD-IRx" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="dh7-xZ-i3R"/>
+                                            <constraint firstItem="kc2-0u-cT8" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="fh4-ob-01H"/>
+                                            <constraint firstAttribute="trailing" secondItem="kc2-0u-cT8" secondAttribute="trailing" constant="16" id="fsn-IF-lLV"/>
+                                            <constraint firstItem="nH0-gB-Ino" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="gGR-V1-l0M"/>
+                                            <constraint firstItem="k8k-gy-G9v" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="gcD-Dg-qrf"/>
+                                            <constraint firstItem="nJQ-RI-acs" firstAttribute="top" secondItem="e28-mU-3NU" secondAttribute="bottom" constant="16" id="lhX-VD-CuV"/>
+                                            <constraint firstItem="DIj-OC-oZg" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="n21-7h-QBG"/>
+                                            <constraint firstItem="Gdu-Tb-eu6" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="nY7-wI-H9L"/>
+                                            <constraint firstItem="NPU-KP-IAN" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="o4M-c3-a6W"/>
+                                            <constraint firstAttribute="trailing" secondItem="k8k-gy-G9v" secondAttribute="trailing" constant="16" id="pic-zf-Fw9"/>
+                                            <constraint firstItem="cJq-hb-wTb" firstAttribute="top" secondItem="Gdu-Tb-eu6" secondAttribute="bottom" constant="16" id="q60-sc-0PV"/>
+                                            <constraint firstAttribute="trailing" secondItem="e28-mU-3NU" secondAttribute="trailing" constant="16" id="qTj-uY-WMC"/>
+                                            <constraint firstItem="cJq-hb-wTb" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="sZV-pV-efM"/>
+                                            <constraint firstItem="kW3-Jy-wGj" firstAttribute="top" secondItem="fTy-A1-wv1" secondAttribute="bottom" constant="16" id="v87-C6-vd7"/>
+                                            <constraint firstItem="e28-mU-3NU" firstAttribute="leading" secondItem="bA8-Tj-U6G" secondAttribute="leading" constant="16" id="yNB-RQ-ESN"/>
+                                            <constraint firstAttribute="trailing" secondItem="b2L-UB-Kda" secondAttribute="trailing" constant="16" id="yc2-yE-kdt"/>
+                                            <constraint firstItem="b2L-UB-Kda" firstAttribute="top" secondItem="DIj-OC-oZg" secondAttribute="bottom" constant="16" id="yjr-4c-fma"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="bA8-Tj-U6G" secondAttribute="bottom" id="ABO-PW-eLl"/>
-                                    <constraint firstItem="bA8-Tj-U6G" firstAttribute="leading" secondItem="Sdj-Od-NSQ" secondAttribute="leading" id="Fnn-3a-QRr"/>
-                                    <constraint firstItem="bA8-Tj-U6G" firstAttribute="top" secondItem="Sdj-Od-NSQ" secondAttribute="top" id="TdB-9j-ZCS"/>
-                                    <constraint firstAttribute="trailing" secondItem="bA8-Tj-U6G" secondAttribute="trailing" id="mh9-xL-tfb"/>
+                                    <constraint firstAttribute="bottom" secondItem="bA8-Tj-U6G" secondAttribute="bottom" id="JgQ-Hn-UZC"/>
+                                    <constraint firstItem="bA8-Tj-U6G" firstAttribute="leading" secondItem="Sdj-Od-NSQ" secondAttribute="leading" id="KWG-14-1Yd"/>
+                                    <constraint firstItem="bA8-Tj-U6G" firstAttribute="top" secondItem="Sdj-Od-NSQ" secondAttribute="top" id="nEg-Dr-z4k"/>
+                                    <constraint firstAttribute="trailing" secondItem="bA8-Tj-U6G" secondAttribute="trailing" id="u03-wq-LMa"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EXV-rg-lkl">
+                                <rect key="frame" x="16" y="912" width="382" height="30"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Eku-1s-YAy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="18"/>
+                                <color key="tintColor" name="Icon"/>
+                                <menu key="menu" id="O9H-b1-I3P">
+                                    <children>
+                                        <command title="Año" id="xaw-Vc-eXO"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="AnioIn" image="calendar" catalog="system">
+                                    <color key="titleColor" name="Primary"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sLF-Pa-ddP"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="Sdj-Od-NSQ" firstAttribute="top" secondItem="sLF-Pa-ddP" secondAttribute="top" id="92j-rV-TBs"/>
-                            <constraint firstItem="bA8-Tj-U6G" firstAttribute="height" secondItem="sZn-je-vOQ" secondAttribute="height" multiplier="0.899554" id="G9a-cd-9sz"/>
-                            <constraint firstItem="bA8-Tj-U6G" firstAttribute="width" secondItem="sZn-je-vOQ" secondAttribute="width" id="LQV-Yl-Gk8"/>
+                            <constraint firstItem="EXV-rg-lkl" firstAttribute="leading" secondItem="sZn-je-vOQ" secondAttribute="leading" constant="16" id="Cud-GI-hWU"/>
+                            <constraint firstItem="EXV-rg-lkl" firstAttribute="top" secondItem="Sdj-Od-NSQ" secondAttribute="bottom" constant="16" id="KUh-h7-dep"/>
+                            <constraint firstItem="bA8-Tj-U6G" firstAttribute="width" secondItem="sZn-je-vOQ" secondAttribute="width" id="KcZ-BX-8wO"/>
+                            <constraint firstAttribute="trailing" secondItem="EXV-rg-lkl" secondAttribute="trailing" constant="16" id="NVP-2t-Jl8"/>
                             <constraint firstAttribute="bottom" secondItem="Sdj-Od-NSQ" secondAttribute="bottom" id="PEF-Ms-81d"/>
+                            <constraint firstItem="bA8-Tj-U6G" firstAttribute="height" relation="greaterThanOrEqual" secondItem="sZn-je-vOQ" secondAttribute="height" multiplier="1.00446" id="Wxq-xA-Bmf"/>
                             <constraint firstItem="Sdj-Od-NSQ" firstAttribute="trailing" secondItem="sLF-Pa-ddP" secondAttribute="trailing" id="dkp-MW-IDG"/>
                             <constraint firstItem="Sdj-Od-NSQ" firstAttribute="leading" secondItem="sLF-Pa-ddP" secondAttribute="leading" id="sos-Wo-QPI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ETP-NE-S44"/>
+                    <connections>
+                        <outlet property="chargeTextField" destination="l1S-7m-MVI" id="McF-8f-Kt1"/>
+                        <outlet property="countryTextField" destination="kc2-0u-cT8" id="Gqz-CH-aco"/>
+                        <outlet property="enterpriseTextField" destination="nH0-gB-Ino" id="0PF-Ag-bR1"/>
+                        <outlet property="logrosTextView" destination="e28-mU-3NU" id="crM-X3-ipS"/>
+                        <outlet property="modalButton" destination="U6c-SD-IRx" id="wyv-XJ-hQd"/>
+                        <outlet property="monthEndButton" destination="fTy-A1-wv1" id="4bb-db-eaI"/>
+                        <outlet property="monthInButton" destination="pbo-O9-nFR" id="Fps-gH-EAK"/>
+                        <outlet property="segmControl" destination="DIj-OC-oZg" id="VQe-5c-c5I"/>
+                        <outlet property="typeBtn" destination="Gdu-Tb-eu6" id="X8l-oS-Lqe"/>
+                        <outlet property="yearEndTextField" destination="kW3-Jy-wGj" id="Cr8-n4-tp0"/>
+                        <outlet property="yearTextField" destination="cEZ-vK-6wj" id="drI-s2-sqn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVh-Fc-tNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1041,7 +1246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOT-87-jck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4101" y="427"/>
+            <point key="canvasLocation" x="3751" y="13"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1051,6 +1256,7 @@
         <image name="HeaderLogo" width="1022" height="183"/>
         <image name="LogoExt" width="300" height="300"/>
         <image name="TalentUserIcon" width="94" height="94"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="eye.fill" catalog="system" width="128" height="80"/>
         <image name="person.fill.questionmark" catalog="system" width="128" height="102"/>
         <namedColor name="Background">
@@ -1061,6 +1267,9 @@
         </namedColor>
         <namedColor name="Icon">
             <color red="0.0" green="0.094117647058823528" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainColor">
+            <color red="0.78823529411764703" green="0.92941176470588238" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Primary">
             <color red="0.015686274509803921" green="0.32941176470588235" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -157,13 +157,4 @@ extension RegisterProfileRecViewController: UITextFieldDelegate, UITextViewDeleg
         return true
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if let text = textView.text {
-            if !text.isEmpty {
-                aboutUser = text
-            }
-        }
-        showAlert("Por favor, ingresa un resumen de tí")
-    }
-    
 }
