@@ -21,6 +21,9 @@
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
         <array key="NunitoSans-Bold.ttf">
             <string>NunitoSans-Bold</string>
         </array>
@@ -1059,10 +1062,10 @@
             </objects>
             <point key="canvasLocation" x="2905.7971014492755" y="-100.44642857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Profile Tal View Controller-->
         <scene sceneID="ttN-vW-0N5">
             <objects>
-                <viewController id="BHE-Br-GbO" sceneMemberID="viewController">
+                <viewController id="BHE-Br-GbO" customClass="RegisterProfileTalViewController" customModule="IT_Talent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QRD-GP-22X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1075,83 +1078,104 @@
                                     <segment title="Perfil"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="upl-e1-Dl5">
-                                <rect key="frame" x="16" y="155" width="382" height="34"/>
-                                <color key="backgroundColor" name="MainColor"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="getFullName:" destination="s0x-Sw-dEz" eventType="editingDidEnd" id="IGN-v0-chF"/>
-                                </connections>
-                            </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-XG-IxD">
-                                <rect key="frame" x="16" y="217" width="382" height="125"/>
+                                <rect key="frame" x="16" y="203" width="382" height="115"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="yQf-sx-uoJ"/>
+                                    <constraint firstAttribute="height" constant="115" id="yQf-sx-uoJ"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona un país" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCP-M0-g2U">
-                                <rect key="frame" x="16" y="197" width="382" height="20"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ciudad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ku-XR-s2H">
-                                <rect key="frame" x="16" y="342" width="382" height="34"/>
+                                <rect key="frame" x="16" y="334" width="382" height="34"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="getCity:" destination="BHE-Br-GbO" eventType="editingDidEnd" id="SzJ-ve-Yrp"/>
                                     <action selector="getCity:" destination="s0x-Sw-dEz" eventType="editingDidEnd" id="eGv-uL-ATM"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número telefónico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pb-Vd-L1m">
-                                <rect key="frame" x="16" y="392" width="382" height="34"/>
+                                <rect key="frame" x="16" y="384" width="382" height="34"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                 <connections>
+                                    <action selector="getPhone:" destination="BHE-Br-GbO" eventType="editingDidEnd" id="O6s-SH-LSy"/>
                                     <action selector="getPhoneNum:" destination="s0x-Sw-dEz" eventType="editingDidEnd" id="OWp-eM-7IE"/>
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Cuéntanos de tí" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9oz-TZ-GJm">
-                                <rect key="frame" x="16" y="442" width="382" height="128"/>
+                                <rect key="frame" x="16" y="434" width="382" height="116"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="khT-qh-jo0"/>
+                                    <constraint firstAttribute="height" constant="116" id="khT-qh-jo0"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona un país" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCP-M0-g2U">
+                                <rect key="frame" x="16" y="183" width="382" height="20"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terminemos de registrar tu perfil." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0F-78-yq3">
+                                <rect key="frame" x="16" y="155" width="382" height="20"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <color key="textColor" name="TextBold"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzP-FK-DTM">
+                                <rect key="frame" x="16" y="762" width="382" height="36"/>
+                                <color key="tintColor" name="Primary"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Finalizar Registro">
+                                    <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                    <color key="baseBackgroundColor" name="Primary"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="finishRegister:" destination="BHE-Br-GbO" eventType="touchUpInside" id="o5M-93-WY7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5n9-Kj-eyp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="upl-e1-Dl5" secondAttribute="trailing" constant="16" id="2mU-Il-oPo"/>
-                            <constraint firstItem="vCP-M0-g2U" firstAttribute="top" secondItem="upl-e1-Dl5" secondAttribute="bottom" constant="8" id="4M3-To-UOW"/>
-                            <constraint firstItem="2Pb-Vd-L1m" firstAttribute="top" secondItem="0ku-XR-s2H" secondAttribute="bottom" constant="16" id="7dL-Qb-asy"/>
-                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="9k6-Bs-mFu" secondAttribute="trailing" constant="16" id="7hN-DX-Fux"/>
-                            <constraint firstItem="9oz-TZ-GJm" firstAttribute="top" secondItem="2Pb-Vd-L1m" secondAttribute="bottom" constant="16" id="Aob-5J-xpB"/>
-                            <constraint firstItem="Jsd-XG-IxD" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="Ckv-ge-KGJ"/>
-                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="0ku-XR-s2H" secondAttribute="trailing" constant="16" id="EOc-jc-I6V"/>
-                            <constraint firstItem="upl-e1-Dl5" firstAttribute="top" secondItem="9k6-Bs-mFu" secondAttribute="bottom" constant="16" id="FQU-FA-erj"/>
-                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="Jsd-XG-IxD" secondAttribute="trailing" constant="16" id="RSa-7X-6L9"/>
-                            <constraint firstItem="upl-e1-Dl5" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="Snl-Ff-IXi"/>
-                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="vCP-M0-g2U" secondAttribute="trailing" constant="16" id="VPn-qR-RZg"/>
-                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="9oz-TZ-GJm" secondAttribute="trailing" constant="16" id="WmV-gk-HGO"/>
-                            <constraint firstItem="Jsd-XG-IxD" firstAttribute="top" secondItem="vCP-M0-g2U" secondAttribute="bottom" id="Wx1-eN-ZQa"/>
-                            <constraint firstItem="0ku-XR-s2H" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="Xe2-OI-LEr"/>
-                            <constraint firstItem="9oz-TZ-GJm" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="ZBx-5J-Ftc"/>
-                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="2Pb-Vd-L1m" secondAttribute="trailing" constant="16" id="cYM-Xv-VME"/>
-                            <constraint firstItem="9k6-Bs-mFu" firstAttribute="top" secondItem="5n9-Kj-eyp" secondAttribute="top" constant="16" id="eeU-ti-bDf"/>
-                            <constraint firstItem="0ku-XR-s2H" firstAttribute="top" secondItem="Jsd-XG-IxD" secondAttribute="bottom" id="fxx-tH-gR6"/>
-                            <constraint firstItem="vCP-M0-g2U" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="gJb-Vs-Ljo"/>
-                            <constraint firstItem="2Pb-Vd-L1m" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="kY3-42-sPa"/>
-                            <constraint firstItem="9k6-Bs-mFu" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="wCy-Lk-xZm"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="V0F-78-yq3" secondAttribute="trailing" constant="16" id="2W1-mg-re4"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="9oz-TZ-GJm" secondAttribute="trailing" constant="16" id="3dn-Kg-y7K"/>
+                            <constraint firstItem="0ku-XR-s2H" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="4lA-P8-96a"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="mzP-FK-DTM" secondAttribute="trailing" constant="16" id="5kV-Vs-7JS"/>
+                            <constraint firstItem="vCP-M0-g2U" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="67p-RA-K8E"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="Jsd-XG-IxD" secondAttribute="trailing" constant="16" id="7Bp-IJ-0eI"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="0ku-XR-s2H" secondAttribute="trailing" constant="16" id="DWg-wT-6Dz"/>
+                            <constraint firstItem="9oz-TZ-GJm" firstAttribute="top" secondItem="2Pb-Vd-L1m" secondAttribute="bottom" constant="16" id="Fvh-LS-7ah"/>
+                            <constraint firstItem="Jsd-XG-IxD" firstAttribute="top" secondItem="vCP-M0-g2U" secondAttribute="bottom" id="IFW-7e-8tY"/>
+                            <constraint firstItem="vCP-M0-g2U" firstAttribute="top" secondItem="V0F-78-yq3" secondAttribute="bottom" constant="8" id="Ikn-EP-pjy"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="2Pb-Vd-L1m" secondAttribute="trailing" constant="16" id="MiV-dp-qmw"/>
+                            <constraint firstItem="9k6-Bs-mFu" firstAttribute="top" secondItem="5n9-Kj-eyp" secondAttribute="top" constant="16" id="NbZ-xL-d39"/>
+                            <constraint firstItem="0ku-XR-s2H" firstAttribute="top" secondItem="Jsd-XG-IxD" secondAttribute="bottom" constant="16" id="PhD-fH-5Ux"/>
+                            <constraint firstItem="mzP-FK-DTM" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="Tp0-yE-Eeg"/>
+                            <constraint firstItem="V0F-78-yq3" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="azB-aI-IBl"/>
+                            <constraint firstItem="9k6-Bs-mFu" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="gx6-MY-4op"/>
+                            <constraint firstItem="2Pb-Vd-L1m" firstAttribute="top" secondItem="0ku-XR-s2H" secondAttribute="bottom" constant="16" id="h2y-vc-J3S"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="bottom" secondItem="mzP-FK-DTM" secondAttribute="bottom" constant="64" id="h4l-hR-LWC"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="vCP-M0-g2U" secondAttribute="trailing" constant="16" id="iDH-jh-Gd6"/>
+                            <constraint firstItem="2Pb-Vd-L1m" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="jj0-LO-yAs"/>
+                            <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="9k6-Bs-mFu" secondAttribute="trailing" constant="16" id="nKA-8v-1aW"/>
+                            <constraint firstItem="V0F-78-yq3" firstAttribute="top" secondItem="9k6-Bs-mFu" secondAttribute="bottom" constant="16" id="qns-YD-fdj"/>
+                            <constraint firstItem="Jsd-XG-IxD" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="yFP-aC-XJT"/>
+                            <constraint firstItem="9oz-TZ-GJm" firstAttribute="leading" secondItem="5n9-Kj-eyp" secondAttribute="leading" constant="16" id="yOa-rw-yZ9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w5t-Xc-J4c"/>
+                    <connections>
+                        <outlet property="aboutTextField" destination="9oz-TZ-GJm" id="MRA-sF-7n5"/>
+                        <outlet property="cityTextField" destination="0ku-XR-s2H" id="mDL-Hm-Xo6"/>
+                        <outlet property="countryPricker" destination="Jsd-XG-IxD" id="cSp-Ls-bS2"/>
+                        <outlet property="phoneNumTextField" destination="2Pb-Vd-L1m" id="ibV-3g-bYK"/>
+                        <outlet property="segmControl" destination="9k6-Bs-mFu" id="k91-8V-eQb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OyJ-SC-POj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1368,7 +1392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOT-87-jck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4601" y="313"/>
+            <point key="canvasLocation" x="5200" y="346"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
