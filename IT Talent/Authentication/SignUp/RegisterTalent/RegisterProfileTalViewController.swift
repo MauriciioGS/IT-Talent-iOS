@@ -45,7 +45,7 @@ class RegisterProfileTalViewController: UIViewController {
                     if isSaved {
                         // performar segue para ir a la pantalla principal (Jobs)
                         print("Registrado")
-                        self.performSegue(withIdentifier: "toMain", sender: self)
+                        self.performSegue(withIdentifier: "toMainTal", sender: self)
                     }
                 } else {
                     self.showAlert("Ha ocurrido un error. Intenta de nuevo más tarde")

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660E20D52988EEFA00BFC318 /* JobsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E20D42988EEFA00BFC318 /* JobsViewModel.swift */; };
+		660E20D82988FEF400BFC318 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E20D72988FEF400BFC318 /* Job.swift */; };
+		660E20DA2989096300BFC318 /* NewJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E20D92989096300BFC318 /* NewJobViewController.swift */; };
+		660E20DC29890E6800BFC318 /* InitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E20DB29890E6800BFC318 /* InitViewModel.swift */; };
 		664B798E2987B44F0065718C /* ExperiencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B798D2987B44F0065718C /* ExperiencesViewController.swift */; };
 		668ADB2B2985D27E006EDEC3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */; };
 		668ADB2D2985DC9F006EDEC3 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */; };
@@ -54,6 +58,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		660E20D42988EEFA00BFC318 /* JobsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewModel.swift; sourceTree = "<group>"; };
+		660E20D72988FEF400BFC318 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		660E20D92989096300BFC318 /* NewJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobViewController.swift; sourceTree = "<group>"; };
+		660E20DB29890E6800BFC318 /* InitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewModel.swift; sourceTree = "<group>"; };
 		664B798D2987B44F0065718C /* ExperiencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewController.swift; sourceTree = "<group>"; };
 		668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		660E20D62988FED500BFC318 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				660E20D72988FEF400BFC318 /* Job.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		668ADB272985D232006EDEC3 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +181,7 @@
 		668CAC612988D18B00EA8DE6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				660E20D42988EEFA00BFC318 /* JobsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -172,8 +189,10 @@
 		6696E47629871F1200437177 /* Jobs */ = {
 			isa = PBXGroup;
 			children = (
+				660E20D62988FED500BFC318 /* Model */,
 				668CAC612988D18B00EA8DE6 /* ViewModel */,
 				6696E47729871F8000437177 /* JobsViewController.swift */,
+				660E20D92989096300BFC318 /* NewJobViewController.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -203,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				66A0618C2986319F008C5390 /* SignUpViewModel.swift */,
+				660E20DB29890E6800BFC318 /* InitViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -396,10 +416,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660E20DC29890E6800BFC318 /* InitViewModel.swift in Sources */,
+				660E20D52988EEFA00BFC318 /* JobsViewModel.swift in Sources */,
 				668ADB2D2985DC9F006EDEC3 /* SignUp1ViewController.swift in Sources */,
 				66B4A9692984D1D70033A10D /* SignInViewController.swift in Sources */,
 				668ADB332985E684006EDEC3 /* UserModel.swift in Sources */,
 				668ADB2B2985D27E006EDEC3 /* WelcomeViewController.swift in Sources */,
+				660E20DA2989096300BFC318 /* NewJobViewController.swift in Sources */,
 				66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */,
 				66B4A9652984D1D70033A10D /* AppDelegate.swift in Sources */,
 				668CAC5C2988D07F00EA8DE6 /* IT_Talent.xcdatamodeld in Sources */,
@@ -414,6 +437,7 @@
 				66B4A9672984D1D70033A10D /* SceneDelegate.swift in Sources */,
 				66A0618D2986319F008C5390 /* SignUpViewModel.swift in Sources */,
 				668CAC5329888CC400EA8DE6 /* RegisterProfileTalViewController.swift in Sources */,
+				660E20D82988FEF400BFC318 /* Job.swift in Sources */,
 				66A0618829862829008C5390 /* Arrays.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

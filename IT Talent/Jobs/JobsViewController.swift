@@ -7,18 +7,79 @@
 
 import UIKit
 
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+import CoreData
+
 class JobsViewController: UIViewController {
     
-    var user: User?
-
+    @IBOutlet weak var activityIndicator1: UIActivityIndicatorView!
+    @IBOutlet weak var activityIndicator2: UIActivityIndicatorView!
+    @IBOutlet weak var newJobButton: UIButton!
+    
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var jobsViewModel: JobsViewModel?
+    
+    private var jobsList: [Job] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(user ?? "Nada")
+        jobsViewModel = JobsViewModel(self.context)
+        
+        activityIndicator1.startAnimating()
+        activityIndicator2.startAnimating()
 
+        jobsViewModel!.getMyJobPosts()
+        bindJobs()
     }
     
-
+    private func bindJobs() {
+        self.jobsViewModel!.fetchJobs = {
+            DispatchQueue.main.async {
+                if let jobs = self.jobsViewModel!.jobsList {
+                    if jobs.isEmpty {
+                        self.showAlertNoJobs("Todavía no tienes empleos publicados")
+                    } else {
+                        self.jobsList = jobs
+                        print(self.jobsList)
+                    }
+                } else {
+                    self.showAlert("Ocurrió un error inesperado")
+                }
+            }
+        }
+    }
     
+    func showAlertNoJobs(_ errorMesssage: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "Reintentar", style: UIAlertAction.Style.default, handler: { action in
+            self.jobsViewModel!.getMyJobPosts()
+        }))
+        alert.addAction(UIAlertAction(title: "Crear empleo", style: UIAlertAction.Style.default, handler: { action in
+            self.performSegue(withIdentifier: "toNewJob", sender: self)
+        }))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlert(_ errorMesssage: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func newJob(_ sender: Any) {
+        
+    }
 
 }

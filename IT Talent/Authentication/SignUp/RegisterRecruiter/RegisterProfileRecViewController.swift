@@ -76,6 +76,7 @@ class RegisterProfileRecViewController: UIViewController {
     }
     
     @IBAction func continueRegister(_ sender: Any) {
+        aboutUser = aboutTextField.text
             if let errorMessage = checkFields() {
                 showAlert(errorMessage)
             } else {

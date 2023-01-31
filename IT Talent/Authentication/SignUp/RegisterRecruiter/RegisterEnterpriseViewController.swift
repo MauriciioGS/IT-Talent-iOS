@@ -60,8 +60,7 @@ class RegisterEnterpriseViewController: UIViewController {
         self.signUpViewModel.signUpUiState = {
             DispatchQueue.main.async {
                 if let _ = self.signUpViewModel.isSaved {
-                    // performar segue para ir a la pantalla principal (Jobs)
-                    self.showAlert("Registrado!")
+                    self.performSegue(withIdentifier: "toMainRec", sender: self)
                 } else {
                     self.showAlert("Ha ocurrido un error. Intenta de nuevo más tarde")
                 }

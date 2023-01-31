@@ -17,10 +17,13 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var btnAlreadyRegistered: UIButton!
     
     private var userType = 1
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let initViewModel = InitViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        getCredentials()
         // Card
         viewCardContainer.backgroundColor = UIColor(named: "Background")!
         viewCardContainer.layer.cornerRadius = 10
@@ -32,7 +35,22 @@ class WelcomeViewController: UIViewController {
         viewCardContainer.layer.shadowPath = UIBezierPath(rect: viewCardContainer.bounds).cgPath
         viewCardContainer.layer.shouldRasterize = true
         viewCardContainer.layer.rasterizationScale = UIScreen.main.scale
-
+    }
+    
+    private func getCredentials() {
+        do {
+            let user = try context.fetch(User.fetchRequest())
+            if let userCred = user.first {
+                print("Registrado anteriormente")
+                if userCred.userType == 1 {
+                    self.performSegue(withIdentifier: "signInTal", sender: self)
+                } else {
+                    self.performSegue(withIdentifier: "signInRec", sender: self)
+                }
+            }
+        } catch {
+            print("Error al obtener los datos: \(error)")
+        }
     }
     
 
@@ -61,5 +79,16 @@ class WelcomeViewController: UIViewController {
                 destino.userType = userType
             }
         }
+    }
+    
+    func showAlert(_ errorMesssage: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
 }

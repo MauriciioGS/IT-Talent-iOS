@@ -48,8 +48,8 @@ class SignUpViewModel {
     func saveLocal(userPass: String) {
         if let context = self.mObjectContext {
             let user = User(context: context)
-            user.fullName = userProfile?.fullName
-            user.email = userProfile?.email
+            user.fullName = userProfile!.fullName
+            user.email = userProfile!.email
             user.userType = Int16(userProfile!.userType)
             user.pass = userPass
             do {
