@@ -14,6 +14,7 @@ class Skills2ViewController: UIViewController {
     @IBOutlet weak var segmControl: UISegmentedControl!
     
     var userProfile: UserProfile?
+    var userPass = String()
     private var userSoftSkills: [String] = ["Habilidades seleccionadas:"]
 
     override func viewDidLoad() {
@@ -82,6 +83,7 @@ class Skills2ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destino = segue.destination as? ExperiencesViewController {
             destino.userProfile = userProfile
+            destino.userPass = userPass
         }
     }
 

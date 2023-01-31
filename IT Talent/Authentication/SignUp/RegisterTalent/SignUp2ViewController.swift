@@ -16,6 +16,7 @@ class SignUp2ViewController: UIViewController {
     
     var userType = 0
     var userEmail = String()
+    var userPass = String()
     private var userFullName = String()
     private var profesionalRole = String()
     private var profesionalLevel = String()
@@ -54,6 +55,7 @@ class SignUp2ViewController: UIViewController {
             // Crea usuario y pasarlo entre las siguientes pantallas
             let userProfile = UserProfile(userType: userType, email: userEmail, fullName: userFullName, country: "", city: "", phoneNumber: "", resume: "", profRole: profesionalRole, xpLevel: profesionalLevel, skills: [""], enterprise: "", role: "")
             destino.userProfile = userProfile
+            destino.userPass = userPass
         }
     }
     

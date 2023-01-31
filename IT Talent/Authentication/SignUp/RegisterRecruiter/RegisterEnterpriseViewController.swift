@@ -14,8 +14,10 @@ class RegisterEnterpriseViewController: UIViewController {
     var userProfile: UserProfile?
     private var userEnterprise = String()
     private var userRole = String()
+    var userPass = String()
     
     private let signUpViewModel = SignUpViewModel()
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,7 @@ class RegisterEnterpriseViewController: UIViewController {
         print(userRole)
         userProfile?.enterprise = userEnterprise
         userProfile?.role = userRole
-        signUpViewModel.saveUserProfile(user: userProfile!)
+        signUpViewModel.saveUserProfile(user: userProfile!, userPass: userPass, context: context)
         bind()
     }
     

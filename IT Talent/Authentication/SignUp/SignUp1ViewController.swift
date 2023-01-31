@@ -105,11 +105,13 @@ class SignUp1ViewController: UIViewController {
         if let destino = segue.destination as? SignUp2ViewController {
             destino.userEmail = userEmail
             destino.userType = userType
+            destino.userPass = userPass
             destino.title = "¡Bienvenido Talento!"
         }
         if let destino = segue.destination as? RegisterProfileRecViewController {
             destino.userEmail = userEmail
             destino.userType = userType
+            destino.userPass = userPass
             destino.title = "¡Bienvenido Reclutador!"
         }
     }

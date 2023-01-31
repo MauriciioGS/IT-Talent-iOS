@@ -10,7 +10,9 @@ import UIKit
 class RegisterProfileTalViewController: UIViewController {
     
     private let signUpViewModel = SignUpViewModel()
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var userProfile: UserProfile?
+    var userPass = String()
     private var userCountry = String()
     private var userCity = String()
     private var userPhoneNum = String()
@@ -39,9 +41,12 @@ class RegisterProfileTalViewController: UIViewController {
     private func bind() {
         self.signUpViewModel.signUpUiState = {
             DispatchQueue.main.async {
-                if let _ = self.signUpViewModel.isSaved {
-                    // performar segue para ir a la pantalla principal (Jobs)
-                    self.showAlert("Registrado!")
+                if let isSaved = self.signUpViewModel.isSaved {
+                    if isSaved {
+                        // performar segue para ir a la pantalla principal (Jobs)
+                        print("Registrado")
+                        self.performSegue(withIdentifier: "toMain", sender: self)
+                    }
                 } else {
                     self.showAlert("Ha ocurrido un error. Intenta de nuevo más tarde")
                 }
@@ -77,7 +82,7 @@ class RegisterProfileTalViewController: UIViewController {
             userProfile?.city = userCity
             userProfile?.phoneNumber = userPhoneNum
             userProfile?.resume = aboutTextField.text
-            signUpViewModel.saveUserProfile(user: userProfile!)
+            signUpViewModel.saveUserProfile(user: userProfile!, userPass: userPass, context: context)
             bind()
         }
     }

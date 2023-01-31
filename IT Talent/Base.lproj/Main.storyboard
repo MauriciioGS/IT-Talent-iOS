@@ -1140,7 +1140,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5n9-Kj-eyp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="V0F-78-yq3" secondAttribute="trailing" constant="16" id="2W1-mg-re4"/>
                             <constraint firstItem="5n9-Kj-eyp" firstAttribute="trailing" secondItem="9oz-TZ-GJm" secondAttribute="trailing" constant="16" id="3dn-Kg-y7K"/>
@@ -1175,6 +1175,7 @@
                         <outlet property="countryPricker" destination="Jsd-XG-IxD" id="cSp-Ls-bS2"/>
                         <outlet property="phoneNumTextField" destination="2Pb-Vd-L1m" id="ibV-3g-bYK"/>
                         <outlet property="segmControl" destination="9k6-Bs-mFu" id="k91-8V-eQb"/>
+                        <segue destination="aJB-69-Bvo" kind="show" identifier="toMain" id="ty5-UC-uu2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OyJ-SC-POj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1378,21 +1379,98 @@
             </objects>
             <point key="canvasLocation" x="1187" y="642"/>
         </scene>
-        <!--Main-->
+        <!--Profile-->
+        <scene sceneID="RFD-2v-cCe">
+            <objects>
+                <viewController title="Profile" id="WEP-6K-B7j" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="afX-r0-9gU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="MaE-BP-af7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Perfil" id="BrV-nH-n72">
+                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="large" renderingMode="hierarchical" variableValue="1">
+                            <hierarchicalColors>
+                                <color name="Icon"/>
+                                <color name="Icon"/>
+                                <color name="Icon"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ehg-eJ-wtS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6216" y="603"/>
+        </scene>
+        <!--Postulations-->
+        <scene sceneID="ERk-lY-eEI">
+            <objects>
+                <viewController title="Postulations" id="Pms-v4-HFa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KRo-aR-QNY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mhg-81-SKR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Postulaciones" id="a9m-Pa-dCj">
+                        <imageReference key="image" image="Work_ic" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color name="Icon"/>
+                                <color name="Icon"/>
+                                <color name="Icon"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0Q-Pi-fes" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6216" y="-100"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tuo-t6-7kC">
+            <objects>
+                <tabBarController id="aJB-69-Bvo" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N81-9y-eWO">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9iR-H6-1Hb" kind="relationship" relationship="viewControllers" id="Omh-9t-nzR"/>
+                        <segue destination="Pms-v4-HFa" kind="relationship" relationship="viewControllers" id="csg-aP-5cJ"/>
+                        <segue destination="WEP-6K-B7j" kind="relationship" relationship="viewControllers" id="1Yd-Mb-cbr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efo-Wr-myU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5107" y="-100"/>
+        </scene>
+        <!--Jobs-->
         <scene sceneID="pnM-ZA-waE">
             <objects>
-                <viewController title="Main" id="9iR-H6-1Hb" sceneMemberID="viewController">
+                <viewController title="Jobs" id="9iR-H6-1Hb" customClass="JobsViewController" customModule="IT_Talent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QXS-Nk-REx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="ib3-wm-Etk"/>
                         <color key="backgroundColor" name="Background"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Inicio" id="Mfh-TR-nQJ">
+                        <imageReference key="image" image="house.fill" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color name="Icon"/>
+                                <color name="Icon"/>
+                                <color name="Icon"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="hSx-0f-jUz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOT-87-jck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5200" y="346"/>
+            <point key="canvasLocation" x="6217" y="-767"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1402,8 +1480,11 @@
         <image name="HeaderLogo" width="1022" height="183"/>
         <image name="LogoExt" width="300" height="300"/>
         <image name="TalentUserIcon" width="94" height="94"/>
+        <image name="Work_ic" width="28" height="26"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="eye.fill" catalog="system" width="128" height="80"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="person.fill.questionmark" catalog="system" width="128" height="102"/>
         <namedColor name="Background">
             <color red="0.94901960784313721" green="0.95686274509803926" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

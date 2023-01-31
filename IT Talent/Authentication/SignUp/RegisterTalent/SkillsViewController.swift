@@ -15,6 +15,8 @@ class SkillsViewController: UIViewController {
     @IBOutlet weak var continueButton: UIButton!
     
     var userProfile: UserProfile?
+    var userPass = String()
+
     private var userSkills: [String] = ["Habilidades seleccionadas:"]
     
     override func viewDidLoad() {
@@ -120,6 +122,7 @@ class SkillsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destino = segue.destination as? Skills2ViewController {
             destino.userProfile = userProfile
+            destino.userPass = userPass
         }
     }
 

@@ -11,6 +11,7 @@ class RegisterProfileRecViewController: UIViewController {
     
     var userType = 0
     var userEmail = String()
+    var userPass = String()
     private var userFullName = String()
     private var userCountry = String()
     private var userCity = String()
@@ -116,6 +117,7 @@ class RegisterProfileRecViewController: UIViewController {
         if let destino = segue.destination as? RegisterEnterpriseViewController {
             destino.userProfile = UserProfile(userType: userType, email: userEmail, fullName: userFullName, country: userCountry, city: userCity, phoneNumber: userPhoneNum, resume: aboutUser, profRole: "", xpLevel: "", skills: [""], enterprise: "", role: "")
             destino.title = "Empresa"
+            destino.userPass = userPass
         }
     }
     

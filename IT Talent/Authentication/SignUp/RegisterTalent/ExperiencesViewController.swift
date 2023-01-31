@@ -24,6 +24,7 @@ class ExperiencesViewController: UIViewController {
     
     
     var userProfile: UserProfile?
+    var userPass = String()
     private var jobMode = String()
     private var job = String()
     private var enterprise = String()
@@ -262,6 +263,7 @@ class ExperiencesViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destino = segue.destination as? RegisterProfileTalViewController {
             destino.userProfile = userProfile
+            destino.userPass = userPass
         }
     }
     
