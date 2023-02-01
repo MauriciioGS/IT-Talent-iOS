@@ -40,7 +40,7 @@ class JobsViewController: UIViewController {
         
         cellJobActiveWidth = collectionViewActive.bounds.width - (collectionViewActive.bounds.width / 6)
         
-        cellJobPastWidth = collectionViewPast.bounds.width - (collectionViewPast.bounds.width / 3)
+        cellJobPastWidth = collectionViewPast.bounds.width - (collectionViewPast.bounds.width / 4)
         
         jobsViewModel = JobsViewModel(self.context)
         
@@ -87,6 +87,8 @@ class JobsViewController: UIViewController {
     }
     
     private func getJobs(_ jobs: [Job]) {
+        jobsListActive.removeAll()
+        jobsListPast.removeAll()
         jobs.forEach { job in
             if job.status != 4 {
                 jobsListActive.append(job)
@@ -163,7 +165,7 @@ extension JobsViewController: UICollectionViewDataSource {
         } else {
             let jobCell = collectionView.dequeueReusableCell(withReuseIdentifier: "jobPastCell", for: indexPath) as? JobPastViewCell
             
-            let job = jobsListActive[indexPath.row]
+            let job = jobsListPast[indexPath.row]
             jobCell!.chargeLabel.text = job.job
             jobCell!.enterpriseLabel.text = job.enterprise
             jobCell!.publisherLabel.text = "Publicado por: \(job.nameRecruiter.split(separator: " ")[0])"
@@ -184,10 +186,13 @@ extension JobsViewController: UICollectionViewDataSource {
 extension JobsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == collectionViewActive {
-            print("ACtive...")
+            print("Active...")
             return CGSize(width: cellJobActiveWidth!, height: 124)
-        } else {
-            return CGSize(width: cellJobPastWidth!, height: 136)
         }
+        if collectionView == collectionViewPast {
+            print("Past...")
+            return CGSize(width: cellJobPastWidth!, height: 138)
+        }
+        return CGSize(width: 0,height: 0)
     }
 }

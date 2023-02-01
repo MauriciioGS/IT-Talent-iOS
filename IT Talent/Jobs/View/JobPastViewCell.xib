@@ -24,60 +24,60 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="jobPastCell" id="gTV-IL-0wX" customClass="JobPastViewCell" customModule="IT_Talent" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="263" height="135"/>
+            <rect key="frame" x="0.0" y="0.0" width="252" height="139"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="263" height="135"/>
+                <rect key="frame" x="0.0" y="0.0" width="252" height="139"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61l-WL-Dgn">
-                        <rect key="frame" x="0.0" y="0.0" width="263" height="135"/>
+                        <rect key="frame" x="0.0" y="0.0" width="244" height="139"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cargo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJn-ee-gx5">
-                                <rect key="frame" x="12" y="12" width="36.666666666666664" height="14.666666666666664"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJn-ee-gx5">
+                                <rect key="frame" x="12" y="12" width="36.666666666666664" height="14"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" name="TextBold"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnterpriseImage" translatesAutoresizingMaskIntoConstraints="NO" id="QtR-We-VD3">
-                                <rect key="frame" x="199" y="32" width="52" height="52"/>
+                                <rect key="frame" x="180" y="16" width="52" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="RHh-qP-ghu"/>
                                     <constraint firstAttribute="height" constant="52" id="wHn-Nb-5jo"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nombre de la empresa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3Y-GZ-Oj5">
-                                <rect key="frame" x="12.000000000000007" y="29.666666666666668" width="122.66666666666669" height="16.666666666666661"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre de la empresa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3Y-GZ-Oj5">
+                                <rect key="frame" x="12.000000000000007" y="29" width="122.66666666666669" height="16.666666666666671"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Publicado por: Persona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XH-Vw-PFD">
-                                <rect key="frame" x="12" y="49.333333333333343" width="124" height="16.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publicado por: Persona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XH-Vw-PFD">
+                                <rect key="frame" x="12" y="48.666666666666664" width="124" height="16.666666666666664"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="10 Solicitantes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE4-m4-XRK">
-                                <rect key="frame" x="12" y="69" width="80" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Solicitantes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE4-m4-XRK">
+                                <rect key="frame" x="12" y="68.333333333333329" width="80" height="16.666666666666671"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="3 Vacantes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJM-rs-ob2">
-                                <rect key="frame" x="12.000000000000004" y="89" width="59.333333333333343" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Vacantes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJM-rs-ob2">
+                                <rect key="frame" x="12" y="88" width="200" height="16.666666666666671"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                 <color key="textColor" name="Success"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="3 Rechazados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biv-JQ-56K">
-                                <rect key="frame" x="12" y="109" width="74.666666666666671" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Rechazados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biv-JQ-56K">
+                                <rect key="frame" x="12" y="107.66666666666667" width="74.666666666666671" height="16.666666666666671"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                 <color key="textColor" name="Error"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hace 1 día" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caL-is-SQh">
-                                <rect key="frame" x="191" y="108" width="60" height="15"/>
+                                <rect key="frame" x="172" y="113" width="60" height="14"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" name="Disable"/>
                                 <nil key="highlightedColor"/>
@@ -85,11 +85,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QtR-We-VD3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1XH-Vw-PFD" secondAttribute="trailing" constant="32" id="35O-7r-ugv"/>
+                            <constraint firstItem="QtR-We-VD3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1XH-Vw-PFD" secondAttribute="trailing" constant="16" id="35O-7r-ugv"/>
                             <constraint firstItem="iE4-m4-XRK" firstAttribute="top" secondItem="1XH-Vw-PFD" secondAttribute="bottom" constant="3" id="3M0-bD-deO"/>
                             <constraint firstItem="gJn-ee-gx5" firstAttribute="top" secondItem="61l-WL-Dgn" secondAttribute="top" constant="12" id="9dt-el-xjw"/>
-                            <constraint firstItem="QtR-We-VD3" firstAttribute="leading" secondItem="gJn-ee-gx5" secondAttribute="trailing" constant="150.33333333333334" id="LAI-at-bnf"/>
-                            <constraint firstItem="QtR-We-VD3" firstAttribute="top" secondItem="61l-WL-Dgn" secondAttribute="top" constant="32" id="LNh-1n-cBi"/>
+                            <constraint firstItem="QtR-We-VD3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gJn-ee-gx5" secondAttribute="trailing" constant="16" id="LAI-at-bnf"/>
+                            <constraint firstItem="QtR-We-VD3" firstAttribute="top" secondItem="61l-WL-Dgn" secondAttribute="top" constant="16" id="LNh-1n-cBi"/>
                             <constraint firstItem="FJM-rs-ob2" firstAttribute="leading" secondItem="61l-WL-Dgn" secondAttribute="leading" constant="12" id="NFa-Tr-pfY"/>
                             <constraint firstItem="FJM-rs-ob2" firstAttribute="top" secondItem="iE4-m4-XRK" secondAttribute="bottom" constant="3" id="Tdw-cP-wWB"/>
                             <constraint firstAttribute="trailing" secondItem="caL-is-SQh" secondAttribute="trailing" constant="12" id="Tvf-BO-7ww"/>
@@ -102,8 +102,9 @@
                             <constraint firstItem="iE4-m4-XRK" firstAttribute="leading" secondItem="61l-WL-Dgn" secondAttribute="leading" constant="12" id="lb1-lC-RHb"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="biv-JQ-56K" secondAttribute="bottom" constant="12" id="m5H-cM-6Sa"/>
                             <constraint firstAttribute="trailing" secondItem="QtR-We-VD3" secondAttribute="trailing" constant="12" id="mHR-3S-Z1F"/>
+                            <constraint firstAttribute="trailing" secondItem="FJM-rs-ob2" secondAttribute="trailing" constant="32" id="p2P-dd-zd5"/>
                             <constraint firstItem="biv-JQ-56K" firstAttribute="top" secondItem="FJM-rs-ob2" secondAttribute="bottom" constant="3" id="trk-gI-ZVX"/>
-                            <constraint firstItem="QtR-We-VD3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="g3Y-GZ-Oj5" secondAttribute="trailing" constant="32" id="uB0-9B-Gjh"/>
+                            <constraint firstItem="QtR-We-VD3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="g3Y-GZ-Oj5" secondAttribute="trailing" constant="16" id="uB0-9B-Gjh"/>
                             <constraint firstItem="biv-JQ-56K" firstAttribute="leading" secondItem="61l-WL-Dgn" secondAttribute="leading" constant="12" id="wUd-dE-ucP"/>
                             <constraint firstItem="g3Y-GZ-Oj5" firstAttribute="top" secondItem="gJn-ee-gx5" secondAttribute="bottom" constant="3" id="zdZ-lD-PK1"/>
                         </constraints>
@@ -114,10 +115,10 @@
             <constraints>
                 <constraint firstItem="61l-WL-Dgn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QUv-P4-C8b"/>
                 <constraint firstItem="61l-WL-Dgn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YGJ-4i-Hfs"/>
-                <constraint firstAttribute="trailing" secondItem="61l-WL-Dgn" secondAttribute="trailing" id="lmZ-c4-5mh"/>
+                <constraint firstAttribute="trailing" secondItem="61l-WL-Dgn" secondAttribute="trailing" constant="8" id="lmZ-c4-5mh"/>
                 <constraint firstAttribute="bottom" secondItem="61l-WL-Dgn" secondAttribute="bottom" id="uYF-YA-lId"/>
             </constraints>
-            <size key="customSize" width="263" height="135"/>
+            <size key="customSize" width="252" height="139"/>
             <connections>
                 <outlet property="applicantsLabel" destination="iE4-m4-XRK" id="N3t-PY-Mzk"/>
                 <outlet property="chargeLabel" destination="gJn-ee-gx5" id="Nag-Kx-bfd"/>
@@ -128,7 +129,7 @@
                 <outlet property="timeLabel" destination="caL-is-SQh" id="baH-qf-rjL"/>
                 <outlet property="vacanciesLabel" destination="FJM-rs-ob2" id="p14-zR-nly"/>
             </connections>
-            <point key="canvasLocation" x="145.38461538461539" y="17.417061611374407"/>
+            <point key="canvasLocation" x="136.92307692307691" y="15.284360189573459"/>
         </collectionViewCell>
     </objects>
     <resources>
