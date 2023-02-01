@@ -16,6 +16,7 @@ class NewJobViewModel {
     private let db = Firestore.firestore()
     
     private var newJob : Job?
+    private var user : User?
     
     var newJobUiState : (() -> ()) = { }
     
@@ -25,11 +26,36 @@ class NewJobViewModel {
         }
     }
     
+    var getUserUiState : (() -> ()) = { }
+    
+    var userEnterprise: String? {
+        didSet {
+            getUserUiState()
+        }
+    }
+    
+    func getUser(context: NSManagedObjectContext){
+        self.mObjectContext = context
+        do {
+            user = try context.fetch(User.fetchRequest()).first
+            db.collection("users").document((user?.email)!).getDocument(as: UserProfile.self) { result in
+                switch result {
+                case .success(let user):
+                    self.userEnterprise = user.enterprise
+                case .failure(let error):
+                    print("Error obteniendo remote data: \(error)")
+                }
+            }
+        } catch {
+            print("Error obteniendo local data: \(error)")
+        }
+    }
+    
     func saveNewJob(newJob: Job, context: NSManagedObjectContext) {
         self.mObjectContext = context
         self.newJob = newJob
         do {
-            if let user = try context.fetch(User.fetchRequest()).first {
+            if let user = user {
                 self.newJob?.nameRecruiter = user.fullName!
                 self.newJob?.emailRecruiter = user.email!
                 var ref: DocumentReference? = nil
@@ -39,7 +65,6 @@ class NewJobViewModel {
                         print("Error guardando los datos en el servidor: \(err.localizedDescription)")
                     } else {
                         self.isSaved = true
-                        print("Job Guardado!")
                     }
                 }
             }

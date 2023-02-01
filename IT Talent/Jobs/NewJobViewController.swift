@@ -50,6 +50,19 @@ class NewJobViewController: UIViewController {
         enterpriseTextField.delegate = self
         locationTextField.delegate = self
         vacanciesTextField.delegate = self
+        
+        newJobViewModel.getUser(context: context)
+        bindGetUser()
+    }
+    
+    private func bindGetUser() {
+        newJobViewModel.getUserUiState = {
+            DispatchQueue.main.async {
+                if let enterprise = self.newJobViewModel.userEnterprise {
+                    self.enterpriseTextField.text = enterprise
+                }
+            }
+        }
     }
     
     private func initModalMenu(){

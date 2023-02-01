@@ -11,8 +11,17 @@
 		660E20D82988FEF400BFC318 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E20D72988FEF400BFC318 /* Job.swift */; };
 		660E20DA2989096300BFC318 /* NewJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E20D92989096300BFC318 /* NewJobViewController.swift */; };
 		660E20DC29890E6800BFC318 /* InitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E20DB29890E6800BFC318 /* InitViewModel.swift */; };
+		662380C3298A34F0001E68D1 /* JobPastViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662380C1298A34F0001E68D1 /* JobPastViewCell.swift */; };
+		662380C4298A34F0001E68D1 /* JobPastViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662380C2298A34F0001E68D1 /* JobPastViewCell.xib */; };
 		664B798E2987B44F0065718C /* ExperiencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B798D2987B44F0065718C /* ExperiencesViewController.swift */; };
 		6674E1C02989EDD900470C8C /* NewJobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6674E1BF2989EDD900470C8C /* NewJobViewModel.swift */; };
+		6674E1C3298A0AE300470C8C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6674E1C2298A0AE300470C8C /* Lottie */; };
+		6674E1C6298A0F0600470C8C /* no_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 6674E1C5298A0F0600470C8C /* no_data.json */; };
+		6674E1C8298A0F2B00470C8C /* sad.json in Resources */ = {isa = PBXBuildFile; fileRef = 6674E1C7298A0F2B00470C8C /* sad.json */; };
+		6674E1CA298A0F3300470C8C /* lost_connection.json in Resources */ = {isa = PBXBuildFile; fileRef = 6674E1C9298A0F3200470C8C /* lost_connection.json */; };
+		6674E1CC298A0F3800470C8C /* mail_send.json in Resources */ = {isa = PBXBuildFile; fileRef = 6674E1CB298A0F3800470C8C /* mail_send.json */; };
+		6674E1D0298A2A2500470C8C /* JobViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6674E1CE298A2A2500470C8C /* JobViewCell.swift */; };
+		6674E1D1298A2A2500470C8C /* JobViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6674E1CF298A2A2500470C8C /* JobViewCell.xib */; };
 		668ADB2B2985D27E006EDEC3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */; };
 		668ADB2D2985DC9F006EDEC3 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */; };
 		668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2F2985E1DF006EDEC3 /* MyColors.swift */; };
@@ -63,8 +72,16 @@
 		660E20D72988FEF400BFC318 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		660E20D92989096300BFC318 /* NewJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobViewController.swift; sourceTree = "<group>"; };
 		660E20DB29890E6800BFC318 /* InitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewModel.swift; sourceTree = "<group>"; };
+		662380C1298A34F0001E68D1 /* JobPastViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPastViewCell.swift; sourceTree = "<group>"; };
+		662380C2298A34F0001E68D1 /* JobPastViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobPastViewCell.xib; sourceTree = "<group>"; };
 		664B798D2987B44F0065718C /* ExperiencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewController.swift; sourceTree = "<group>"; };
 		6674E1BF2989EDD900470C8C /* NewJobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobViewModel.swift; sourceTree = "<group>"; };
+		6674E1C5298A0F0600470C8C /* no_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_data.json; sourceTree = "<group>"; };
+		6674E1C7298A0F2B00470C8C /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
+		6674E1C9298A0F3200470C8C /* lost_connection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lost_connection.json; sourceTree = "<group>"; };
+		6674E1CB298A0F3800470C8C /* mail_send.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mail_send.json; sourceTree = "<group>"; };
+		6674E1CE298A2A2500470C8C /* JobViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewCell.swift; sourceTree = "<group>"; };
+		6674E1CF298A2A2500470C8C /* JobViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobViewCell.xib; sourceTree = "<group>"; };
 		668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
 		668ADB2F2985E1DF006EDEC3 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
@@ -117,6 +134,7 @@
 				668ADB4A29860718006EDEC3 /* FirebaseStorage in Frameworks */,
 				668ADB3829860718006EDEC3 /* FirebaseAnalytics in Frameworks */,
 				668ADB4C29860718006EDEC3 /* FirebaseStorageCombine-Community in Frameworks */,
+				6674E1C3298A0AE300470C8C /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +147,28 @@
 				660E20D72988FEF400BFC318 /* Job.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6674E1C4298A0E4F00470C8C /* LottieAnims */ = {
+			isa = PBXGroup;
+			children = (
+				6674E1CB298A0F3800470C8C /* mail_send.json */,
+				6674E1C9298A0F3200470C8C /* lost_connection.json */,
+				6674E1C7298A0F2B00470C8C /* sad.json */,
+				6674E1C5298A0F0600470C8C /* no_data.json */,
+			);
+			path = LottieAnims;
+			sourceTree = "<group>";
+		};
+		6674E1CD298A29F900470C8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6674E1CE298A2A2500470C8C /* JobViewCell.swift */,
+				6674E1CF298A2A2500470C8C /* JobViewCell.xib */,
+				662380C1298A34F0001E68D1 /* JobPastViewCell.swift */,
+				662380C2298A34F0001E68D1 /* JobPastViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		668ADB272985D232006EDEC3 /* Authentication */ = {
@@ -194,6 +234,7 @@
 			children = (
 				660E20D62988FED500BFC318 /* Model */,
 				668CAC612988D18B00EA8DE6 /* ViewModel */,
+				6674E1CD298A29F900470C8C /* View */,
 				6696E47729871F8000437177 /* JobsViewController.swift */,
 				660E20D92989096300BFC318 /* NewJobViewController.swift */,
 			);
@@ -299,6 +340,7 @@
 		66B4A97F2984DA6D0033A10D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6674E1C4298A0E4F00470C8C /* LottieAnims */,
 				66B4A9802984DA7C0033A10D /* Fonts */,
 			);
 			path = Resources;
@@ -349,6 +391,7 @@
 				668ADB4729860718006EDEC3 /* FirebaseFirestoreSwift */,
 				668ADB4929860718006EDEC3 /* FirebaseStorage */,
 				668ADB4B29860718006EDEC3 /* FirebaseStorageCombine-Community */,
+				6674E1C2298A0AE300470C8C /* Lottie */,
 			);
 			productName = "IT Talent";
 			productReference = 66B4A9612984D1D70033A10D /* IT Talent.app */;
@@ -380,6 +423,7 @@
 			mainGroup = 66B4A9582984D1D70033A10D;
 			packageReferences = (
 				668ADB3629860718006EDEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				6674E1C1298A0AE300470C8C /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 66B4A9622984D1D70033A10D /* Products */;
 			projectDirPath = "";
@@ -398,16 +442,22 @@
 				66B4A9742984D1D80033A10D /* LaunchScreen.storyboard in Resources */,
 				66B4A9A12984DE130033A10D /* Montserrat-Regular.ttf in Resources */,
 				66B4A9932984DDBF0033A10D /* NunitoSans-Bold.ttf in Resources */,
+				6674E1D1298A2A2500470C8C /* JobViewCell.xib in Resources */,
 				66B4A9902984DD400033A10D /* nunitosans_light.ttf in Resources */,
 				66B4A9A32984DE130033A10D /* Montserrat-Bold.ttf in Resources */,
+				662380C4298A34F0001E68D1 /* JobPastViewCell.xib in Resources */,
 				66B4A99F2984DE130033A10D /* Montserrat-Light.ttf in Resources */,
 				66B4A9A02984DE130033A10D /* Montserrat-SemiBold.ttf in Resources */,
 				66B4A9912984DD600033A10D /* NunitoSans-Regular.ttf in Resources */,
+				6674E1C8298A0F2B00470C8C /* sad.json in Resources */,
+				6674E1CA298A0F3300470C8C /* lost_connection.json in Resources */,
 				66B4A9922984DD860033A10D /* NunitoSans-SemiBold.ttf in Resources */,
+				6674E1C6298A0F0600470C8C /* no_data.json in Resources */,
 				66B4A9712984D1D80033A10D /* Assets.xcassets in Resources */,
 				66B4A9942984DDD80033A10D /* NunitoSansBlack.ttf in Resources */,
 				66B4A9A22984DE130033A10D /* Montserrat-Medium.ttf in Resources */,
 				66B4A96C2984D1D70033A10D /* Main.storyboard in Resources */,
+				6674E1CC298A0F3800470C8C /* mail_send.json in Resources */,
 				668ADB352985FDB2006EDEC3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,9 +481,11 @@
 				6674E1C02989EDD900470C8C /* NewJobViewModel.swift in Sources */,
 				668CAC5C2988D07F00EA8DE6 /* IT_Talent.xcdatamodeld in Sources */,
 				6696E480298785C500437177 /* SkillsViewController.swift in Sources */,
+				662380C3298A34F0001E68D1 /* JobPastViewCell.swift in Sources */,
 				668CAC512988786E00EA8DE6 /* Date.swift in Sources */,
 				66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */,
 				664B798E2987B44F0065718C /* ExperiencesViewController.swift in Sources */,
+				6674E1D0298A2A2500470C8C /* JobViewCell.swift in Sources */,
 				6696E47829871F8000437177 /* JobsViewController.swift in Sources */,
 				668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */,
 				6696E47A2987201800437177 /* RegisterEnterpriseViewController.swift in Sources */,
@@ -672,6 +724,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6674E1C1298A0AE300470C8C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		668ADB3629860718006EDEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -683,6 +743,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6674E1C2298A0AE300470C8C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6674E1C1298A0AE300470C8C /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		668ADB3729860718006EDEC3 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 668ADB3629860718006EDEC3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

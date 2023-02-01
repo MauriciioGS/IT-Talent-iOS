@@ -54,6 +54,7 @@ class JobsViewModel {
     
     func getJobsByUser(email: String) {
         print("Obteniendo jobs...")
+        myJobs.removeAll()
         db.collection("jobs").whereField("emailRecruiter", isEqualTo: email).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error: \(err)")
