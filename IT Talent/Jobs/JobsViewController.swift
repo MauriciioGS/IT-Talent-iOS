@@ -27,6 +27,8 @@ class JobsViewController: UIViewController {
         
         jobsViewModel = JobsViewModel(self.context)
         
+        self.activityIndicator1.isHidden = false
+        self.activityIndicator2.isHidden = false
         activityIndicator1.startAnimating()
         activityIndicator2.startAnimating()
 
@@ -39,8 +41,15 @@ class JobsViewController: UIViewController {
             DispatchQueue.main.async {
                 if let jobs = self.jobsViewModel!.jobsList {
                     if jobs.isEmpty {
+                        print("No jobs")
+                        self.activityIndicator1.stopAnimating()
+                        self.activityIndicator2.stopAnimating()
                         self.showAlertNoJobs("Todavía no tienes empleos publicados")
                     } else {
+                        self.activityIndicator1.stopAnimating()
+                        self.activityIndicator1.isHidden = true
+                        self.activityIndicator2.stopAnimating()
+                        self.activityIndicator2.isHidden = true
                         self.jobsList = jobs
                         print(self.jobsList)
                     }
@@ -79,7 +88,7 @@ class JobsViewController: UIViewController {
     }
     
     @IBAction func newJob(_ sender: Any) {
-        
+        performSegue(withIdentifier: "toNewJob", sender: self)
     }
 
 }

@@ -15,12 +15,13 @@ class JobsViewModel {
     private var mObjectContext: NSManagedObjectContext?
     private let db = Firestore.firestore()
     
-    
     init(_ context: NSManagedObjectContext? = nil) {
         self.mObjectContext = context
     }
     
     var fetchJobs : (() -> ()) = { }
+    
+    private var myJobs: [Job] = []
     
     var jobsList: [Job]? {
         didSet {
@@ -30,8 +31,8 @@ class JobsViewModel {
     
     func getMyJobPosts() {
         if let userEmail = getUserLocal() {
-            let jobs = getJobsByUser(email: userEmail)
-            jobsList = jobs
+            print("A obtener jobs")
+            getJobsByUser(email: userEmail)
         } else {
             print("Error al obtener el usuario localmente")
         }
@@ -51,21 +52,26 @@ class JobsViewModel {
         return nil
     }
     
-    func getJobsByUser(email: String) -> [Job] {
-        var myJobs: [Job] = []
+    func getJobsByUser(email: String) {
+        print("Obteniendo jobs...")
         db.collection("jobs").whereField("emailRecruiter", isEqualTo: email).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error: \(err)")
             } else {
-                for document in querySnapshot!.documents {
-                    do {
-                        myJobs.append(try document.data(as: Job.self))
-                    } catch {
-                        print("Error en la conversión: \(error)")
+                print("Deserializando...")
+                DispatchQueue.main.async {
+                    for document in querySnapshot!.documents {
+                        do {
+                            var job = try document.data(as: Job.self)
+                            job.id = document.documentID
+                            self.myJobs.append(job)
+                        } catch {
+                            print("Error en la conversión: \(error)")
+                        }
                     }
+                    self.jobsList = self.myJobs
                 }
             }
         }
-        return myJobs
     }
 }

@@ -1394,6 +1394,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reclutamiento" image="Work_ic" id="A27-Sv-Ssu"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BnH-R0-h3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1558,11 +1559,12 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator1" destination="W5a-Jx-WBa" id="pTJ-vG-VqF"/>
                         <outlet property="activityIndicator2" destination="XYl-lX-AA2" id="JIp-g4-4Hf"/>
                         <outlet property="newJobButton" destination="Pea-xO-VAv" id="euT-7y-bJP"/>
-                        <segue destination="wzJ-I2-mG4" kind="showDetail" identifier="toNewJob" id="n7w-5k-qBg"/>
+                        <segue destination="wzJ-I2-mG4" kind="presentation" identifier="toNewJob" id="n7w-5k-qBg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GxX-pE-Syh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1578,122 +1580,167 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuevo Empleo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqn-5T-nLy">
-                                <rect key="frame" x="16" y="48" width="382" height="27.5"/>
+                                <rect key="frame" x="16" y="64" width="382" height="27.5"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="20"/>
                                 <color key="textColor" name="TextBold"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cargo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWU-ZE-D2H">
-                                <rect key="frame" x="16" y="91.5" width="382" height="34"/>
+                                <rect key="frame" x="16" y="107.5" width="382" height="34"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getCharge:" destination="wzJ-I2-mG4" eventType="editingDidEnd" id="K64-vT-W4T"/>
+                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnterpriseImage" translatesAutoresizingMaskIntoConstraints="NO" id="wzb-ZS-U6b">
-                                <rect key="frame" x="16" y="141.5" width="122" height="134"/>
+                                <rect key="frame" x="16" y="157.5" width="122" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="JKa-id-zrR"/>
                                     <constraint firstAttribute="height" constant="134" id="bZl-Ac-lTV"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Empresa / Nombre del proyecto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gS4-Hs-x56">
-                                <rect key="frame" x="150" y="141.5" width="248" height="34"/>
+                                <rect key="frame" x="150" y="157.5" width="248" height="34"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getEnterprise:" destination="wzJ-I2-mG4" eventType="editingDidEnd" id="u1z-xS-yrs"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ubicación" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLY-6j-H8k">
-                                <rect key="frame" x="150" y="191.5" width="248" height="34"/>
+                                <rect key="frame" x="150" y="207.5" width="248" height="34"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getLocation:" destination="wzJ-I2-mG4" eventType="editingDidEnd" id="4fi-Tc-Udu"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número de vacantes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-n5-1Rb">
-                                <rect key="frame" x="150" y="241.5" width="248" height="34"/>
+                                <rect key="frame" x="150" y="257.5" width="248" height="34"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getVacancies:" destination="wzJ-I2-mG4" eventType="editingDidEnd" id="gnT-qK-Epk"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NV4-En-fZP">
-                                <rect key="frame" x="16" y="327.5" width="382" height="40"/>
-                                <color key="backgroundColor" name="MainColor"/>
-                                <color key="tintColor" name="Primary"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="Work_ic" title="    Modalidad del empleo">
-                                    <color key="baseBackgroundColor" name="MainColor"/>
-                                </buttonConfiguration>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona la modalidad del empleo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G47-sM-Bsz">
-                                <rect key="frame" x="16" y="291.5" width="382" height="20"/>
+                                <rect key="frame" x="16" y="307.5" width="382" height="20"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el tipo de empleo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5g-t6-Jg1">
-                                <rect key="frame" x="16" y="383.5" width="382" height="20"/>
+                                <rect key="frame" x="16" y="395.5" width="382" height="20"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yd3-mw-Koj">
-                                <rect key="frame" x="16" y="419.5" width="382" height="40"/>
-                                <color key="backgroundColor" name="MainColor"/>
-                                <color key="tintColor" name="Primary"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="Work_ic" title="    Tipo de empleo">
-                                    <color key="baseBackgroundColor" name="MainColor"/>
-                                </buttonConfiguration>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el rango de salario aproximado:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUT-RT-vph">
-                                <rect key="frame" x="16" y="475.5" width="382" height="20"/>
+                                <rect key="frame" x="16" y="483.5" width="382" height="20"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7j-iM-pCS">
-                                <rect key="frame" x="32" y="502" width="350" height="150"/>
+                                <rect key="frame" x="16" y="519.5" width="382" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="hjc-cS-JwX"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q6-fX-H68">
+                                <rect key="frame" x="16" y="701.5" width="382" height="36"/>
+                                <color key="tintColor" name="Primary"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Publicar">
+                                    <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                    <color key="baseBackgroundColor" name="Primary"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="postJob:" destination="wzJ-I2-mG4" eventType="touchUpInside" id="05r-xB-76J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbT-ST-P8o">
+                                <rect key="frame" x="16" y="343.5" width="382" height="36"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="pha-fl-4sm"/>
+                                </constraints>
+                                <color key="tintColor" name="Icon"/>
+                                <menu key="menu" id="ew3-qV-RBN">
+                                    <children>
+                                        <command title="Item 1" id="cdf-aY-x6X"/>
+                                        <command title="Item 2" id="fe4-TY-9RQ"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Button" image="Work_ic">
+                                    <color key="titleColor" name="TextBold"/>
+                                    <color key="titleShadowColor" name="MainColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlY-Fe-LcT">
+                                <rect key="frame" x="16" y="431.5" width="382" height="36"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="rl1-XZ-oTH"/>
+                                </constraints>
+                                <color key="tintColor" name="Icon"/>
+                                <menu key="menu" id="Arj-go-BUL">
+                                    <children>
+                                        <command title="Item 1" id="89p-lw-L8U"/>
+                                        <command title="Item 2" id="HsB-77-qGL"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Button" image="Work_ic">
+                                    <color key="titleColor" name="TextBold"/>
+                                    <color key="titleShadowColor" name="MainColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UPd-6M-2WX"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="Yd3-mw-Koj" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="06H-cq-goJ"/>
                             <constraint firstItem="G47-sM-Bsz" firstAttribute="top" secondItem="1dB-n5-1Rb" secondAttribute="bottom" constant="16" id="1Jd-Q3-vjz"/>
-                            <constraint firstItem="i5g-t6-Jg1" firstAttribute="top" secondItem="NV4-En-fZP" secondAttribute="bottom" constant="16" id="6vb-zF-aSu"/>
                             <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="Oqn-5T-nLy" secondAttribute="trailing" constant="16" id="83v-tC-sqb"/>
                             <constraint firstItem="G47-sM-Bsz" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="8PP-6h-x57"/>
                             <constraint firstItem="1dB-n5-1Rb" firstAttribute="leading" secondItem="wzb-ZS-U6b" secondAttribute="trailing" constant="12" id="9e3-wn-fQj"/>
-                            <constraint firstItem="Oqn-5T-nLy" firstAttribute="top" secondItem="UPd-6M-2WX" secondAttribute="top" id="AZR-Xa-mRz"/>
-                            <constraint firstItem="O7j-iM-pCS" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="32" id="FGy-ki-PJz"/>
+                            <constraint firstItem="Oqn-5T-nLy" firstAttribute="top" secondItem="UPd-6M-2WX" secondAttribute="top" constant="16" id="AZR-Xa-mRz"/>
+                            <constraint firstItem="cbT-ST-P8o" firstAttribute="top" secondItem="G47-sM-Bsz" secondAttribute="bottom" constant="16" id="DvU-d1-nr1"/>
+                            <constraint firstItem="O7j-iM-pCS" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="FGy-ki-PJz"/>
                             <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="1dB-n5-1Rb" secondAttribute="trailing" constant="16" id="FpF-b7-BTR"/>
-                            <constraint firstItem="O7j-iM-pCS" firstAttribute="top" secondItem="RUT-RT-vph" secondAttribute="bottom" constant="6" id="Gnb-9m-SsZ"/>
-                            <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="O7j-iM-pCS" secondAttribute="trailing" constant="32" id="H0y-i2-eid"/>
-                            <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="Yd3-mw-Koj" secondAttribute="trailing" constant="16" id="HAh-Gh-v5y"/>
+                            <constraint firstItem="O7j-iM-pCS" firstAttribute="top" secondItem="RUT-RT-vph" secondAttribute="bottom" constant="16" id="Gnb-9m-SsZ"/>
+                            <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="O7j-iM-pCS" secondAttribute="trailing" constant="16" id="H0y-i2-eid"/>
+                            <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="nlY-Fe-LcT" secondAttribute="trailing" constant="16" id="HML-aV-onI"/>
                             <constraint firstItem="kLY-6j-H8k" firstAttribute="top" secondItem="gS4-Hs-x56" secondAttribute="bottom" constant="16" id="HeW-E1-4XX"/>
+                            <constraint firstItem="8Q6-fX-H68" firstAttribute="top" secondItem="O7j-iM-pCS" secondAttribute="bottom" constant="32" id="KiS-bq-lnZ"/>
                             <constraint firstItem="qWU-ZE-D2H" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="L8Y-Ue-hMm"/>
-                            <constraint firstItem="Yd3-mw-Koj" firstAttribute="top" secondItem="i5g-t6-Jg1" secondAttribute="bottom" constant="16" id="NJ3-09-38d"/>
+                            <constraint firstItem="nlY-Fe-LcT" firstAttribute="top" secondItem="i5g-t6-Jg1" secondAttribute="bottom" constant="16" id="N1c-fQ-6qa"/>
                             <constraint firstItem="gS4-Hs-x56" firstAttribute="top" secondItem="qWU-ZE-D2H" secondAttribute="bottom" constant="16" id="Nt1-al-LwD"/>
-                            <constraint firstItem="NV4-En-fZP" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="PTw-Iu-Ydy"/>
+                            <constraint firstItem="nlY-Fe-LcT" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="Pho-dR-dL5"/>
                             <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="G47-sM-Bsz" secondAttribute="trailing" constant="16" id="Qiq-8y-IsV"/>
                             <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="gS4-Hs-x56" secondAttribute="trailing" constant="16" id="SK4-Hh-keD"/>
-                            <constraint firstItem="NV4-En-fZP" firstAttribute="top" secondItem="G47-sM-Bsz" secondAttribute="bottom" constant="16" id="VdW-il-rt4"/>
                             <constraint firstItem="RUT-RT-vph" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="Ym3-AA-y7c"/>
                             <constraint firstItem="wzb-ZS-U6b" firstAttribute="top" secondItem="qWU-ZE-D2H" secondAttribute="bottom" constant="16" id="YrW-3t-CZ9"/>
                             <constraint firstItem="i5g-t6-Jg1" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="Z5p-uU-Yqp"/>
                             <constraint firstItem="kLY-6j-H8k" firstAttribute="leading" secondItem="wzb-ZS-U6b" secondAttribute="trailing" constant="12" id="ZQQ-px-jVM"/>
                             <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="RUT-RT-vph" secondAttribute="trailing" constant="16" id="awc-RL-l1X"/>
+                            <constraint firstItem="i5g-t6-Jg1" firstAttribute="top" secondItem="cbT-ST-P8o" secondAttribute="bottom" constant="16" id="cX7-Rz-acF"/>
                             <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="i5g-t6-Jg1" secondAttribute="trailing" constant="16" id="cXe-Oj-1ah"/>
+                            <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="cbT-ST-P8o" secondAttribute="trailing" constant="16" id="csg-9N-ELx"/>
+                            <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="8Q6-fX-H68" secondAttribute="trailing" constant="16" id="es1-ku-qTG"/>
                             <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="kLY-6j-H8k" secondAttribute="trailing" constant="16" id="fEa-IS-dB6"/>
-                            <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="NV4-En-fZP" secondAttribute="trailing" constant="16" id="i5s-dn-dWN"/>
-                            <constraint firstItem="RUT-RT-vph" firstAttribute="top" secondItem="Yd3-mw-Koj" secondAttribute="bottom" constant="16" id="ilG-hO-jAz"/>
+                            <constraint firstItem="8Q6-fX-H68" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="gAy-8q-2QD"/>
                             <constraint firstItem="Oqn-5T-nLy" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="kVi-Vc-Ck9"/>
                             <constraint firstItem="gS4-Hs-x56" firstAttribute="leading" secondItem="wzb-ZS-U6b" secondAttribute="trailing" constant="12" id="n2a-nr-mJv"/>
                             <constraint firstItem="qWU-ZE-D2H" firstAttribute="top" secondItem="Oqn-5T-nLy" secondAttribute="bottom" constant="16" id="pwo-q3-gDI"/>
                             <constraint firstItem="1dB-n5-1Rb" firstAttribute="top" secondItem="kLY-6j-H8k" secondAttribute="bottom" constant="16" id="qXZ-dT-aGk"/>
+                            <constraint firstItem="RUT-RT-vph" firstAttribute="top" secondItem="nlY-Fe-LcT" secondAttribute="bottom" constant="16" id="qus-Il-vG7"/>
                             <constraint firstItem="UPd-6M-2WX" firstAttribute="trailing" secondItem="qWU-ZE-D2H" secondAttribute="trailing" constant="16" id="w7t-bH-2wn"/>
+                            <constraint firstItem="cbT-ST-P8o" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="xDf-4N-66e"/>
                             <constraint firstItem="wzb-ZS-U6b" firstAttribute="leading" secondItem="UPd-6M-2WX" secondAttribute="leading" constant="16" id="xfK-On-VcK"/>
                         </constraints>
                     </view>
@@ -1701,9 +1748,10 @@
                         <outlet property="chargeTextField" destination="qWU-ZE-D2H" id="92P-ID-0cf"/>
                         <outlet property="enterpriseTextField" destination="gS4-Hs-x56" id="2Hf-Za-grS"/>
                         <outlet property="locationTextField" destination="kLY-6j-H8k" id="Vmy-pq-1rc"/>
-                        <outlet property="modalPopUp" destination="NV4-En-fZP" id="rDk-Iz-4Yk"/>
-                        <outlet property="typePopUp" destination="Yd3-mw-Koj" id="fqX-ig-EiU"/>
+                        <outlet property="modalPopUp" destination="cbT-ST-P8o" id="mCc-uF-tcj"/>
+                        <outlet property="typePopUp" destination="nlY-Fe-LcT" id="MQ5-rW-ZlT"/>
                         <outlet property="vacanciesTextField" destination="1dB-n5-1Rb" id="92r-iz-Gzs"/>
+                        <outlet property="wageLabel" destination="RUT-RT-vph" id="do3-rA-KdE"/>
                         <outlet property="wagePicker" destination="O7j-iM-pCS" id="xmZ-UI-v6U"/>
                     </connections>
                 </viewController>
@@ -1751,6 +1799,7 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ukh-sD-lrR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1775,6 +1824,7 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehg-eJ-wtS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1799,6 +1849,7 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0Q-Pi-fes" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1845,6 +1896,7 @@
                         </imageReference>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="hSx-0f-jUz"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOT-87-jck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
