@@ -36,7 +36,6 @@
         <scene sceneID="PLW-yJ-c7k">
             <objects>
                 <navigationController navigationBarHidden="YES" id="V3j-u1-Aej" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="979-o8-W2w">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -268,7 +267,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o5O-Gs-Ckf"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="btnAlreadyRegistered" destination="Iaa-fz-jck" id="PKV-0K-gn1"/>
                         <outlet property="btnContinue" destination="pzh-gL-Uur" id="qso-I9-5Oy"/>
@@ -278,8 +276,8 @@
                         <outlet property="viewCardContainer" destination="80l-Wf-trV" id="xRJ-nI-KLp"/>
                         <segue destination="iJw-QQ-2Rl" kind="show" identifier="toSignUp" id="ZYw-6x-WEb"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toSignIn" id="L1d-P1-3wz"/>
-                        <segue destination="4Ye-hT-qOS" kind="show" identifier="signInRec" id="Fpz-dT-pE4"/>
                         <segue destination="aJB-69-Bvo" kind="show" identifier="signInTal" id="bXJ-tk-uGT"/>
+                        <segue destination="4Ye-hT-qOS" kind="show" identifier="signInRec" id="v0t-2W-hro"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gd-ce-A67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1376,7 +1374,6 @@
                     <connections>
                         <outlet property="enterpriseTextField" destination="aX6-l5-bSU" id="uGo-gH-YJd"/>
                         <outlet property="roleTextField" destination="uka-Ji-4sF" id="OIu-6w-K7C"/>
-                        <segue destination="4Ye-hT-qOS" kind="show" identifier="toMainRec" id="ZiA-xb-Ny8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQN-0V-cYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1775,6 +1772,7 @@
                         <segue destination="Tf8-He-M5A" kind="relationship" relationship="viewControllers" id="pMc-j0-cyt"/>
                         <segue destination="tXv-DZ-rbJ" kind="relationship" relationship="viewControllers" id="KoQ-76-8ph"/>
                         <segue destination="AhP-h8-Nu6" kind="relationship" relationship="viewControllers" id="GlR-xQ-q2y"/>
+                        <segue destination="WEP-6K-B7j" kind="show" id="AeT-pT-ocV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j63-ur-baa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1784,12 +1782,76 @@
         <!--Talentos-->
         <scene sceneID="TgA-RO-O4c">
             <objects>
-                <viewController title="Talentos" id="AhP-h8-Nu6" sceneMemberID="viewController">
+                <viewController title="Talentos" id="AhP-h8-Nu6" customClass="TalentViewController" customModule="IT_Talent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kDe-CX-mAb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owP-Kx-C6T">
+                                <rect key="frame" x="107" y="330.5" width="200" height="200"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6mR-Us-1Iz"/>
+                                    <constraint firstAttribute="width" constant="200" id="fAb-AQ-jmy"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rkD-1l-1Wh">
+                                <rect key="frame" x="0.0" y="167.5" width="414" height="645.5"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="YYY-MI-Iho">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="estimatedItemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="mUb-Jk-RXe">
+                                <rect key="frame" x="0.0" y="48" width="308.5" height="56"/>
+                                <color key="barTintColor" name="Background"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AhP-h8-Nu6" id="uzT-bN-yjx"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos los talentos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x39-Lc-wXG">
+                                <rect key="frame" x="16" y="120" width="382" height="31.5"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="23"/>
+                                <color key="textColor" name="TextBold"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2U-rN-hm8">
+                                <rect key="frame" x="308.5" y="58" width="97.5" height="35"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <color key="tintColor" name="Primary"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Ver todos">
+                                    <color key="baseBackgroundColor" name="MainColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="getAllTalent:" destination="AhP-h8-Nu6" eventType="touchUpInside" id="jmM-A6-XHW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Q8b-Rk-Cs3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="owP-Kx-C6T" firstAttribute="centerX" secondItem="Q8b-Rk-Cs3" secondAttribute="centerX" id="76w-1n-Ibn"/>
+                            <constraint firstItem="owP-Kx-C6T" firstAttribute="centerY" secondItem="Q8b-Rk-Cs3" secondAttribute="centerY" id="FXn-GR-yRS"/>
+                            <constraint firstItem="mUb-Jk-RXe" firstAttribute="top" secondItem="Q8b-Rk-Cs3" secondAttribute="top" id="LfW-Jj-Lv0"/>
+                            <constraint firstItem="x39-Lc-wXG" firstAttribute="leading" secondItem="Q8b-Rk-Cs3" secondAttribute="leading" constant="16" id="RaS-GN-ZfU"/>
+                            <constraint firstItem="Q8b-Rk-Cs3" firstAttribute="bottom" secondItem="rkD-1l-1Wh" secondAttribute="bottom" id="TjI-4q-wJv"/>
+                            <constraint firstItem="mUb-Jk-RXe" firstAttribute="leading" secondItem="Q8b-Rk-Cs3" secondAttribute="leading" id="XOL-hs-0Dl"/>
+                            <constraint firstItem="Q8b-Rk-Cs3" firstAttribute="trailing" secondItem="m2U-rN-hm8" secondAttribute="trailing" constant="8" id="XgM-Zw-wiF"/>
+                            <constraint firstItem="Q8b-Rk-Cs3" firstAttribute="trailing" secondItem="x39-Lc-wXG" secondAttribute="trailing" constant="16" id="Yg5-br-1UP"/>
+                            <constraint firstItem="m2U-rN-hm8" firstAttribute="leading" secondItem="mUb-Jk-RXe" secondAttribute="trailing" id="dLc-Qi-YnO"/>
+                            <constraint firstItem="x39-Lc-wXG" firstAttribute="top" secondItem="mUb-Jk-RXe" secondAttribute="bottom" constant="16" id="iPw-Yv-Yad"/>
+                            <constraint firstItem="rkD-1l-1Wh" firstAttribute="top" secondItem="x39-Lc-wXG" secondAttribute="bottom" constant="16" id="pMk-EA-Rdr"/>
+                            <constraint firstItem="Q8b-Rk-Cs3" firstAttribute="trailing" secondItem="rkD-1l-1Wh" secondAttribute="trailing" id="rQA-dA-Sow"/>
+                            <constraint firstItem="m2U-rN-hm8" firstAttribute="top" secondItem="Q8b-Rk-Cs3" secondAttribute="top" constant="10" id="rmT-ub-A0i"/>
+                            <constraint firstItem="rkD-1l-1Wh" firstAttribute="leading" secondItem="Q8b-Rk-Cs3" secondAttribute="leading" id="v27-vL-eyP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Talento" id="Thm-qE-XoJ">
                         <imageReference key="image" image="person.2.fill" catalog="system" renderingMode="hierarchical">
@@ -1800,11 +1862,16 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="animContainer" destination="owP-Kx-C6T" id="1gd-S0-yYK"/>
+                        <outlet property="profRoleLabel" destination="x39-Lc-wXG" id="IC2-V4-U3z"/>
+                        <outlet property="searchBar" destination="mUb-Jk-RXe" id="HRE-Cg-mOm"/>
+                        <outlet property="talentCollectionView" destination="rkD-1l-1Wh" id="dQw-q9-Slz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ukh-sD-lrR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2061" y="2763"/>
+            <point key="canvasLocation" x="2061" y="2735"/>
         </scene>
         <!--Profile-->
         <scene sceneID="RFD-2v-cCe">
@@ -1825,11 +1892,12 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="pp8-2W-72S"/>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehg-eJ-wtS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6216" y="603"/>
+            <point key="canvasLocation" x="2061" y="3388"/>
         </scene>
         <!--Postulations-->
         <scene sceneID="ERk-lY-eEI">
@@ -1870,7 +1938,6 @@
                     <connections>
                         <segue destination="9iR-H6-1Hb" kind="relationship" relationship="viewControllers" id="Omh-9t-nzR"/>
                         <segue destination="Pms-v4-HFa" kind="relationship" relationship="viewControllers" id="csg-aP-5cJ"/>
-                        <segue destination="WEP-6K-B7j" kind="relationship" relationship="viewControllers" id="1Yd-Mb-cbr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efo-Wr-myU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1906,7 +1973,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="bXJ-tk-uGT"/>
-        <segue reference="Fpz-dT-pE4"/>
         <segue reference="L1d-P1-3wz"/>
     </inferredMetricsTieBreakers>
     <resources>

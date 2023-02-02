@@ -30,6 +30,14 @@ class SignUp2ViewController: UIViewController {
         levelPicker.delegate = self
         
         nameTextField.delegate = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        profesionalRole = ProfRoles.arrayProfRoles[profRolePicker.selectedRow(inComponent: 0)]
+        print(profesionalRole)
+        profesionalLevel = ProfRoles.levels[levelPicker.selectedRow(inComponent: 0)]
+        print(profesionalLevel)
     }
     
     @IBAction func getFullName(_ sender: Any) {

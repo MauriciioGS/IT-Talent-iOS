@@ -22,6 +22,10 @@
 		6674E1CC298A0F3800470C8C /* mail_send.json in Resources */ = {isa = PBXBuildFile; fileRef = 6674E1CB298A0F3800470C8C /* mail_send.json */; };
 		6674E1D0298A2A2500470C8C /* JobViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6674E1CE298A2A2500470C8C /* JobViewCell.swift */; };
 		6674E1D1298A2A2500470C8C /* JobViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6674E1CF298A2A2500470C8C /* JobViewCell.xib */; };
+		6682CD41298B62E20073E5EB /* TalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6682CD40298B62E20073E5EB /* TalentViewController.swift */; };
+		6682CD45298B66C40073E5EB /* TalentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6682CD43298B66C40073E5EB /* TalentViewCell.swift */; };
+		6682CD46298B66C40073E5EB /* TalentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6682CD44298B66C40073E5EB /* TalentViewCell.xib */; };
+		6682CD49298B6B3B0073E5EB /* TalentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6682CD48298B6B3B0073E5EB /* TalentViewModel.swift */; };
 		668ADB2B2985D27E006EDEC3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */; };
 		668ADB2D2985DC9F006EDEC3 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */; };
 		668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668ADB2F2985E1DF006EDEC3 /* MyColors.swift */; };
@@ -82,6 +86,10 @@
 		6674E1CB298A0F3800470C8C /* mail_send.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mail_send.json; sourceTree = "<group>"; };
 		6674E1CE298A2A2500470C8C /* JobViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewCell.swift; sourceTree = "<group>"; };
 		6674E1CF298A2A2500470C8C /* JobViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobViewCell.xib; sourceTree = "<group>"; };
+		6682CD40298B62E20073E5EB /* TalentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentViewController.swift; sourceTree = "<group>"; };
+		6682CD43298B66C40073E5EB /* TalentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentViewCell.swift; sourceTree = "<group>"; };
+		6682CD44298B66C40073E5EB /* TalentViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TalentViewCell.xib; sourceTree = "<group>"; };
+		6682CD48298B6B3B0073E5EB /* TalentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentViewModel.swift; sourceTree = "<group>"; };
 		668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		668ADB2C2985DC9F006EDEC3 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
 		668ADB2F2985E1DF006EDEC3 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
@@ -171,6 +179,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6682CD3F298B62BF0073E5EB /* Talent */ = {
+			isa = PBXGroup;
+			children = (
+				6682CD47298B6B2B0073E5EB /* ViewModel */,
+				6682CD42298B66A80073E5EB /* View */,
+				6682CD40298B62E20073E5EB /* TalentViewController.swift */,
+			);
+			path = Talent;
+			sourceTree = "<group>";
+		};
+		6682CD42298B66A80073E5EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6682CD43298B66C40073E5EB /* TalentViewCell.swift */,
+				6682CD44298B66C40073E5EB /* TalentViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6682CD47298B6B2B0073E5EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6682CD48298B6B3B0073E5EB /* TalentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		668ADB272985D232006EDEC3 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +213,6 @@
 				668ADB292985D247006EDEC3 /* SignIn */,
 				668ADB282985D241006EDEC3 /* SignUp */,
 				668ADB2A2985D27E006EDEC3 /* WelcomeViewController.swift */,
-				668ADB2E2985E1C7006EDEC3 /* Utils */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -293,8 +327,10 @@
 				668CAC5A2988D07F00EA8DE6 /* IT_Talent.xcdatamodeld */,
 				66B4A9642984D1D70033A10D /* AppDelegate.swift */,
 				66B4A9662984D1D70033A10D /* SceneDelegate.swift */,
+				6682CD3F298B62BF0073E5EB /* Talent */,
 				6696E47629871F1200437177 /* Jobs */,
 				668ADB272985D232006EDEC3 /* Authentication */,
+				668ADB2E2985E1C7006EDEC3 /* Utils */,
 				66B4A96A2984D1D70033A10D /* Main.storyboard */,
 				66B4A9722984D1D80033A10D /* LaunchScreen.storyboard */,
 				66B4A97B2984D5EA0033A10D /* Main */,
@@ -453,6 +489,7 @@
 				6674E1CA298A0F3300470C8C /* lost_connection.json in Resources */,
 				66B4A9922984DD860033A10D /* NunitoSans-SemiBold.ttf in Resources */,
 				6674E1C6298A0F0600470C8C /* no_data.json in Resources */,
+				6682CD46298B66C40073E5EB /* TalentViewCell.xib in Resources */,
 				66B4A9712984D1D80033A10D /* Assets.xcassets in Resources */,
 				66B4A9942984DDD80033A10D /* NunitoSansBlack.ttf in Resources */,
 				66B4A9A22984DE130033A10D /* Montserrat-Medium.ttf in Resources */,
@@ -471,6 +508,7 @@
 			files = (
 				660E20DC29890E6800BFC318 /* InitViewModel.swift in Sources */,
 				660E20D52988EEFA00BFC318 /* JobsViewModel.swift in Sources */,
+				6682CD49298B6B3B0073E5EB /* TalentViewModel.swift in Sources */,
 				668ADB2D2985DC9F006EDEC3 /* SignUp1ViewController.swift in Sources */,
 				66B4A9692984D1D70033A10D /* SignInViewController.swift in Sources */,
 				668ADB332985E684006EDEC3 /* UserModel.swift in Sources */,
@@ -479,12 +517,14 @@
 				66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */,
 				66B4A9652984D1D70033A10D /* AppDelegate.swift in Sources */,
 				6674E1C02989EDD900470C8C /* NewJobViewModel.swift in Sources */,
+				6682CD45298B66C40073E5EB /* TalentViewCell.swift in Sources */,
 				668CAC5C2988D07F00EA8DE6 /* IT_Talent.xcdatamodeld in Sources */,
 				6696E480298785C500437177 /* SkillsViewController.swift in Sources */,
 				662380C3298A34F0001E68D1 /* JobPastViewCell.swift in Sources */,
 				668CAC512988786E00EA8DE6 /* Date.swift in Sources */,
 				66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */,
 				664B798E2987B44F0065718C /* ExperiencesViewController.swift in Sources */,
+				6682CD41298B62E20073E5EB /* TalentViewController.swift in Sources */,
 				6674E1D0298A2A2500470C8C /* JobViewCell.swift in Sources */,
 				6696E47829871F8000437177 /* JobsViewController.swift in Sources */,
 				668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */,
