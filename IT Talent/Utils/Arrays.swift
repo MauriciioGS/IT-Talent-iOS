@@ -40,6 +40,15 @@ public struct ProfRoles {
         "Junior",
         "Trainee"
     ]
+    
+    static let roles = [
+        "Reclutamiento de RH",
+        "Reclutamiento de TI",
+        "Atracción de talento",
+        "Gerencia de TI",
+        "Líder de proyecto",
+        "Líder de TI"
+    ]
 }
 
 public struct Countries {
