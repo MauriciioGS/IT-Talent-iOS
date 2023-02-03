@@ -109,6 +109,7 @@ class MyProfileViewController: UIViewController {
     }
     
     private func enableTextFields() {
+        enableEdition.isOn = true
         nameTextField.isEnabled = true
         cityTextLabel.isEnabled =  true
         phoneNumTextField.isEnabled = true
@@ -121,6 +122,7 @@ class MyProfileViewController: UIViewController {
     }
     
     private func disableEdit() {
+        enableEdition.isOn = false
         nameTextField.isEnabled = false
         cityTextLabel.isEnabled =  false
         phoneNumTextField.isEnabled = false
