@@ -40,4 +40,33 @@ class ProfileViewModel{
             print("Error obteniendo local data: \(error)")
         }
     }
+    
+    var updateUserProfile : (() -> ()) = { }
+    
+    var isUpdated: Bool? {
+        didSet {
+            updateUserProfile()
+        }
+    }
+    
+    func updateUser(user: UserProfile) {
+        db.collection("users").document(user.email).updateData([
+            "city" : user.city,
+            "country" : user.country,
+            "enterprise" : user.enterprise,
+            "fullName" : user.fullName,
+            "phoneNumber": user.phoneNumber,
+            "profRole" : user.profRole,
+            "resume" : user.resume,
+            "role" : user.role
+        ]) { err in
+            if let err = err {
+                print("Error actualizando usuario en Firebase: \(err)")
+                self.isUpdated = false
+            } else {
+                print("Usuario actualizado en Firebase!")
+                self.isUpdated = true
+            }
+        }
+    }
 }

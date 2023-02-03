@@ -303,14 +303,14 @@
                                 <rect key="frame" x="16" y="337.5" width="382" height="141"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcO-aC-yEq">
-                                        <rect key="frame" x="0.0" y="45.5" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="382" height="1"/>
                                         <color key="backgroundColor" name="Disable"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="aPg-Cc-o4J"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo electrónico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xC-Hi-GYG">
-                                        <rect key="frame" x="16" y="8" width="350" height="21.5"/>
+                                        <rect key="frame" x="16" y="8" width="350" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                         <connections>
@@ -318,7 +318,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Constraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFb-gb-eCb">
-                                        <rect key="frame" x="16" y="58.5" width="350" height="20"/>
+                                        <rect key="frame" x="16" y="57.5" width="350" height="19"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
@@ -326,14 +326,14 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOw-3Y-Mep">
-                                        <rect key="frame" x="0.0" y="90.5" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="88.5" width="382" height="1"/>
                                         <color key="backgroundColor" name="Disable"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="t6o-HL-tUd"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repite tu contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3R3-4y-Rcb">
-                                        <rect key="frame" x="16" y="103.5" width="350" height="20"/>
+                                        <rect key="frame" x="16" y="101.5" width="350" height="19"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
@@ -839,13 +839,13 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de empleo:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPU-KP-IAN">
-                                                <rect key="frame" x="16" y="539.5" width="382" height="18"/>
+                                                <rect key="frame" x="16" y="539.5" width="382" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gdu-Tb-eu6">
-                                                <rect key="frame" x="16" y="573.5" width="382" height="30"/>
+                                                <rect key="frame" x="16" y="573" width="382" height="30"/>
                                                 <color key="backgroundColor" name="MainColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="oT8-Rn-IVK"/>
@@ -864,13 +864,13 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de inicio:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJq-hb-wTb">
-                                                <rect key="frame" x="16" y="619.5" width="382" height="18"/>
+                                                <rect key="frame" x="16" y="619" width="382" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbo-O9-nFR">
-                                                <rect key="frame" x="16" y="653.5" width="382" height="30"/>
+                                                <rect key="frame" x="16" y="652.5" width="382" height="30"/>
                                                 <color key="backgroundColor" name="MainColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="ncO-Ub-Wmw"/>
@@ -887,13 +887,13 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de finalización:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8k-gy-G9v">
-                                                <rect key="frame" x="16" y="749.5" width="382" height="18"/>
+                                                <rect key="frame" x="16" y="748.5" width="382" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTy-A1-wv1">
-                                                <rect key="frame" x="16" y="783.5" width="382" height="30"/>
+                                                <rect key="frame" x="16" y="782" width="382" height="30"/>
                                                 <color key="backgroundColor" name="MainColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="3t4-FW-CEX"/>
@@ -910,7 +910,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRi-KJ-61f">
-                                                <rect key="frame" x="16" y="879.5" width="382" height="36"/>
+                                                <rect key="frame" x="16" y="878" width="382" height="36"/>
                                                 <color key="tintColor" name="Primary"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button">
@@ -922,7 +922,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Año" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cEZ-vK-6wj">
-                                                <rect key="frame" x="16" y="699.5" width="382" height="34"/>
+                                                <rect key="frame" x="16" y="698.5" width="382" height="34"/>
                                                 <color key="backgroundColor" name="MainColor"/>
                                                 <color key="tintColor" name="TextBold"/>
                                                 <color key="textColor" name="Primary"/>
@@ -933,7 +933,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Año" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kW3-Jy-wGj">
-                                                <rect key="frame" x="16" y="829.5" width="382" height="34"/>
+                                                <rect key="frame" x="16" y="828" width="382" height="34"/>
                                                 <color key="backgroundColor" name="MainColor"/>
                                                 <color key="tintColor" name="TextBold"/>
                                                 <color key="textColor" name="Primary"/>
@@ -1923,7 +1923,7 @@
                                                     <constraint firstAttribute="height" constant="115" id="Yi5-6o-8c0"/>
                                                 </constraints>
                                             </pickerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona un país" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLj-hk-n22">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona un país" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLj-hk-n22">
                                                 <rect key="frame" x="16" y="204" width="382" height="20"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -1955,7 +1955,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwT-FR-84v">
-                                                <rect key="frame" x="16" y="649" width="382" height="200"/>
+                                                <rect key="frame" x="16" y="649" width="382" height="225"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empresa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU5-G5-Lds">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="22"/>
@@ -1964,7 +1964,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de la empresa / organización" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="10e-WO-3P5">
-                                                        <rect key="frame" x="0.0" y="38" width="382" height="46"/>
+                                                        <rect key="frame" x="0.0" y="38" width="382" height="35"/>
                                                         <color key="backgroundColor" name="MainColor"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1973,16 +1973,23 @@
                                                         </connections>
                                                     </textField>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkc-yQ-iv4">
-                                                        <rect key="frame" x="0.0" y="100" width="382" height="100"/>
+                                                        <rect key="frame" x="0.0" y="125" width="382" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="0sD-qP-3Fc"/>
                                                         </constraints>
                                                     </pickerView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rol que desempeñas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cht-4T-CMO">
+                                                        <rect key="frame" x="0.0" y="89" width="382" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" name="Background"/>
                                                 <constraints>
-                                                    <constraint firstItem="jkc-yQ-iv4" firstAttribute="top" secondItem="10e-WO-3P5" secondAttribute="bottom" constant="16" id="942-qX-kvY"/>
+                                                    <constraint firstItem="jkc-yQ-iv4" firstAttribute="top" secondItem="Cht-4T-CMO" secondAttribute="bottom" constant="16" id="CR5-ZX-Ff4"/>
                                                     <constraint firstItem="LU5-G5-Lds" firstAttribute="leading" secondItem="UwT-FR-84v" secondAttribute="leading" id="JgO-re-UsP"/>
+                                                    <constraint firstItem="Cht-4T-CMO" firstAttribute="top" secondItem="10e-WO-3P5" secondAttribute="bottom" constant="16" id="QgH-R8-sCN"/>
                                                     <constraint firstItem="10e-WO-3P5" firstAttribute="leading" secondItem="UwT-FR-84v" secondAttribute="leading" id="QkC-1f-UoV"/>
                                                     <constraint firstItem="LU5-G5-Lds" firstAttribute="top" secondItem="UwT-FR-84v" secondAttribute="top" id="Ric-u5-WGc"/>
                                                     <constraint firstAttribute="trailing" secondItem="10e-WO-3P5" secondAttribute="trailing" id="Sck-nh-8ch"/>
@@ -1991,11 +1998,13 @@
                                                     <constraint firstItem="jkc-yQ-iv4" firstAttribute="leading" secondItem="UwT-FR-84v" secondAttribute="leading" id="eOF-w2-Mgf"/>
                                                     <constraint firstAttribute="bottom" secondItem="jkc-yQ-iv4" secondAttribute="bottom" id="fnZ-Q9-TMn"/>
                                                     <constraint firstAttribute="trailing" secondItem="LU5-G5-Lds" secondAttribute="trailing" id="gRa-dk-aI2"/>
-                                                    <constraint firstAttribute="height" constant="200" id="jOB-jd-mt3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Cht-4T-CMO" secondAttribute="trailing" id="hvX-rL-OZ5"/>
+                                                    <constraint firstAttribute="height" constant="225" id="jOB-jd-mt3"/>
+                                                    <constraint firstItem="Cht-4T-CMO" firstAttribute="leading" secondItem="UwT-FR-84v" secondAttribute="leading" id="zbs-3S-zBg"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZH-uq-KX6">
-                                                <rect key="frame" x="16" y="933" width="382" height="36"/>
+                                                <rect key="frame" x="16" y="958" width="382" height="36"/>
                                                 <color key="tintColor" name="Primary"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="tinted" title="Eliminar Cuenta" cornerStyle="large">
@@ -2019,7 +2028,7 @@
                                                 </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoE-fD-vir">
-                                                <rect key="frame" x="16" y="881" width="382" height="36"/>
+                                                <rect key="frame" x="16" y="906" width="382" height="36"/>
                                                 <color key="tintColor" name="Primary"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Actualizar" cornerStyle="large">
@@ -2109,12 +2118,15 @@
                         <outlet property="aboutTextView" destination="lbT-zF-9cT" id="Qtd-xz-Fzt"/>
                         <outlet property="cityTextLabel" destination="vtY-SQ-xz7" id="Js0-xh-jiM"/>
                         <outlet property="containerEnterprise" destination="UwT-FR-84v" id="Jo7-Lt-xYV"/>
+                        <outlet property="countryLabel" destination="sLj-hk-n22" id="vUl-2D-PlO"/>
                         <outlet property="countryPicker" destination="D2u-dw-5IS" id="lBI-GK-XJQ"/>
                         <outlet property="emailTextField" destination="33n-dx-NKz" id="Jqt-gl-PtP"/>
                         <outlet property="enableEdition" destination="Vhk-JZ-aN6" id="Q7d-wj-iuW"/>
+                        <outlet property="enterpriseLabel" destination="LU5-G5-Lds" id="DIL-ZC-UHd"/>
                         <outlet property="enterpriseTextField" destination="10e-WO-3P5" id="WIL-DD-zvI"/>
                         <outlet property="nameTextField" destination="f1x-El-pMY" id="hca-Ag-fDa"/>
                         <outlet property="phoneNumTextField" destination="2gC-Vm-uy9" id="KKR-Ns-SGD"/>
+                        <outlet property="rolLabel" destination="Cht-4T-CMO" id="sgW-PU-Fwj"/>
                         <outlet property="rolPicker" destination="jkc-yQ-iv4" id="34O-Pb-bH8"/>
                         <outlet property="updateButton" destination="KoE-fD-vir" id="v8L-d1-jdY"/>
                     </connections>

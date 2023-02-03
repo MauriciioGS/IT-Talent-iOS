@@ -24,6 +24,11 @@ class MyProfileViewController: UIViewController {
     
     @IBOutlet weak var rolPicker: UIPickerView!
     
+    @IBOutlet weak var rolLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var enterpriseLabel: UILabel!
+    
+    
     private let profileViewModel = ProfileViewModel()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -36,11 +41,6 @@ class MyProfileViewController: UIViewController {
         bindGetUser()
         
         updateButton.isEnabled = false
-        
-        countryPicker.delegate = self
-        countryPicker.dataSource = self
-        rolPicker.delegate = self
-        rolPicker.dataSource = self
     }
     
     private func bindGetUser() {
@@ -49,18 +49,26 @@ class MyProfileViewController: UIViewController {
                 self.userProfile = userFirebase
                 self.setUI()
             } else {
-                
+                self.showAlert("Ocurrió un error inesperado obteniendo tu perfil")
             }
         }
     }
     
     private func setUI() {
+        countryPicker.delegate = self
+        countryPicker.dataSource = self
+        countryPicker.isHidden = true
+        rolPicker.delegate = self
+        rolPicker.dataSource = self
+        rolPicker.isHidden = true
+        
         nameTextField.delegate = self
         cityTextLabel.delegate = self
         phoneNumTextField.delegate = self
-        enterpriseTextField.delegate = self
+        
         
         nameTextField.text = userProfile?.fullName
+        countryLabel.text = "País: \(userProfile!.country)"
         cityTextLabel.text = userProfile?.city
         phoneNumTextField.text = userProfile?.phoneNumber
         emailTextField.text = userProfile?.email
@@ -69,10 +77,25 @@ class MyProfileViewController: UIViewController {
             countryPicker.selectRow(indexCountry, inComponent: 0, animated: true)
         }
         
-        enterpriseTextField.text = userProfile?.enterprise
-        if let indexRole = ProfRoles.roles.firstIndex(of: userProfile!.role) {
-            rolPicker.selectRow(indexRole, inComponent: 0, animated: true)
+        if userProfile!.userType == 1 {
+            enterpriseLabel.text = "Rol profesional"
+            enterpriseTextField.isHidden = true
+            rolLabel.text = userProfile!.profRole
+            if let indexRole = ProfRoles.arrayProfRoles.firstIndex(of: userProfile!.profRole) {
+                rolPicker.selectRow(indexRole, inComponent: 0, animated: true)
+            }
+            
+        } else {
+            enterpriseTextField.delegate = self
+            enterpriseTextField.isHidden = false
+            enterpriseLabel.text = "Empresa"
+            enterpriseTextField.text = userProfile?.enterprise
+            rolLabel.text = "Rol que desempeñas: \(userProfile!.role)"
+            if let indexRole = ProfRoles.roles.firstIndex(of: userProfile!.role) {
+                rolPicker.selectRow(indexRole, inComponent: 0, animated: true)
+            }
         }
+        
     }
     
     @IBAction func enableEdit(_ sender: Any) {
@@ -91,6 +114,10 @@ class MyProfileViewController: UIViewController {
         phoneNumTextField.isEnabled = true
         aboutTextView.isEditable = true
         enterpriseTextField.isEnabled = true
+        
+        countryPicker.isHidden = false
+        rolPicker.isHidden = false
+
     }
     
     private func disableEdit() {
@@ -99,6 +126,9 @@ class MyProfileViewController: UIViewController {
         phoneNumTextField.isEnabled = false
         aboutTextView.isEditable = false
         enterpriseTextField.isEnabled = false
+        
+        countryPicker.isHidden = true
+        rolPicker.isHidden = true
     }
     
     @IBAction func getName(_ sender: Any) {
@@ -141,22 +171,32 @@ class MyProfileViewController: UIViewController {
         }
     }
     
-    func showAlert(_ errorMesssage: String) {
-        // create the alert
-        let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
-
-        // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
+    @IBAction func updateProfile(_ sender: Any) {
+        if let error = checkFields() {
+            showAlert(error)
+        } else {
+            userProfile!.resume = aboutTextView.text
+            profileViewModel.updateUser(user: userProfile!)
+            bindUserUpdate()
+        }
     }
     
-    @IBAction func updateProfile(_ sender: Any) {
-        print(userProfile)
+    private func bindUserUpdate() {
+        profileViewModel.updateUserProfile = {
+            if let isUpdated = self.profileViewModel.isUpdated {
+                if isUpdated {
+                    self.showAlertSuccess("Tu perfil se ha actualizado correctamente")
+                    self.nameTextField.becomeFirstResponder()
+                    self.disableEdit()
+                } else {
+                    self.showAlert("Ocurrió un error actualizando tu perfil, intenta de nuevo")
+                }
+            }
+        }
     }
     
     @IBAction func deleteProfile(_ sender: Any) {
+        // TODO: borrar perfil / quizá cerrar sesión
     }
     
 }
@@ -172,6 +212,9 @@ extension MyProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         case countryPicker:
             return Countries.countries.count
         case rolPicker:
+            if userProfile!.userType == 1 {
+                return ProfRoles.arrayProfRoles.count
+            }
             return ProfRoles.roles.count
         default:
             return 0
@@ -183,6 +226,9 @@ extension MyProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         case countryPicker:
             return Countries.countries[row]
         case rolPicker:
+            if userProfile!.userType == 1 {
+                return ProfRoles.arrayProfRoles[row]
+            }
             return ProfRoles.roles[row]
         default:
             return nil
@@ -193,8 +239,16 @@ extension MyProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         switch pickerView {
         case countryPicker:
             self.userProfile!.country = Countries.countries[row]
+            countryLabel.text = "País: \(userProfile!.country)"
         case rolPicker:
-            self.userProfile!.role = ProfRoles.roles[row]
+            if userProfile!.userType == 1 {
+                self.userProfile!.profRole = ProfRoles.arrayProfRoles[row]
+                rolLabel.text = userProfile!.profRole
+            } else {
+                self.userProfile!.role = ProfRoles.roles[row]
+                rolLabel.text = "Rol que desempeñas: \(userProfile!.role)"
+            }
+            
         default: break
         }
     }
@@ -220,5 +274,56 @@ extension MyProfileViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+}
+
+extension MyProfileViewController {
+    
+    func showAlert(_ errorMesssage: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertSuccess(_ message: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Perfil actualizado!", message: message, preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func checkFields() -> String? {
+        if let text = nameTextField.text {
+            if text.isEmpty {
+                return "Ingresa tu nombre completo"
+            }
+        }
+        if userProfile!.userType != 1 {
+            if let text = enterpriseTextField.text {
+                if text.isEmpty {
+                    return "Ingresa la empresa para que colaboras"
+                }
+            }
+        }
+        if let text = cityTextLabel.text {
+            if text.isEmpty {
+                return "Ingresa tu ciudad"
+            }
+        }
+        if let text = phoneNumTextField.text {
+            if text.isEmpty {
+                return "Ingresa un número de teléfono"
+            }
+        }
+        return nil
     }
 }
