@@ -55,6 +55,8 @@
 		6696E47A2987201800437177 /* RegisterEnterpriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696E4792987201800437177 /* RegisterEnterpriseViewController.swift */; };
 		6696E480298785C500437177 /* SkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696E47F298785C500437177 /* SkillsViewController.swift */; };
 		6696E4822987937C00437177 /* Skills2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6696E4812987937C00437177 /* Skills2ViewController.swift */; };
+		669EABFA298EEE1B006E5049 /* ApplyJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EABF9298EEE1B006E5049 /* ApplyJobViewController.swift */; };
+		669EABFC298EF3BB006E5049 /* ApplyJobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EABFB298EF3BB006E5049 /* ApplyJobViewModel.swift */; };
 		66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A06185298622EE008C5390 /* SignUp2ViewController.swift */; };
 		66A0618829862829008C5390 /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A0618729862829008C5390 /* Arrays.swift */; };
 		66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */; };
@@ -116,6 +118,8 @@
 		6696E4792987201800437177 /* RegisterEnterpriseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEnterpriseViewController.swift; sourceTree = "<group>"; };
 		6696E47F298785C500437177 /* SkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsViewController.swift; sourceTree = "<group>"; };
 		6696E4812987937C00437177 /* Skills2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills2ViewController.swift; sourceTree = "<group>"; };
+		669EABF9298EEE1B006E5049 /* ApplyJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyJobViewController.swift; sourceTree = "<group>"; };
+		669EABFB298EF3BB006E5049 /* ApplyJobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyJobViewModel.swift; sourceTree = "<group>"; };
 		66A06185298622EE008C5390 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		66A0618729862829008C5390 /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
 		66A0618929863048008C5390 /* RegisterProfileRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProfileRecViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +177,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6674E1C4298A0E4F00470C8C /* Resources */ = {
+		6674E1C4298A0E4F00470C8C /* Anims */ = {
 			isa = PBXGroup;
 			children = (
 				66636AAE298E0D5F0025B8C4 /* loading_anim.json */,
@@ -182,7 +186,7 @@
 				6674E1C7298A0F2B00470C8C /* sad.json */,
 				6674E1C5298A0F0600470C8C /* no_data.json */,
 			);
-			path = Resources;
+			path = Anims;
 			sourceTree = "<group>";
 		};
 		6674E1CD298A29F900470C8C /* View */ = {
@@ -280,6 +284,7 @@
 				660E20D42988EEFA00BFC318 /* JobsViewModel.swift */,
 				6674E1BF2989EDD900470C8C /* NewJobViewModel.swift */,
 				66636AB0298E0F0B0025B8C4 /* JobsTalentViewModel.swift */,
+				669EABFB298EF3BB006E5049 /* ApplyJobViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				6696E47729871F8000437177 /* JobsViewController.swift */,
 				660E20D92989096300BFC318 /* NewJobViewController.swift */,
 				66636AA6298DE0C10025B8C4 /* JobsForTalentViewController.swift */,
+				669EABF9298EEE1B006E5049 /* ApplyJobViewController.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -367,7 +373,7 @@
 		66B4A97F2984DA6D0033A10D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6674E1C4298A0E4F00470C8C /* Resources */,
+				6674E1C4298A0E4F00470C8C /* Anims */,
 				66B4A9802984DA7C0033A10D /* Fonts */,
 			);
 			path = Resources;
@@ -516,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669EABFC298EF3BB006E5049 /* ApplyJobViewModel.swift in Sources */,
 				66EF30C1298B962F007EAE1A /* MyProfileViewController.swift in Sources */,
 				660E20DC29890E6800BFC318 /* InitViewModel.swift in Sources */,
 				66636AB1298E0F0B0025B8C4 /* JobsTalentViewModel.swift in Sources */,
@@ -539,6 +546,7 @@
 				66A0618A29863048008C5390 /* RegisterProfileRecViewController.swift in Sources */,
 				664B798E2987B44F0065718C /* ExperiencesViewController.swift in Sources */,
 				6682CD41298B62E20073E5EB /* TalentViewController.swift in Sources */,
+				669EABFA298EEE1B006E5049 /* ApplyJobViewController.swift in Sources */,
 				6674E1D0298A2A2500470C8C /* JobViewCell.swift in Sources */,
 				6696E47829871F8000437177 /* JobsViewController.swift in Sources */,
 				668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */,

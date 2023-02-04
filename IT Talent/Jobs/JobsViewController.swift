@@ -159,7 +159,7 @@ extension JobsViewController: UICollectionViewDataSource {
             jobCell!.enterpriseLabel.text = job.enterprise
             jobCell!.publisherLabel.text = "Publicado por: \(job.nameRecruiter.split(separator: " ")[0])"
             jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
-            jobCell!.applicantsLabel.text = "| \(job.applicants.count) Solicitantes"
+            jobCell!.applicantsLabel.text = "| \(job.applicants.count-1) Solicitantes"
             jobCell!.timeLabel.text = job.time
             return jobCell!
         } else {

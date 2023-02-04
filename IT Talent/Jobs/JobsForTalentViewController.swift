@@ -17,14 +17,16 @@ class JobsForTalentViewController: UIViewController {
     @IBOutlet weak var animContainerView: UIView!
     
     @IBOutlet weak var filterPicker: UIPickerView!
-    
+
     private var loadingAnim: LottieAnimationView?
+    private var noDataAnim: LottieAnimationView?
 
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private var jobsViewModel: JobsTalentViewModel?
     
     private var jobsList: [Job] = []
+    private var jobSelected: Job?
     private var profRol: String?
     private var cellJobWidth: CGFloat?
 
@@ -45,7 +47,15 @@ class JobsForTalentViewController: UIViewController {
         animContainerView.addSubview(loadingAnim!)
         loadingAnim!.play()
         
+        noDataAnim = .init(name: "no_data")
+        noDataAnim!.frame = animContainerView.bounds
+        noDataAnim!.contentMode = .scaleAspectFit
+        noDataAnim!.loopMode = .loop
+        noDataAnim!.animationSpeed = 0.5
+        
         animContainerView.isHidden = false
+        loadingAnim!.isHidden = false
+        noDataAnim!.isHidden = true
         
         jobsCollectionView.register(UINib(nibName: "JobsTalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "jobTalCell")
         
@@ -66,7 +76,10 @@ class JobsForTalentViewController: UIViewController {
             DispatchQueue.main.async {
                 if let jobs = self.jobsViewModel!.jobsList {
                     if jobs.isEmpty {
-                        print("Lista vacía")
+                        self.loadingAnim!.isHidden = true
+                        self.noDataAnim!.isHidden = false
+                        self.animContainerView.addSubview(self.noDataAnim!)
+                        self.noDataAnim!.play()
                     } else {
                         self.animContainerView.isHidden = true
                         self.jobsCollectionView.isHidden = false
@@ -101,8 +114,10 @@ class JobsForTalentViewController: UIViewController {
             DispatchQueue.main.async {
                 if let jobs = self.jobsViewModel!.jobsListFiltered {
                     if jobs.isEmpty {
-                        print("Lista vacía")
-                        // Dtener loader y colocar no data
+                        self.loadingAnim!.isHidden = true
+                        self.noDataAnim!.isHidden = false
+                        self.animContainerView.addSubview(self.noDataAnim!)
+                        self.noDataAnim!.play()
                     } else {
                         self.animContainerView.isHidden = true
                         self.jobsCollectionView.isHidden = false
@@ -116,6 +131,11 @@ class JobsForTalentViewController: UIViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destino = segue.destination as? ApplyJobViewController {
+            destino.jobSelected = self.jobSelected
+        }
+    }
     
 
 }
@@ -135,12 +155,16 @@ extension JobsForTalentViewController: UICollectionViewDelegate, UICollectionVie
         jobCell!.modeLabel.text = job.mode
         jobCell!.typeLabel.text = job.type
         jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
-        jobCell!.applicantsLabel.text = "| \(job.applicants.count) Solicitantes"
+        jobCell!.applicantsLabel.text = "| \(job.applicants.count-1) Solicitantes"
         jobCell!.wageLabel.text = job.wage
         jobCell!.timeLabel.text = job.time
         return jobCell!
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        jobSelected = jobsList[indexPath.row]
+        performSegue(withIdentifier: "goToApply", sender: self)
+    }
 
 }
 
@@ -162,6 +186,10 @@ extension JobsForTalentViewController: UIPickerViewDataSource, UIPickerViewDeleg
         animContainerView.isHidden = false
         jobsCollectionView.isHidden = true
         profRol = ProfRoles.arrayProfRoles[row]
+        
+        loadingAnim!.isHidden = false
+        noDataAnim!.isHidden = true
+
         jobsViewModel!.filterJobsByFilter(profRol!)
         jobsList.removeAll()
         bindFiltered()
