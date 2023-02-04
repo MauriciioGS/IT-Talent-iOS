@@ -100,9 +100,12 @@ class JobsTalentViewModel {
     
     func filterJobs() {
         var jobsTemp: [Job] = []
+        let filters = userProfile!.profRole.split(separator: " ")
         jobs.forEach { job in
-            if job.job.contains(userProfile!.profRole) {
-                jobsTemp.append(job)
+            filters.forEach{ filter in
+                if job.job.contains(filter) {
+                    jobsTemp.append(job)
+                }
             }
         }
         jobsList = jobsTemp
