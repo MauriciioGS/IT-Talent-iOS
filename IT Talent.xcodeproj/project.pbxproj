@@ -19,6 +19,7 @@
 		66636AAD298E048E0025B8C4 /* JobsTalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66636AAB298E048E0025B8C4 /* JobsTalCollectionViewCell.xib */; };
 		66636AAF298E0D5F0025B8C4 /* loading_anim.json in Resources */ = {isa = PBXBuildFile; fileRef = 66636AAE298E0D5F0025B8C4 /* loading_anim.json */; };
 		66636AB1298E0F0B0025B8C4 /* JobsTalentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66636AB0298E0F0B0025B8C4 /* JobsTalentViewModel.swift */; };
+		66636AB3298E3E340025B8C4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66636AB2298E3E340025B8C4 /* SignInViewModel.swift */; };
 		6674E1C02989EDD900470C8C /* NewJobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6674E1BF2989EDD900470C8C /* NewJobViewModel.swift */; };
 		6674E1C3298A0AE300470C8C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6674E1C2298A0AE300470C8C /* Lottie */; };
 		6674E1C6298A0F0600470C8C /* no_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 6674E1C5298A0F0600470C8C /* no_data.json */; };
@@ -91,6 +92,7 @@
 		66636AAB298E048E0025B8C4 /* JobsTalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsTalCollectionViewCell.xib; sourceTree = "<group>"; };
 		66636AAE298E0D5F0025B8C4 /* loading_anim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading_anim.json; path = ../../../../../../../Users/mauriciogs/Downloads/loading_anim.json; sourceTree = "<group>"; };
 		66636AB0298E0F0B0025B8C4 /* JobsTalentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTalentViewModel.swift; sourceTree = "<group>"; };
+		66636AB2298E3E340025B8C4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		6674E1BF2989EDD900470C8C /* NewJobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobViewModel.swift; sourceTree = "<group>"; };
 		6674E1C5298A0F0600470C8C /* no_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_data.json; sourceTree = "<group>"; };
 		6674E1C7298A0F2B00470C8C /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				66B4A9682984D1D70033A10D /* SignInViewController.swift */,
+				66636AB2298E3E340025B8C4 /* SignInViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				66636AAC298E048E0025B8C4 /* JobsTalCollectionViewCell.swift in Sources */,
 				6696E47A2987201800437177 /* RegisterEnterpriseViewController.swift in Sources */,
 				6696E4822987937C00437177 /* Skills2ViewController.swift in Sources */,
+				66636AB3298E3E340025B8C4 /* SignInViewModel.swift in Sources */,
 				66B4A9672984D1D70033A10D /* SceneDelegate.swift in Sources */,
 				66A0618D2986319F008C5390 /* SignUpViewModel.swift in Sources */,
 				668CAC5329888CC400EA8DE6 /* RegisterProfileTalViewController.swift in Sources */,

@@ -186,12 +186,10 @@ extension JobsViewController: UICollectionViewDataSource {
 extension JobsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == collectionViewActive {
-            print("Active...")
-            return CGSize(width: cellJobActiveWidth!, height: 124)
+            return CGSize(width: cellJobActiveWidth!, height: 140)
         }
         if collectionView == collectionViewPast {
-            print("Past...")
-            return CGSize(width: cellJobPastWidth!, height: 138)
+            return CGSize(width: cellJobPastWidth!, height: 154)
         }
         return CGSize(width: 0,height: 0)
     }

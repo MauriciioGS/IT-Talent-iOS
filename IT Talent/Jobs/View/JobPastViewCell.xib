@@ -24,14 +24,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="jobPastCell" id="gTV-IL-0wX" customClass="JobPastViewCell" customModule="IT_Talent" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="252" height="139"/>
+            <rect key="frame" x="0.0" y="0.0" width="252" height="154"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="252" height="139"/>
+                <rect key="frame" x="0.0" y="0.0" width="252" height="154"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61l-WL-Dgn">
-                        <rect key="frame" x="0.0" y="0.0" width="244" height="139"/>
+                        <rect key="frame" x="8" y="8" width="236" height="138"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJn-ee-gx5">
                                 <rect key="frame" x="12" y="12" width="36.666666666666664" height="14"/>
@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnterpriseImage" translatesAutoresizingMaskIntoConstraints="NO" id="QtR-We-VD3">
-                                <rect key="frame" x="180" y="16" width="52" height="52"/>
+                                <rect key="frame" x="172" y="16" width="52" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="RHh-qP-ghu"/>
                                     <constraint firstAttribute="height" constant="52" id="wHn-Nb-5jo"/>
@@ -65,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Vacantes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJM-rs-ob2">
-                                <rect key="frame" x="12" y="88" width="200" height="16.666666666666671"/>
+                                <rect key="frame" x="12" y="88" width="192" height="16.666666666666671"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                 <color key="textColor" name="Success"/>
                                 <nil key="highlightedColor"/>
@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hace 1 día" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caL-is-SQh">
-                                <rect key="frame" x="172" y="113" width="60" height="14"/>
+                                <rect key="frame" x="164" y="112" width="60" height="14"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" name="Disable"/>
                                 <nil key="highlightedColor"/>
@@ -113,12 +113,12 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="61l-WL-Dgn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QUv-P4-C8b"/>
-                <constraint firstItem="61l-WL-Dgn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YGJ-4i-Hfs"/>
+                <constraint firstItem="61l-WL-Dgn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="QUv-P4-C8b"/>
+                <constraint firstItem="61l-WL-Dgn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="YGJ-4i-Hfs"/>
                 <constraint firstAttribute="trailing" secondItem="61l-WL-Dgn" secondAttribute="trailing" constant="8" id="lmZ-c4-5mh"/>
-                <constraint firstAttribute="bottom" secondItem="61l-WL-Dgn" secondAttribute="bottom" id="uYF-YA-lId"/>
+                <constraint firstAttribute="bottom" secondItem="61l-WL-Dgn" secondAttribute="bottom" constant="8" id="uYF-YA-lId"/>
             </constraints>
-            <size key="customSize" width="252" height="139"/>
+            <size key="customSize" width="252" height="155"/>
             <connections>
                 <outlet property="applicantsLabel" destination="iE4-m4-XRK" id="N3t-PY-Mzk"/>
                 <outlet property="chargeLabel" destination="gJn-ee-gx5" id="Nag-Kx-bfd"/>
@@ -129,7 +129,7 @@
                 <outlet property="timeLabel" destination="caL-is-SQh" id="baH-qf-rjL"/>
                 <outlet property="vacanciesLabel" destination="FJM-rs-ob2" id="p14-zR-nly"/>
             </connections>
-            <point key="canvasLocation" x="136.92307692307691" y="15.284360189573459"/>
+            <point key="canvasLocation" x="135.38461538461539" y="20.971563981042653"/>
         </collectionViewCell>
     </objects>
     <resources>
