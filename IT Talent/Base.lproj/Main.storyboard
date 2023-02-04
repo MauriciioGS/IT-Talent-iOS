@@ -303,14 +303,14 @@
                                 <rect key="frame" x="16" y="337.5" width="382" height="141"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcO-aC-yEq">
-                                        <rect key="frame" x="0.0" y="44.5" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="45.5" width="382" height="1"/>
                                         <color key="backgroundColor" name="Disable"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="aPg-Cc-o4J"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo electrónico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xC-Hi-GYG">
-                                        <rect key="frame" x="16" y="8" width="350" height="20.5"/>
+                                        <rect key="frame" x="16" y="8" width="350" height="21.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                         <connections>
@@ -318,7 +318,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Constraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFb-gb-eCb">
-                                        <rect key="frame" x="16" y="57.5" width="350" height="19"/>
+                                        <rect key="frame" x="16" y="58.5" width="350" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
@@ -326,14 +326,14 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOw-3Y-Mep">
-                                        <rect key="frame" x="0.0" y="88.5" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="90.5" width="382" height="1"/>
                                         <color key="backgroundColor" name="Disable"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="t6o-HL-tUd"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repite tu contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3R3-4y-Rcb">
-                                        <rect key="frame" x="16" y="101.5" width="350" height="19"/>
+                                        <rect key="frame" x="16" y="103.5" width="350" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
@@ -1374,6 +1374,7 @@
                     <connections>
                         <outlet property="enterpriseTextField" destination="aX6-l5-bSU" id="uGo-gH-YJd"/>
                         <outlet property="roleTextField" destination="uka-Ji-4sF" id="OIu-6w-K7C"/>
+                        <segue destination="4Ye-hT-qOS" kind="show" id="CH7-ge-uXq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQN-0V-cYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1388,7 +1389,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="c2y-KT-tcp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reclutamiento" image="Work_ic" id="A27-Sv-Ssu"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -2133,7 +2134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehg-eJ-wtS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186.9565217391305" y="3166.7410714285711"/>
+            <point key="canvasLocation" x="3699" y="2110"/>
         </scene>
         <!--Postulations-->
         <scene sceneID="ERk-lY-eEI">
@@ -2158,7 +2159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0Q-Pi-fes" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6216" y="-100"/>
+            <point key="canvasLocation" x="5090" y="1165"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tuo-t6-7kC">
@@ -2174,21 +2175,89 @@
                     <connections>
                         <segue destination="9iR-H6-1Hb" kind="relationship" relationship="viewControllers" id="Omh-9t-nzR"/>
                         <segue destination="Pms-v4-HFa" kind="relationship" relationship="viewControllers" id="csg-aP-5cJ"/>
+                        <segue destination="WEP-6K-B7j" kind="relationship" relationship="viewControllers" id="KE3-cF-lTd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efo-Wr-myU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5107" y="-100"/>
+            <point key="canvasLocation" x="4168" y="793"/>
         </scene>
         <!--JobsTal-->
         <scene sceneID="pnM-ZA-waE">
             <objects>
-                <viewController title="JobsTal" id="9iR-H6-1Hb" sceneMemberID="viewController">
+                <viewController title="JobsTal" id="9iR-H6-1Hb" customClass="JobsForTalentViewController" customModule="IT_Talent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QXS-Nk-REx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjL-Ii-din">
+                                <rect key="frame" x="0.0" y="48" width="414" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tus filtros:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-XV-SPv">
+                                        <rect key="frame" x="16" y="12" width="382" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyc-CZ-vGx">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="116" id="Sm2-fj-tWA"/>
+                                        </constraints>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="FBi-nB-5un"/>
+                                    <constraint firstAttribute="trailing" secondItem="kyc-CZ-vGx" secondAttribute="trailing" id="PCL-7l-0QP"/>
+                                    <constraint firstAttribute="bottom" secondItem="kyc-CZ-vGx" secondAttribute="bottom" id="TU1-8B-0Nw"/>
+                                    <constraint firstItem="kyc-CZ-vGx" firstAttribute="leading" secondItem="rjL-Ii-din" secondAttribute="leading" id="sMS-0A-jHf"/>
+                                    <constraint firstAttribute="trailing" secondItem="hIb-XV-SPv" secondAttribute="trailing" constant="16" id="tKc-n8-nk5"/>
+                                    <constraint firstItem="hIb-XV-SPv" firstAttribute="top" secondItem="rjL-Ii-din" secondAttribute="top" constant="12" id="uGl-ou-rCj"/>
+                                    <constraint firstItem="hIb-XV-SPv" firstAttribute="leading" secondItem="rjL-Ii-din" secondAttribute="leading" constant="16" id="wQp-it-F70"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empleos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpx-Kq-hun">
+                                <rect key="frame" x="16" y="240" width="382" height="27.5"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="20"/>
+                                <color key="textColor" name="TextBold"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="che-XY-Wd0">
+                                <rect key="frame" x="0.0" y="283.5" width="414" height="529.5"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9o7-DU-bup">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="estimatedItemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEG-xG-rqy">
+                                <rect key="frame" x="16" y="283.5" width="382" height="529.5"/>
+                                <color key="backgroundColor" name="Background"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ib3-wm-Etk"/>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="QEG-xG-rqy" firstAttribute="bottom" secondItem="ib3-wm-Etk" secondAttribute="bottom" id="AkU-Po-Tc6"/>
+                            <constraint firstItem="Qpx-Kq-hun" firstAttribute="leading" secondItem="ib3-wm-Etk" secondAttribute="leading" constant="16" id="Cnc-PZ-5ay"/>
+                            <constraint firstItem="che-XY-Wd0" firstAttribute="top" secondItem="Qpx-Kq-hun" secondAttribute="bottom" constant="16" id="DXM-j2-Taz"/>
+                            <constraint firstItem="QEG-xG-rqy" firstAttribute="top" secondItem="Qpx-Kq-hun" secondAttribute="bottom" constant="16" id="E2T-ne-7eT"/>
+                            <constraint firstItem="rjL-Ii-din" firstAttribute="top" secondItem="ib3-wm-Etk" secondAttribute="top" id="HZ8-f2-e4Q"/>
+                            <constraint firstItem="rjL-Ii-din" firstAttribute="leading" secondItem="ib3-wm-Etk" secondAttribute="leading" id="Kfx-q5-ll6"/>
+                            <constraint firstItem="Qpx-Kq-hun" firstAttribute="top" secondItem="rjL-Ii-din" secondAttribute="bottom" constant="32" id="Lcf-Pu-gWE"/>
+                            <constraint firstItem="ib3-wm-Etk" firstAttribute="trailing" secondItem="rjL-Ii-din" secondAttribute="trailing" id="NfZ-xk-Q1a"/>
+                            <constraint firstItem="che-XY-Wd0" firstAttribute="leading" secondItem="ib3-wm-Etk" secondAttribute="leading" id="Ort-zD-rsL"/>
+                            <constraint firstItem="ib3-wm-Etk" firstAttribute="trailing" secondItem="che-XY-Wd0" secondAttribute="trailing" id="Ult-69-0dL"/>
+                            <constraint firstItem="QEG-xG-rqy" firstAttribute="leading" secondItem="ib3-wm-Etk" secondAttribute="leading" constant="16" id="eve-7V-2J9"/>
+                            <constraint firstItem="ib3-wm-Etk" firstAttribute="trailing" secondItem="QEG-xG-rqy" secondAttribute="trailing" constant="16" id="jpp-uB-Vcc"/>
+                            <constraint firstItem="ib3-wm-Etk" firstAttribute="trailing" secondItem="Qpx-Kq-hun" secondAttribute="trailing" constant="16" id="q9X-i0-FD1"/>
+                            <constraint firstItem="ib3-wm-Etk" firstAttribute="bottom" secondItem="che-XY-Wd0" secondAttribute="bottom" id="zOE-dW-FcP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Inicio" id="Mfh-TR-nQJ">
                         <imageReference key="image" image="house.fill" catalog="system" renderingMode="hierarchical">
@@ -2201,14 +2270,23 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="hSx-0f-jUz"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="animContainerView" destination="QEG-xG-rqy" id="zeh-mn-60e"/>
+                        <outlet property="containerFilters" destination="rjL-Ii-din" id="W7P-nJ-Cp4"/>
+                        <outlet property="filterPicker" destination="kyc-CZ-vGx" id="HVs-vh-cnY"/>
+                        <outlet property="headerLabel" destination="Qpx-Kq-hun" id="Jyj-vk-dqA"/>
+                        <outlet property="jobsCollectionView" destination="che-XY-Wd0" id="agJ-5V-KDb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOT-87-jck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6217" y="-767"/>
+            <point key="canvasLocation" x="5089.8550724637689" y="450"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ty5-UC-uu2"/>
+        <segue reference="KE3-cF-lTd"/>
+        <segue reference="CH7-ge-uXq"/>
         <segue reference="L1d-P1-3wz"/>
     </inferredMetricsTieBreakers>
     <resources>

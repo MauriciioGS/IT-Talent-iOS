@@ -14,6 +14,11 @@
 		662380C3298A34F0001E68D1 /* JobPastViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662380C1298A34F0001E68D1 /* JobPastViewCell.swift */; };
 		662380C4298A34F0001E68D1 /* JobPastViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662380C2298A34F0001E68D1 /* JobPastViewCell.xib */; };
 		664B798E2987B44F0065718C /* ExperiencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664B798D2987B44F0065718C /* ExperiencesViewController.swift */; };
+		66636AA7298DE0C10025B8C4 /* JobsForTalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66636AA6298DE0C10025B8C4 /* JobsForTalentViewController.swift */; };
+		66636AAC298E048E0025B8C4 /* JobsTalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66636AAA298E048E0025B8C4 /* JobsTalCollectionViewCell.swift */; };
+		66636AAD298E048E0025B8C4 /* JobsTalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66636AAB298E048E0025B8C4 /* JobsTalCollectionViewCell.xib */; };
+		66636AAF298E0D5F0025B8C4 /* loading_anim.json in Resources */ = {isa = PBXBuildFile; fileRef = 66636AAE298E0D5F0025B8C4 /* loading_anim.json */; };
+		66636AB1298E0F0B0025B8C4 /* JobsTalentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66636AB0298E0F0B0025B8C4 /* JobsTalentViewModel.swift */; };
 		6674E1C02989EDD900470C8C /* NewJobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6674E1BF2989EDD900470C8C /* NewJobViewModel.swift */; };
 		6674E1C3298A0AE300470C8C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6674E1C2298A0AE300470C8C /* Lottie */; };
 		6674E1C6298A0F0600470C8C /* no_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 6674E1C5298A0F0600470C8C /* no_data.json */; };
@@ -81,6 +86,11 @@
 		662380C1298A34F0001E68D1 /* JobPastViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPastViewCell.swift; sourceTree = "<group>"; };
 		662380C2298A34F0001E68D1 /* JobPastViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobPastViewCell.xib; sourceTree = "<group>"; };
 		664B798D2987B44F0065718C /* ExperiencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewController.swift; sourceTree = "<group>"; };
+		66636AA6298DE0C10025B8C4 /* JobsForTalentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsForTalentViewController.swift; sourceTree = "<group>"; };
+		66636AAA298E048E0025B8C4 /* JobsTalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTalCollectionViewCell.swift; sourceTree = "<group>"; };
+		66636AAB298E048E0025B8C4 /* JobsTalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsTalCollectionViewCell.xib; sourceTree = "<group>"; };
+		66636AAE298E0D5F0025B8C4 /* loading_anim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading_anim.json; path = ../../../../../../../Users/mauriciogs/Downloads/loading_anim.json; sourceTree = "<group>"; };
+		66636AB0298E0F0B0025B8C4 /* JobsTalentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTalentViewModel.swift; sourceTree = "<group>"; };
 		6674E1BF2989EDD900470C8C /* NewJobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobViewModel.swift; sourceTree = "<group>"; };
 		6674E1C5298A0F0600470C8C /* no_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_data.json; sourceTree = "<group>"; };
 		6674E1C7298A0F2B00470C8C /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
@@ -161,15 +171,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6674E1C4298A0E4F00470C8C /* LottieAnims */ = {
+		6674E1C4298A0E4F00470C8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				66636AAE298E0D5F0025B8C4 /* loading_anim.json */,
 				6674E1CB298A0F3800470C8C /* mail_send.json */,
 				6674E1C9298A0F3200470C8C /* lost_connection.json */,
 				6674E1C7298A0F2B00470C8C /* sad.json */,
 				6674E1C5298A0F0600470C8C /* no_data.json */,
 			);
-			path = LottieAnims;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		6674E1CD298A29F900470C8C /* View */ = {
@@ -179,6 +190,8 @@
 				6674E1CF298A2A2500470C8C /* JobViewCell.xib */,
 				662380C1298A34F0001E68D1 /* JobPastViewCell.swift */,
 				662380C2298A34F0001E68D1 /* JobPastViewCell.xib */,
+				66636AAA298E048E0025B8C4 /* JobsTalCollectionViewCell.swift */,
+				66636AAB298E048E0025B8C4 /* JobsTalCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +276,7 @@
 			children = (
 				660E20D42988EEFA00BFC318 /* JobsViewModel.swift */,
 				6674E1BF2989EDD900470C8C /* NewJobViewModel.swift */,
+				66636AB0298E0F0B0025B8C4 /* JobsTalentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -275,6 +289,7 @@
 				6674E1CD298A29F900470C8C /* View */,
 				6696E47729871F8000437177 /* JobsViewController.swift */,
 				660E20D92989096300BFC318 /* NewJobViewController.swift */,
+				66636AA6298DE0C10025B8C4 /* JobsForTalentViewController.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -338,7 +353,6 @@
 				668ADB2E2985E1C7006EDEC3 /* Utils */,
 				66B4A96A2984D1D70033A10D /* Main.storyboard */,
 				66B4A9722984D1D80033A10D /* LaunchScreen.storyboard */,
-				66B4A97B2984D5EA0033A10D /* Main */,
 				66B4A9702984D1D80033A10D /* Assets.xcassets */,
 				66B4A9752984D1D80033A10D /* Info.plist */,
 				668ADB342985FDB2006EDEC3 /* GoogleService-Info.plist */,
@@ -347,41 +361,10 @@
 			path = "IT Talent";
 			sourceTree = "<group>";
 		};
-		66B4A97B2984D5EA0033A10D /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				66B4A97E2984D60C0033A10D /* ViewModel */,
-				66B4A97D2984D6050033A10D /* View */,
-				66B4A97C2984D5FB0033A10D /* Model */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		66B4A97C2984D5FB0033A10D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		66B4A97D2984D6050033A10D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		66B4A97E2984D60C0033A10D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		66B4A97F2984DA6D0033A10D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6674E1C4298A0E4F00470C8C /* LottieAnims */,
+				6674E1C4298A0E4F00470C8C /* Resources */,
 				66B4A9802984DA7C0033A10D /* Fonts */,
 			);
 			path = Resources;
@@ -503,8 +486,10 @@
 				6674E1D1298A2A2500470C8C /* JobViewCell.xib in Resources */,
 				66B4A9902984DD400033A10D /* nunitosans_light.ttf in Resources */,
 				66B4A9A32984DE130033A10D /* Montserrat-Bold.ttf in Resources */,
+				66636AAD298E048E0025B8C4 /* JobsTalCollectionViewCell.xib in Resources */,
 				662380C4298A34F0001E68D1 /* JobPastViewCell.xib in Resources */,
 				66B4A99F2984DE130033A10D /* Montserrat-Light.ttf in Resources */,
+				66636AAF298E0D5F0025B8C4 /* loading_anim.json in Resources */,
 				66B4A9A02984DE130033A10D /* Montserrat-SemiBold.ttf in Resources */,
 				66B4A9912984DD600033A10D /* NunitoSans-Regular.ttf in Resources */,
 				6674E1C8298A0F2B00470C8C /* sad.json in Resources */,
@@ -530,12 +515,14 @@
 			files = (
 				66EF30C1298B962F007EAE1A /* MyProfileViewController.swift in Sources */,
 				660E20DC29890E6800BFC318 /* InitViewModel.swift in Sources */,
+				66636AB1298E0F0B0025B8C4 /* JobsTalentViewModel.swift in Sources */,
 				660E20D52988EEFA00BFC318 /* JobsViewModel.swift in Sources */,
 				6682CD49298B6B3B0073E5EB /* TalentViewModel.swift in Sources */,
 				668ADB2D2985DC9F006EDEC3 /* SignUp1ViewController.swift in Sources */,
 				66B4A9692984D1D70033A10D /* SignInViewController.swift in Sources */,
 				668ADB332985E684006EDEC3 /* UserModel.swift in Sources */,
 				668ADB2B2985D27E006EDEC3 /* WelcomeViewController.swift in Sources */,
+				66636AA7298DE0C10025B8C4 /* JobsForTalentViewController.swift in Sources */,
 				660E20DA2989096300BFC318 /* NewJobViewController.swift in Sources */,
 				66A06186298622EE008C5390 /* SignUp2ViewController.swift in Sources */,
 				66B4A9652984D1D70033A10D /* AppDelegate.swift in Sources */,
@@ -552,6 +539,7 @@
 				6674E1D0298A2A2500470C8C /* JobViewCell.swift in Sources */,
 				6696E47829871F8000437177 /* JobsViewController.swift in Sources */,
 				668ADB302985E1DF006EDEC3 /* MyColors.swift in Sources */,
+				66636AAC298E048E0025B8C4 /* JobsTalCollectionViewCell.swift in Sources */,
 				6696E47A2987201800437177 /* RegisterEnterpriseViewController.swift in Sources */,
 				6696E4822987937C00437177 /* Skills2ViewController.swift in Sources */,
 				66B4A9672984D1D70033A10D /* SceneDelegate.swift in Sources */,
