@@ -1405,15 +1405,209 @@
                     <view key="view" contentMode="scaleToFill" id="jCv-Ic-BZZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoR-pa-cWz">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEP-Xk-GuL">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reclutamientos activos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcQ-b9-PYR">
+                                                <rect key="frame" x="16" y="16" width="382" height="33"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="24"/>
+                                                <color key="textColor" name="TextBold"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etapa 1: Publicados y Revisión de perfiles" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdJ-sd-f3l">
+                                                <rect key="frame" x="16" y="57" width="378.5" height="22"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                                <color key="textColor" name="TextBold"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBc-Lm-wiN">
+                                                <rect key="frame" x="16" y="87" width="382" height="225"/>
+                                                <subviews>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ciG-Bm-h6e">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gHx-bY-Z6M">
+                                                            <size key="itemSize" width="128" height="128"/>
+                                                            <size key="estimatedItemSize" width="128" height="128"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells/>
+                                                    </collectionView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="ciG-Bm-h6e" firstAttribute="top" secondItem="PBc-Lm-wiN" secondAttribute="top" id="3Am-XB-evr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ciG-Bm-h6e" secondAttribute="bottom" id="7wE-OK-OxI"/>
+                                                    <constraint firstAttribute="height" constant="225" id="Ee4-B0-gfa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ciG-Bm-h6e" secondAttribute="trailing" id="HkC-Rq-t3y"/>
+                                                    <constraint firstItem="ciG-Bm-h6e" firstAttribute="leading" secondItem="PBc-Lm-wiN" secondAttribute="leading" id="P5J-T6-YWz"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etapa 2: Entrevistas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loi-yj-rks">
+                                                <rect key="frame" x="16" y="328" width="382" height="22"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                                <color key="textColor" name="TextBold"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXi-2l-TRG">
+                                                <rect key="frame" x="16" y="358" width="382" height="225"/>
+                                                <subviews>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mqG-hW-o3B">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="npd-Gk-t5U">
+                                                            <size key="itemSize" width="128" height="128"/>
+                                                            <size key="estimatedItemSize" width="128" height="128"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells/>
+                                                    </collectionView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="mqG-hW-o3B" firstAttribute="leading" secondItem="FXi-2l-TRG" secondAttribute="leading" id="H91-mM-FmU"/>
+                                                    <constraint firstItem="mqG-hW-o3B" firstAttribute="top" secondItem="FXi-2l-TRG" secondAttribute="top" id="M2D-Lh-qtv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="mqG-hW-o3B" secondAttribute="bottom" id="Mjc-iw-MrZ"/>
+                                                    <constraint firstAttribute="height" constant="225" id="URq-o1-rn4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mqG-hW-o3B" secondAttribute="trailing" id="qzr-xm-gie"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etapa 3: Pruebas y evaluaciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4m-pw-TSP">
+                                                <rect key="frame" x="16" y="599" width="382" height="22"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                                <color key="textColor" name="TextBold"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeN-L6-gSH">
+                                                <rect key="frame" x="16" y="629" width="382" height="225"/>
+                                                <subviews>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-xO-5fS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="T5A-9W-fgX">
+                                                            <size key="itemSize" width="128" height="128"/>
+                                                            <size key="estimatedItemSize" width="128" height="128"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells/>
+                                                    </collectionView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="9XL-xO-5fS" firstAttribute="leading" secondItem="OeN-L6-gSH" secondAttribute="leading" id="4db-RZ-ScC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="9XL-xO-5fS" secondAttribute="bottom" id="It3-XT-bQ1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9XL-xO-5fS" secondAttribute="trailing" id="NcH-DL-Ahc"/>
+                                                    <constraint firstAttribute="height" constant="225" id="s8b-Ik-1iW"/>
+                                                    <constraint firstItem="9XL-xO-5fS" firstAttribute="top" secondItem="OeN-L6-gSH" secondAttribute="top" id="sPB-gD-Yut"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reclutamientos pasados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqo-Rt-QO3">
+                                                <rect key="frame" x="16" y="870" width="382" height="33"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="24"/>
+                                                <color key="textColor" name="TextBold"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etapa 4: Finalizados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bme-aG-7Yb">
+                                                <rect key="frame" x="16" y="911" width="382" height="22"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                                <color key="textColor" name="TextBold"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbX-IV-1fi">
+                                                <rect key="frame" x="16" y="941" width="382" height="225"/>
+                                                <subviews>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WNI-Ol-fa2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="B2G-dZ-2uG">
+                                                            <size key="itemSize" width="128" height="128"/>
+                                                            <size key="estimatedItemSize" width="128" height="128"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells/>
+                                                    </collectionView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="225" id="A50-OU-KI4"/>
+                                                    <constraint firstItem="WNI-Ol-fa2" firstAttribute="top" secondItem="zbX-IV-1fi" secondAttribute="top" id="ST0-Ga-jSu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="WNI-Ol-fa2" secondAttribute="bottom" id="aJU-ZJ-5IC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WNI-Ol-fa2" secondAttribute="trailing" id="sXv-b8-ti4"/>
+                                                    <constraint firstItem="WNI-Ol-fa2" firstAttribute="leading" secondItem="zbX-IV-1fi" secondAttribute="leading" id="wki-3q-0kj"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Background"/>
+                                        <constraints>
+                                            <constraint firstItem="OeN-L6-gSH" firstAttribute="top" secondItem="W4m-pw-TSP" secondAttribute="bottom" constant="8" id="2E0-IR-G8w"/>
+                                            <constraint firstItem="bme-aG-7Yb" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="3PX-Ub-DVW"/>
+                                            <constraint firstItem="OeN-L6-gSH" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="40D-n4-nBi"/>
+                                            <constraint firstItem="Lqo-Rt-QO3" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="5rK-lZ-Ubj"/>
+                                            <constraint firstItem="FXi-2l-TRG" firstAttribute="top" secondItem="loi-yj-rks" secondAttribute="bottom" constant="8" id="Aht-UF-gHi"/>
+                                            <constraint firstAttribute="trailing" secondItem="PBc-Lm-wiN" secondAttribute="trailing" constant="16" id="DKc-Cs-vPY"/>
+                                            <constraint firstItem="XdJ-sd-f3l" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="GKw-6S-okx"/>
+                                            <constraint firstAttribute="trailing" secondItem="bme-aG-7Yb" secondAttribute="trailing" constant="16" id="Gr2-ZI-E8x"/>
+                                            <constraint firstItem="loi-yj-rks" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="HKp-Uh-31O"/>
+                                            <constraint firstItem="W4m-pw-TSP" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="IOn-Qq-Xsf"/>
+                                            <constraint firstItem="kcQ-b9-PYR" firstAttribute="top" secondItem="WEP-Xk-GuL" secondAttribute="top" constant="16" id="JqN-wB-i5Z"/>
+                                            <constraint firstAttribute="trailing" secondItem="W4m-pw-TSP" secondAttribute="trailing" constant="16" id="K2S-Ra-ekn"/>
+                                            <constraint firstAttribute="height" constant="1200" id="Kga-GQ-SmJ"/>
+                                            <constraint firstItem="Lqo-Rt-QO3" firstAttribute="top" secondItem="OeN-L6-gSH" secondAttribute="bottom" constant="16" id="N7J-Fd-Pg7"/>
+                                            <constraint firstItem="PBc-Lm-wiN" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="N7r-IJ-aSv"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lqo-Rt-QO3" secondAttribute="trailing" constant="16" id="OqR-sF-cIW"/>
+                                            <constraint firstItem="zbX-IV-1fi" firstAttribute="top" secondItem="bme-aG-7Yb" secondAttribute="bottom" constant="8" id="WAO-hR-air"/>
+                                            <constraint firstAttribute="trailing" secondItem="kcQ-b9-PYR" secondAttribute="trailing" constant="16" id="WvK-Fa-p2F"/>
+                                            <constraint firstItem="bme-aG-7Yb" firstAttribute="top" secondItem="Lqo-Rt-QO3" secondAttribute="bottom" constant="8" id="Y6Z-EA-oLN"/>
+                                            <constraint firstAttribute="trailing" secondItem="zbX-IV-1fi" secondAttribute="trailing" constant="16" id="ciQ-1K-dqq"/>
+                                            <constraint firstItem="kcQ-b9-PYR" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="eeb-0A-atT"/>
+                                            <constraint firstItem="XdJ-sd-f3l" firstAttribute="top" secondItem="kcQ-b9-PYR" secondAttribute="bottom" constant="8" id="fcW-oP-juT"/>
+                                            <constraint firstAttribute="trailing" secondItem="OeN-L6-gSH" secondAttribute="trailing" constant="16" id="hWU-Qp-o95"/>
+                                            <constraint firstItem="FXi-2l-TRG" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="hhE-Ll-tSK"/>
+                                            <constraint firstItem="loi-yj-rks" firstAttribute="top" secondItem="PBc-Lm-wiN" secondAttribute="bottom" constant="16" id="hp3-x5-oXv"/>
+                                            <constraint firstAttribute="trailing" secondItem="FXi-2l-TRG" secondAttribute="trailing" constant="16" id="iPG-Jw-hLg"/>
+                                            <constraint firstItem="zbX-IV-1fi" firstAttribute="leading" secondItem="WEP-Xk-GuL" secondAttribute="leading" constant="16" id="kC4-Jq-siR"/>
+                                            <constraint firstItem="W4m-pw-TSP" firstAttribute="top" secondItem="FXi-2l-TRG" secondAttribute="bottom" constant="16" id="mBQ-nY-yqW"/>
+                                            <constraint firstItem="PBc-Lm-wiN" firstAttribute="top" secondItem="XdJ-sd-f3l" secondAttribute="bottom" constant="8" id="mJR-kT-0nP"/>
+                                            <constraint firstAttribute="trailing" secondItem="loi-yj-rks" secondAttribute="trailing" constant="16" id="onK-BE-d9U"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="WEP-Xk-GuL" secondAttribute="bottom" id="1PV-EE-gt3"/>
+                                    <constraint firstAttribute="trailing" secondItem="WEP-Xk-GuL" secondAttribute="trailing" id="BpC-qz-DoG"/>
+                                    <constraint firstItem="WEP-Xk-GuL" firstAttribute="top" secondItem="hoR-pa-cWz" secondAttribute="top" id="cUk-7y-yZP"/>
+                                    <constraint firstItem="WEP-Xk-GuL" firstAttribute="leading" secondItem="hoR-pa-cWz" secondAttribute="leading" id="cgR-6N-7hc"/>
+                                    <constraint firstItem="WEP-Xk-GuL" firstAttribute="centerX" secondItem="hoR-pa-cWz" secondAttribute="centerX" id="giw-cE-js2"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="c2y-KT-tcp"/>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="hoR-pa-cWz" firstAttribute="leading" secondItem="c2y-KT-tcp" secondAttribute="leading" id="0ia-n0-2FE"/>
+                            <constraint firstItem="c2y-KT-tcp" firstAttribute="trailing" secondItem="hoR-pa-cWz" secondAttribute="trailing" id="Pnb-QY-0iC"/>
+                            <constraint firstItem="c2y-KT-tcp" firstAttribute="bottom" secondItem="hoR-pa-cWz" secondAttribute="bottom" id="dni-Wd-JWp"/>
+                            <constraint firstItem="hoR-pa-cWz" firstAttribute="top" secondItem="c2y-KT-tcp" secondAttribute="top" id="g7W-Z1-Od7"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reclutamiento" image="Work_ic" id="A27-Sv-Ssu"/>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BnH-R0-h3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2061" y="2085"/>
+            <point key="canvasLocation" x="2060.8695652173915" y="2084.5982142857142"/>
         </scene>
         <!--JobsRec-->
         <scene sceneID="bTd-7L-dJX">
@@ -2565,6 +2759,9 @@
                                         <color key="tintColor" name="Secondary"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Mauricio García"/>
+                                        <connections>
+                                            <action selector="contactRecruiter:" destination="xm5-mf-aMt" eventType="touchUpInside" id="oCx-Ts-nmh"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presencial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwi-01-TQT">
                                         <rect key="frame" x="12" y="159.5" width="55.5" height="16.5"/>

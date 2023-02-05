@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import MessageUI
 
 class ApplyJobViewController: UIViewController {
     
@@ -70,7 +71,19 @@ class ApplyJobViewController: UIViewController {
         successAnim!.play()
         
     }
-
+    
+    @IBAction func contactRecruiter(_ sender: Any) {
+        guard MFMailComposeViewController.canSendMail() else {
+            showAlert("El dispositivo no puede enviar emails")
+            return
+        }
+        
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients([jobSelected!.emailRecruiter])
+        composer.setSubject("Contacto \(jobSelected!.job)")
+        present(composer, animated: true)
+    }
     
     @IBAction func applyJob(_ sender: Any) {
         activityProgress.isHidden = false
@@ -117,4 +130,28 @@ class ApplyJobViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+}
+
+extension ApplyJobViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let _ = error {
+            controller.dismiss(animated: true)
+            return
+        }
+        switch result{
+        case .cancelled:
+            print("Email cancelado")
+        case .failed:
+            print("Error al enviar")
+        case .saved:
+            print("Guardado")
+            navigationController?.dismiss(animated: true)
+        case .sent:
+            print("Email enviado")
+            navigationController?.dismiss(animated: true)
+        @unknown default:
+            fatalError()
+        }
+        controller.dismiss(animated: true)
+    }
 }
