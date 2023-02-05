@@ -122,6 +122,7 @@
             <connections>
                 <outlet property="applicantsLabel" destination="iE4-m4-XRK" id="N3t-PY-Mzk"/>
                 <outlet property="chargeLabel" destination="gJn-ee-gx5" id="Nag-Kx-bfd"/>
+                <outlet property="containerView" destination="61l-WL-Dgn" id="Ure-Ky-CW8"/>
                 <outlet property="enterpriseLabel" destination="g3Y-GZ-Oj5" id="3sF-N0-Y7k"/>
                 <outlet property="imageView" destination="QtR-We-VD3" id="mrN-1k-gVS"/>
                 <outlet property="publisherLabel" destination="1XH-Vw-PFD" id="RaT-hq-aOt"/>

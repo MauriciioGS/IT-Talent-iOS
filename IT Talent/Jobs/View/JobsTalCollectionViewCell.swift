@@ -26,13 +26,11 @@ class JobsTalCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         viewContainer.layer.cornerRadius = 10
-        viewContainer.layer.shadowColor = UIColor.lightGray.cgColor
-        viewContainer.layer.shadowOpacity = 0.8
-        viewContainer.layer.shadowOffset = .zero
-        viewContainer.layer.shadowRadius = 10
-        viewContainer.layer.shadowPath = UIBezierPath(rect: viewContainer.bounds).cgPath
-        viewContainer.layer.shouldRasterize = true
-        viewContainer.layer.rasterizationScale = UIScreen.main.scale
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 4, height: 4)
+        self.layer.shadowRadius = 8
+        self.layer.masksToBounds = false
     }
 
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ProfProfileViewController: UIViewController {
     
@@ -41,8 +42,30 @@ class ProfProfileViewController: UIViewController {
         
     }
 
+    @IBAction func contact(_ sender: Any) {
+        guard MFMailComposeViewController.canSendMail() else {
+            showAlert("El dispositivo no puede enviar emails")
+            return
+        }
+        
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients([userSelected!.email])
+        composer.setSubject("Contacto oportunidad laboral")
+        present(composer, animated: true)
+    }
     
+    func showAlert(_ errorMesssage: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
 
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension ProfProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -84,4 +107,28 @@ extension ProfProfileViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     
+}
+
+extension ProfProfileViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let _ = error {
+            controller.dismiss(animated: true)
+            return
+        }
+        switch result{
+        case .cancelled:
+            print("Email cancelado")
+        case .failed:
+            print("Error al enviar")
+        case .saved:
+            print("Guardado")
+            navigationController?.dismiss(animated: true)
+        case .sent:
+            print("Email enviado")
+            navigationController?.dismiss(animated: true)
+        @unknown default:
+            fatalError()
+        }
+        controller.dismiss(animated: true)
+    }
 }

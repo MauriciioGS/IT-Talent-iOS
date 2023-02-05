@@ -112,6 +112,7 @@
             <connections>
                 <outlet property="applicantsLabel" destination="geW-Lf-bGs" id="B6p-FV-234"/>
                 <outlet property="chargeLabel" destination="Lhc-en-3Ja" id="ijF-9w-oNn"/>
+                <outlet property="containerView" destination="nY2-wn-9jO" id="t2W-Oz-6zZ"/>
                 <outlet property="enterpriseLabel" destination="o57-em-4GY" id="BF2-m5-z02"/>
                 <outlet property="imageView" destination="oR9-z2-Vm8" id="w7O-oK-ZYD"/>
                 <outlet property="publisherLabel" destination="ddz-gD-Aji" id="pj4-uP-bUa"/>

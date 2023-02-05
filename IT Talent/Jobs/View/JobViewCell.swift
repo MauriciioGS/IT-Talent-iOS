@@ -17,19 +17,18 @@ class JobViewCell: UICollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.cornerRadius = 10
+        containerView.layer.cornerRadius = 10
         
-        self.layer.shadowColor = UIColor.lightGray.cgColor
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowOffset = .zero
-        self.layer.shadowRadius = 10
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shouldRasterize = true
-        self.layer.rasterizationScale = UIScreen.main.scale
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 4, height: 4)
+        self.layer.shadowRadius = 8
+        self.layer.masksToBounds = false
     }
 
 }

@@ -1497,8 +1497,8 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pea-xO-VAv">
-                                                <rect key="frame" x="342" y="669" width="48" height="48"/>
-                                                <color key="backgroundColor" name="Background"/>
+                                                <rect key="frame" x="342" y="685" width="48" height="48"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.15223745748299319" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="Qfu-jd-FG2"/>
                                                     <constraint firstAttribute="width" constant="48" id="rZD-cl-lRi"/>
@@ -1530,7 +1530,7 @@
                                         <constraints>
                                             <constraint firstItem="t2o-Kr-33R" firstAttribute="top" secondItem="IUu-fi-96g" secondAttribute="top" constant="16" id="15S-g8-MqW"/>
                                             <constraint firstItem="0A1-Kh-GXC" firstAttribute="top" secondItem="RS2-3d-ddh" secondAttribute="bottom" constant="16" id="27o-xS-OJ5"/>
-                                            <constraint firstAttribute="bottom" secondItem="Pea-xO-VAv" secondAttribute="bottom" constant="48" id="5LY-9e-icd"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pea-xO-VAv" secondAttribute="bottom" constant="32" id="5LY-9e-icd"/>
                                             <constraint firstAttribute="trailing" secondItem="Pea-xO-VAv" secondAttribute="trailing" constant="24" id="7VC-fo-5ZJ"/>
                                             <constraint firstAttribute="trailing" secondItem="RS2-3d-ddh" secondAttribute="trailing" constant="16" id="8Ks-wP-YBk"/>
                                             <constraint firstAttribute="trailing" secondItem="zCj-MK-1kt" secondAttribute="trailing" constant="16" id="ANO-RV-gq5"/>
@@ -1938,6 +1938,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Contactar Talento">
                                                     <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="contact:" destination="yio-uh-Ihz" eventType="touchUpInside" id="gWa-ea-I0A"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBW-3Q-HgU">
                                                 <rect key="frame" x="16" y="230" width="382" height="1"/>
