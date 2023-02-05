@@ -22,6 +22,7 @@ class TalentViewController: UIViewController {
     private var cellTalentWidth: CGFloat?
     var talentList: [UserProfile] = []
     var talentFilteredList: [UserProfile] = []
+    private var userSelected: UserProfile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +40,10 @@ class TalentViewController: UIViewController {
         
         searchBar.delegate = self
         
+        talentCollectionView.register(UINib(nibName: "TalentViewCell", bundle: nil), forCellWithReuseIdentifier: "talentCell")
         talentCollectionView.delegate = self
         talentCollectionView.dataSource = self
-        talentCollectionView.register(UINib(nibName: "TalentViewCell", bundle: nil), forCellWithReuseIdentifier: "talentCell")
-        cellTalentWidth = talentCollectionView.bounds.width - (talentCollectionView.bounds.width / 2)
+        cellTalentWidth = talentCollectionView.bounds.width - (talentCollectionView.bounds.width / 6)
     }
     
     private func bindAllTalent() {
@@ -68,6 +69,11 @@ class TalentViewController: UIViewController {
         talentViewModel.getAllTalent()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destino = segue.destination as? ProfProfileViewController {
+            destino.userSelected = userSelected!
+        }
+    }
 
 }
 
@@ -77,6 +83,7 @@ extension TalentViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         if let filter = searchBar.text {
             profRoleLabel.text = filter
+            talentFilteredList.removeAll()
             filterForSearchText(searchText: filter)
         }
     }
@@ -104,7 +111,7 @@ extension TalentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let talentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "talentCell", for: indexPath) as? TalentViewCell
         let talent = talentList[indexPath.row]
-        talentCell!.nameLabel.text = talent.fullName
+        talentCell!.nameLabel.text = "\(talent.fullName.split(separator: " ")[0]) \(talent.fullName.split(separator: " ")[1])"
         talentCell!.profRoleLabel.text = talent.profRole
         talentCell!.locationLabel.text = "\(talent.city), \(talent.country)"
         var yearsXP = 0
@@ -115,10 +122,15 @@ extension TalentViewController: UICollectionViewDataSource {
         return talentCell!
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        userSelected = talentList[indexPath.row]
+        performSegue(withIdentifier: "seeTalentProfile", sender: self)
+    }
+    
 }
 
 extension TalentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellTalentWidth!, height: 100)
+        return CGSize(width: cellTalentWidth!, height: 105)
     }
 }
