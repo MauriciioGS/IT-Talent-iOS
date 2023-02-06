@@ -31,7 +31,6 @@ class JobsViewModel {
     
     func getMyJobPosts() {
         if let userEmail = getUserLocal() {
-            print("A obtener jobs")
             getJobsByUser(email: userEmail)
         } else {
             print("Error al obtener el usuario localmente")

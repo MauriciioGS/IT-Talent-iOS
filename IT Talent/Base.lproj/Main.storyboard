@@ -1401,7 +1401,7 @@
         <!--Reclutamiento-->
         <scene sceneID="nrG-uR-kjX">
             <objects>
-                <viewController title="Reclutamiento" id="tXv-DZ-rbJ" sceneMemberID="viewController">
+                <viewController title="Reclutamiento" id="tXv-DZ-rbJ" customClass="RecruitmentViewController" customModule="IT_Talent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jCv-Ic-BZZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1429,7 +1429,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ciG-Bm-h6e">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" name="Background"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gHx-bY-Z6M">
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="estimatedItemSize" width="128" height="128"/>
@@ -1440,7 +1440,7 @@
                                                         <cells/>
                                                     </collectionView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="Background"/>
                                                 <constraints>
                                                     <constraint firstItem="ciG-Bm-h6e" firstAttribute="top" secondItem="PBc-Lm-wiN" secondAttribute="top" id="3Am-XB-evr"/>
                                                     <constraint firstAttribute="bottom" secondItem="ciG-Bm-h6e" secondAttribute="bottom" id="7wE-OK-OxI"/>
@@ -1460,7 +1460,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mqG-hW-o3B">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" name="Background"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="npd-Gk-t5U">
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="estimatedItemSize" width="128" height="128"/>
@@ -1471,7 +1471,7 @@
                                                         <cells/>
                                                     </collectionView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="Background"/>
                                                 <constraints>
                                                     <constraint firstItem="mqG-hW-o3B" firstAttribute="leading" secondItem="FXi-2l-TRG" secondAttribute="leading" id="H91-mM-FmU"/>
                                                     <constraint firstItem="mqG-hW-o3B" firstAttribute="top" secondItem="FXi-2l-TRG" secondAttribute="top" id="M2D-Lh-qtv"/>
@@ -1491,7 +1491,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-xO-5fS">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" name="Background"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="T5A-9W-fgX">
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="estimatedItemSize" width="128" height="128"/>
@@ -1502,7 +1502,7 @@
                                                         <cells/>
                                                     </collectionView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="Background"/>
                                                 <constraints>
                                                     <constraint firstItem="9XL-xO-5fS" firstAttribute="leading" secondItem="OeN-L6-gSH" secondAttribute="leading" id="4db-RZ-ScC"/>
                                                     <constraint firstAttribute="bottom" secondItem="9XL-xO-5fS" secondAttribute="bottom" id="It3-XT-bQ1"/>
@@ -1528,7 +1528,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WNI-Ol-fa2">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" name="Background"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="B2G-dZ-2uG">
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="estimatedItemSize" width="128" height="128"/>
@@ -1539,7 +1539,7 @@
                                                         <cells/>
                                                     </collectionView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="Background"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="225" id="A50-OU-KI4"/>
                                                     <constraint firstItem="WNI-Ol-fa2" firstAttribute="top" secondItem="zbX-IV-1fi" secondAttribute="top" id="ST0-Ga-jSu"/>
@@ -1604,6 +1604,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Reclutamiento" image="Work_ic" id="A27-Sv-Ssu"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="stage1CollectionView" destination="ciG-Bm-h6e" id="OCy-tP-iQd"/>
+                        <outlet property="stage1ContainerView" destination="PBc-Lm-wiN" id="KVF-Uk-sOC"/>
+                        <outlet property="stage2CollectionView" destination="mqG-hW-o3B" id="viw-6B-lrV"/>
+                        <outlet property="stage2ContainerView" destination="FXi-2l-TRG" id="Nk0-0O-24O"/>
+                        <outlet property="stage3CollectionView" destination="9XL-xO-5fS" id="HTo-4W-QZ0"/>
+                        <outlet property="stage3ContainerView" destination="OeN-L6-gSH" id="mmm-Mm-FCb"/>
+                        <outlet property="stage4CollectionView" destination="WNI-Ol-fa2" id="IEp-gz-zRM"/>
+                        <outlet property="stage4ContainerView" destination="zbX-IV-1fi" id="uGF-Ou-taN"/>
+                        <segue destination="93e-G3-l1I" kind="presentation" identifier="toApplicants" id="Kmm-r4-vnl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BnH-R0-h3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2280,6 +2291,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTO-SA-B0i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2873.913043478261" y="2734.8214285714284"/>
+        </scene>
+        <!--Select Applicants View Controller-->
+        <scene sceneID="cwr-1V-YwA">
+            <objects>
+                <viewController id="93e-G3-l1I" customClass="SelectApplicantsViewController" customModule="IT_Talent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZvH-5v-QUJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="486-bN-7Oz">
+                                <rect key="frame" x="225" y="64" width="173" height="35"/>
+                                <color key="tintColor" name="Secondary"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="A la siguiente etapa"/>
+                                <connections>
+                                    <action selector="toNextStage:" destination="93e-G3-l1I" eventType="touchUpInside" id="Y5U-bV-9kd"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wpf-9w-EIP">
+                                <rect key="frame" x="16" y="115" width="382" height="723"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="6e2-gI-Gce">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="estimatedItemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alh-Lg-218">
+                                <rect key="frame" x="57" y="269" width="300" height="300"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="NTH-I1-2VA"/>
+                                    <constraint firstAttribute="width" constant="300" id="mVl-nU-Slw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bp7-zg-Ni7"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="bp7-zg-Ni7" firstAttribute="trailing" secondItem="486-bN-7Oz" secondAttribute="trailing" constant="16" id="FRx-Qi-uBG"/>
+                            <constraint firstItem="486-bN-7Oz" firstAttribute="top" secondItem="bp7-zg-Ni7" secondAttribute="top" constant="16" id="J88-YY-bDN"/>
+                            <constraint firstItem="bp7-zg-Ni7" firstAttribute="bottom" secondItem="Wpf-9w-EIP" secondAttribute="bottom" id="Jem-D7-jz6"/>
+                            <constraint firstItem="Alh-Lg-218" firstAttribute="centerY" secondItem="ZvH-5v-QUJ" secondAttribute="centerY" id="LLl-ef-7Fl"/>
+                            <constraint firstItem="bp7-zg-Ni7" firstAttribute="trailing" secondItem="Wpf-9w-EIP" secondAttribute="trailing" constant="16" id="OxF-UA-UNE"/>
+                            <constraint firstItem="Wpf-9w-EIP" firstAttribute="leading" secondItem="bp7-zg-Ni7" secondAttribute="leading" constant="16" id="P9S-2g-xw9"/>
+                            <constraint firstItem="Alh-Lg-218" firstAttribute="centerX" secondItem="ZvH-5v-QUJ" secondAttribute="centerX" id="mOh-Fs-L5u"/>
+                            <constraint firstItem="Wpf-9w-EIP" firstAttribute="top" secondItem="486-bN-7Oz" secondAttribute="bottom" constant="16" id="xFT-OV-Sff"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="486-bN-7Oz" id="Sw4-qd-MoK"/>
+                        <outlet property="animContainerView" destination="Alh-Lg-218" id="T5K-Wn-ih1"/>
+                        <outlet property="applicantsCollectionView" destination="Wpf-9w-EIP" id="WR2-md-Dnp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ym1-gf-UUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2874" y="2085"/>
         </scene>
         <!--Profile-->
         <scene sceneID="RFD-2v-cCe">

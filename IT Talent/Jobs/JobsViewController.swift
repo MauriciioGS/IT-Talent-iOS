@@ -170,7 +170,7 @@ extension JobsViewController: UICollectionViewDataSource {
             jobCell!.enterpriseLabel.text = job.enterprise
             jobCell!.publisherLabel.text = "Publicado por: \(job.nameRecruiter.split(separator: " ")[0])"
             jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
-            jobCell!.applicantsLabel.text = "\(job.applicants.count) Solicitantes"
+            jobCell!.applicantsLabel.text = "\(job.applicants.count-1) Solicitantes"
             if (job.applicants.count - (Int(job.vacancies) ?? 0)) < 0 {
                 jobCell?.rejectedLabel.text = "0 Rechazados"
             } else {
