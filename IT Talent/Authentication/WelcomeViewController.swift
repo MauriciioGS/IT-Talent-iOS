@@ -18,12 +18,12 @@ class WelcomeViewController: UIViewController {
     
     private var userType = 1
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private let initViewModel = InitViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
         getCredentials()
+        
         // Card
         viewCardContainer.backgroundColor = UIColor(named: "Background")!
         viewCardContainer.layer.cornerRadius = 10

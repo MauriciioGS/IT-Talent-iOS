@@ -17,6 +17,7 @@ class TalentViewController: UIViewController {
     
     
     let talentViewModel = TalentViewModel()
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
     
     private var noDataAnimation: LottieAnimationView?
     private var cellTalentWidth: CGFloat?
@@ -35,8 +36,12 @@ class TalentViewController: UIViewController {
         animContainer.addSubview(self.noDataAnimation!)
         animContainer.isHidden = true
         
-        talentViewModel.getAllTalent()
-        bindAllTalent()
+        if appdel.internetStatus {
+            talentViewModel.getAllTalent()
+            bindAllTalent()
+        } else {
+            showNoInternet()
+        }
         
         searchBar.delegate = self
         
@@ -66,7 +71,11 @@ class TalentViewController: UIViewController {
     }
     
     @IBAction func getAllTalent(_ sender: Any) {
-        talentViewModel.getAllTalent()
+        if appdel.internetStatus {
+            talentViewModel.getAllTalent()
+        } else {
+            showNoInternet()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -132,5 +141,16 @@ extension TalentViewController: UICollectionViewDataSource {
 extension TalentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellTalentWidth!, height: 105)
+    }
+}
+
+extension TalentViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

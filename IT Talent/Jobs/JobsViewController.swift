@@ -26,6 +26,8 @@ class JobsViewController: UIViewController {
     private var noDataAnimation2: LottieAnimationView?
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let appdel = UIApplication.shared.delegate as! AppDelegate
+
     private var jobsViewModel: JobsViewModel?
     
     private var jobsListActive: [Job] = []
@@ -57,8 +59,13 @@ class JobsViewController: UIViewController {
         self.activityIndicator2.isHidden = false
         activityIndicator1.startAnimating()
         activityIndicator2.startAnimating()
-        jobsViewModel!.getMyJobPosts()
-        bindJobs()
+        if appdel.internetStatus {
+            jobsViewModel!.getMyJobPosts()
+            bindJobs()
+        } else {
+            showNoInternet()
+        }
+        
     }
     
     private func bindJobs() {
@@ -192,5 +199,16 @@ extension JobsViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: cellJobPastWidth!, height: 154)
         }
         return CGSize(width: 0,height: 0)
+    }
+}
+
+extension JobsViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

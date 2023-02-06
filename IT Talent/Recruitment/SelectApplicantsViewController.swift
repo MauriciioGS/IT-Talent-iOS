@@ -18,6 +18,7 @@ class SelectApplicantsViewController: UIViewController {
     private var noDataAnim: LottieAnimationView?
     private var loadingAnim: LottieAnimationView?
     private let selectApplicantsViewModel = SelectApplicantsViewModel()
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
     private var cellWidth: CGFloat?
     
     var jobSelected: Job?
@@ -29,39 +30,43 @@ class SelectApplicantsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        selectApplicantsViewModel.getAppplicantsByJob(jobSelected!.applicants)
-
-        applicantsCollectionView.allowsMultipleSelection = true
-        applicantsCollectionView.register(UINib(nibName: "ApplicantViewCell", bundle: nil), forCellWithReuseIdentifier: "applicantCell")
-        applicantsCollectionView.dataSource = self
-        applicantsCollectionView.delegate = self
-        applicantsCollectionView.isHidden = true
-        
-        cellWidth = applicantsCollectionView.bounds.width - (applicantsCollectionView.bounds.width / 8)
-        
-        noDataAnim = .init(name: "no_data")
-        noDataAnim!.frame = animContainerView.bounds
-        noDataAnim!.contentMode = .scaleAspectFit
-        noDataAnim!.loopMode = .loop
-        noDataAnim!.animationSpeed = 0.5
-        animContainerView.addSubview(noDataAnim!)
-        noDataAnim!.play()
-        noDataAnim!.isHidden = true
-        
-        loadingAnim = .init(name: "loading_anim")
-        loadingAnim!.frame = animContainerView.bounds
-        loadingAnim!.contentMode = .scaleAspectFit
-        loadingAnim!.loopMode = .loop
-        loadingAnim!.animationSpeed = 0.5
-        animContainerView.addSubview(loadingAnim!)
-        loadingAnim!.play()
-        loadingAnim!.isHidden = false
-        
-        animContainerView.isHidden = false
-        
-        actionButton.setTitle("\(numApplicants) A la siguiente etapa", for: .normal)
-        
-        bind()
+        if appdel.internetStatus {
+            selectApplicantsViewModel.getAppplicantsByJob(jobSelected!.applicants)
+            
+            applicantsCollectionView.allowsMultipleSelection = true
+            applicantsCollectionView.register(UINib(nibName: "ApplicantViewCell", bundle: nil), forCellWithReuseIdentifier: "applicantCell")
+            applicantsCollectionView.dataSource = self
+            applicantsCollectionView.delegate = self
+            applicantsCollectionView.isHidden = true
+            
+            cellWidth = applicantsCollectionView.bounds.width - (applicantsCollectionView.bounds.width / 8)
+            
+            noDataAnim = .init(name: "no_data")
+            noDataAnim!.frame = animContainerView.bounds
+            noDataAnim!.contentMode = .scaleAspectFit
+            noDataAnim!.loopMode = .loop
+            noDataAnim!.animationSpeed = 0.5
+            animContainerView.addSubview(noDataAnim!)
+            noDataAnim!.play()
+            noDataAnim!.isHidden = true
+            
+            loadingAnim = .init(name: "loading_anim")
+            loadingAnim!.frame = animContainerView.bounds
+            loadingAnim!.contentMode = .scaleAspectFit
+            loadingAnim!.loopMode = .loop
+            loadingAnim!.animationSpeed = 0.5
+            animContainerView.addSubview(loadingAnim!)
+            loadingAnim!.play()
+            loadingAnim!.isHidden = false
+            
+            animContainerView.isHidden = false
+            
+            actionButton.setTitle("\(numApplicants) A la siguiente etapa", for: .normal)
+            
+            bind()
+        } else {
+            showNoInternet()
+        }
     }
     
     private func bind() {
@@ -106,8 +111,12 @@ class SelectApplicantsViewController: UIViewController {
             } else {
                 jobSelected!.status += 1
             }
-            selectApplicantsViewModel.setNewStage(jobSelected!)
-            bindNewStage()
+            if appdel.internetStatus {
+                selectApplicantsViewModel.setNewStage(jobSelected!)
+                bindNewStage()
+            } else {
+                showNoInternet()
+            }
         } else {
             showAlert("Por favor, selecciona a los solicitantes que pasan a la siguiente etapa.")
         }
@@ -220,5 +229,16 @@ extension SelectApplicantsViewController: MFMailComposeViewControllerDelegate {
             fatalError()
         }
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SelectApplicantsViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

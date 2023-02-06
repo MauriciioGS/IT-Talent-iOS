@@ -19,6 +19,7 @@ class SignUp1ViewController: UIViewController {
 
     private var userEmail = String()
     private var userPass = String()
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,18 +86,22 @@ class SignUp1ViewController: UIViewController {
     }
     
     @IBAction func signUpUser(_ sender: Any) {
-        Auth.auth().createUser(withEmail: userEmail, password: userPass) { (result, error) in
-            if let _ = result, error == nil {
-                if self.userType == 1 {
-                    self.performSegue(withIdentifier: "toRegisterTal", sender: self)
+        if appdel.internetStatus {
+            Auth.auth().createUser(withEmail: userEmail, password: userPass) { (result, error) in
+                if let _ = result, error == nil {
+                    if self.userType == 1 {
+                        self.performSegue(withIdentifier: "toRegisterTal", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "toRegisterRec", sender: self)
+                    }
                 } else {
-                    self.performSegue(withIdentifier: "toRegisterRec", sender: self)
+                    let alertController = UIAlertController(title: "Error", message: "Se ha producido un error al registrar", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
+                    self.present(alertController, animated: true, completion: nil)
                 }
-            } else {
-                let alertController = UIAlertController(title: "Error", message: "Se ha producido un error al registrar", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
-                self.present(alertController, animated: true, completion: nil)
             }
+        } else {
+            showNoInternet()
         }
         
     }
@@ -143,5 +148,16 @@ extension SignUp1ViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+}
+
+extension SignUp1ViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

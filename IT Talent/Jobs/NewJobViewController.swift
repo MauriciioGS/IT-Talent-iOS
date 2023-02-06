@@ -20,6 +20,7 @@ class NewJobViewController: UIViewController {
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private let newJobViewModel = NewJobViewModel()
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
     
     private var wageText = "Selecciona el rango de salario aproximado: "
     private var wageRange = String()
@@ -51,8 +52,12 @@ class NewJobViewController: UIViewController {
         locationTextField.delegate = self
         vacanciesTextField.delegate = self
         
-        newJobViewModel.getUser(context: context)
-        bindGetUser()
+        if appdel.internetStatus {
+            newJobViewModel.getUser(context: context)
+            bindGetUser()
+        } else {
+            showNoInternet()
+        }
     }
     
     private func bindGetUser() {
@@ -152,10 +157,14 @@ class NewJobViewController: UIViewController {
         } else {
             let wageRange = "\(wageRange) \(coin)"
             getDateNTime()
-            var newJob = Job(job: charge, enterprise: enterprise, imageUrl: "", location: location, mode: jobMode, type: jobType, wage: wageRange, vacancies: vacancies, applicants: [""], emailRecruiter: "", nameRecruiter: "", timestamp: jobTimestam, date: jobDate, time: jobTime, status: 0)
+            let newJob = Job(job: charge, enterprise: enterprise, imageUrl: "", location: location, mode: jobMode, type: jobType, wage: wageRange, vacancies: vacancies, applicants: [""], emailRecruiter: "", nameRecruiter: "", timestamp: jobTimestam, date: jobDate, time: jobTime, status: 0)
             
-            newJobViewModel.saveNewJob(newJob: newJob, context: context)
-            bind()
+            if appdel.internetStatus {
+                newJobViewModel.saveNewJob(newJob: newJob, context: context)
+                bind()
+            } else {
+                showNoInternet()
+            }
         }
     }
     
@@ -252,5 +261,16 @@ extension NewJobViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+}
+
+extension NewJobViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

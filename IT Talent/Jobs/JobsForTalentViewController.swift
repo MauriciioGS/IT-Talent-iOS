@@ -22,6 +22,7 @@ class JobsForTalentViewController: UIViewController {
     private var noDataAnim: LottieAnimationView?
 
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
     
     private var jobsViewModel: JobsTalentViewModel?
     
@@ -33,42 +34,45 @@ class JobsForTalentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        jobsViewModel = JobsTalentViewModel(context)
-        jobsViewModel!.getJobPosts()
+        if appdel.internetStatus {
+            jobsViewModel = JobsTalentViewModel(context)
+            jobsViewModel!.getJobPosts()
         
-        containerFilters.layer.cornerRadius = 10
-        containerFilters.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
-        loadingAnim = .init(name: "loading_anim")
-        loadingAnim!.frame = animContainerView.bounds
-        loadingAnim!.contentMode = .scaleAspectFit
-        loadingAnim!.loopMode = .loop
-        loadingAnim!.animationSpeed = 0.5
-        animContainerView.addSubview(loadingAnim!)
-        loadingAnim!.play()
-        
-        noDataAnim = .init(name: "no_data")
-        noDataAnim!.frame = animContainerView.bounds
-        noDataAnim!.contentMode = .scaleAspectFit
-        noDataAnim!.loopMode = .loop
-        noDataAnim!.animationSpeed = 0.5
-        
-        animContainerView.isHidden = false
-        loadingAnim!.isHidden = false
-        noDataAnim!.isHidden = true
-        
-        jobsCollectionView.register(UINib(nibName: "JobsTalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "jobTalCell")
-        
-        cellJobWidth = jobsCollectionView.bounds.width - (jobsCollectionView.bounds.width / 6)
-        filterPicker.delegate = self
-        filterPicker.dataSource = self
-        
-        jobsCollectionView.delegate = self
-        jobsCollectionView.dataSource = self
-        
-        bindJobs()
-        bindProfRole()
-        
+            containerFilters.layer.cornerRadius = 10
+            containerFilters.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+            
+            loadingAnim = .init(name: "loading_anim")
+            loadingAnim!.frame = animContainerView.bounds
+            loadingAnim!.contentMode = .scaleAspectFit
+            loadingAnim!.loopMode = .loop
+            loadingAnim!.animationSpeed = 0.5
+            animContainerView.addSubview(loadingAnim!)
+            loadingAnim!.play()
+            
+            noDataAnim = .init(name: "no_data")
+            noDataAnim!.frame = animContainerView.bounds
+            noDataAnim!.contentMode = .scaleAspectFit
+            noDataAnim!.loopMode = .loop
+            noDataAnim!.animationSpeed = 0.5
+            
+            animContainerView.isHidden = false
+            loadingAnim!.isHidden = false
+            noDataAnim!.isHidden = true
+            
+            jobsCollectionView.register(UINib(nibName: "JobsTalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "jobTalCell")
+            
+            cellJobWidth = jobsCollectionView.bounds.width - (jobsCollectionView.bounds.width / 6)
+            filterPicker.delegate = self
+            filterPicker.dataSource = self
+            
+            jobsCollectionView.delegate = self
+            jobsCollectionView.dataSource = self
+            
+            bindJobs()
+            bindProfRole()
+        } else {
+            showNoInternet()
+        }
     }
     
     func bindJobs() {
@@ -190,15 +194,30 @@ extension JobsForTalentViewController: UIPickerViewDataSource, UIPickerViewDeleg
         loadingAnim!.isHidden = false
         noDataAnim!.isHidden = true
 
-        jobsViewModel!.filterJobsByFilter(profRol!)
-        jobsList.removeAll()
-        bindFiltered()
-        headerLabel.text = "Empleos \(profRol!)"
+        if appdel.internetStatus {
+            jobsViewModel!.filterJobsByFilter(profRol!)
+            jobsList.removeAll()
+            bindFiltered()
+            headerLabel.text = "Empleos \(profRol!)"
+        } else {
+            showNoInternet()
+        }
     }
 }
 
 extension JobsForTalentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellJobWidth!, height: 142)
+    }
+}
+
+extension JobsForTalentViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

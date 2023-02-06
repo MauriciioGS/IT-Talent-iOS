@@ -27,6 +27,7 @@ class RecruitmentViewController: UIViewController {
     private var noDataAnim4: LottieAnimationView?
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
     private var recruitmentViewModel: RecruitmentViewModel?
     
     private var jobs1CellWidth = CGFloat(0)
@@ -50,8 +51,12 @@ class RecruitmentViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        recruitmentViewModel!.getAllJobs()
-        bindJobs()
+        if appdel.internetStatus{
+            recruitmentViewModel!.getAllJobs()
+            bindJobs()
+        } else {
+            showNoInternet()
+        }
     }
     
     private func setCollectionViews() {
@@ -340,9 +345,14 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
             alert.addAction(UIAlertAction(title: "Siguiente etapa", style: UIAlertAction.Style.default, handler: { action in
                 guard MFMailComposeViewController.canSendMail() else {
                     self.showAlert("Lo sentimos", "El dispositivo no puede enviar emails")
-                    self.recruitmentViewModel!.setNextStage(self.jobSelected!)
-                    self.bindJobNextStage()
-                    return
+                    if self.appdel.internetStatus {
+                        self.recruitmentViewModel!.setNextStage(self.jobSelected!)
+                        self.bindJobNextStage()
+                        return
+                    } else {
+                        self.showNoInternet()
+                        return
+                    }
                 }
                 
                 let composer = MFMailComposeViewController()
@@ -350,8 +360,12 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
                 composer.setToRecipients(self.jobSelected!.applicants)
                 composer.setSubject("Contacto oportunidad laboral")
                 self.present(composer, animated: true)
-                self.recruitmentViewModel!.setNextStage(self.jobSelected!)
-                self.bindJobNextStage()
+                if self.appdel.internetStatus {
+                    self.recruitmentViewModel!.setNextStage(self.jobSelected!)
+                    self.bindJobNextStage()
+                } else {
+                    self.showNoInternet()
+                }
             }))
 
             self.present(alert, animated: true, completion: nil)
@@ -411,5 +425,16 @@ extension RecruitmentViewController: MFMailComposeViewControllerDelegate {
             fatalError()
         }
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension RecruitmentViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

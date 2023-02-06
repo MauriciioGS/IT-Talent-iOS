@@ -17,6 +17,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
     private var signInViewModel = SignInViewModel()
     private var userEmail = String()
     private var userPass = String()
@@ -74,8 +75,12 @@ class SignInViewController: UIViewController {
         if userEmail.isEmpty && userPass.isEmpty {
             showAlert("Ingresa todas tus credenciales")
         } else {
-            signInViewModel.signInUser(userEmail: userEmail, userPass: userPass, context: context)
-            bind()
+            if appdel.internetStatus {
+                signInViewModel.signInUser(userEmail: userEmail, userPass: userPass, context: context)
+                bind()
+            } else {
+                showNoInternet()
+            }
         }
     }
     
@@ -129,5 +134,16 @@ extension SignInViewController: UITextFieldDelegate {
             return true
         }
         return true
+    }
+}
+
+extension SignInViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

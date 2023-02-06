@@ -11,6 +11,7 @@ class RegisterProfileTalViewController: UIViewController {
     
     private let signUpViewModel = SignUpViewModel()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
     var userProfile: UserProfile?
     var userPass = String()
     private var userCountry = String()
@@ -82,8 +83,12 @@ class RegisterProfileTalViewController: UIViewController {
             userProfile?.city = userCity
             userProfile?.phoneNumber = userPhoneNum
             userProfile?.resume = aboutTextField.text
-            signUpViewModel.saveUserProfile(user: userProfile!, userPass: userPass, context: context)
-            bind()
+            if appdel.internetStatus{
+                signUpViewModel.saveUserProfile(user: userProfile!, userPass: userPass, context: context)
+                bind()
+            } else {
+                showNoInternet()
+            }
         }
     }
     
@@ -147,4 +152,15 @@ extension RegisterProfileTalViewController: UITextFieldDelegate, UITextViewDeleg
         return true
     }
     
+}
+
+extension RegisterProfileTalViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
+    }
 }

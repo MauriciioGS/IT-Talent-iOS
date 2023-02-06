@@ -33,6 +33,7 @@ class ApplyJobViewController: UIViewController {
     private var successAnim: LottieAnimationView?
     var jobSelected: Job?
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
     private var applyJobViewModel: ApplyJobViewModel?
     
     override func viewDidLoad() {
@@ -88,8 +89,12 @@ class ApplyJobViewController: UIViewController {
     @IBAction func applyJob(_ sender: Any) {
         activityProgress.isHidden = false
         activityProgress.startAnimating()
-        applyJobViewModel!.applyJob(job: self.jobSelected!)
-        bind()
+        if appdel.internetStatus {
+            applyJobViewModel!.applyJob(job: self.jobSelected!)
+            bind()
+        } else {
+            showNoInternet()
+        }
     }
     
     private func bind() {
@@ -153,5 +158,16 @@ extension ApplyJobViewController: MFMailComposeViewControllerDelegate {
             fatalError()
         }
         controller.dismiss(animated: true)
+    }
+}
+
+extension ApplyJobViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

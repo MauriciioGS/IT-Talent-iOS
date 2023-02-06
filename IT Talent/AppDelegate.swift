@@ -9,14 +9,30 @@ import UIKit
 import CoreData
 import Firebase
 import FirebaseCore
+import Network
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var internetStatus = false
+    var internetType = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let monitor = NWPathMonitor()
+        monitor.pathUpdateHandler = { path in
+            if path.status != .satisfied{ // .Atributo accedemos a valor de una enum
+                self.internetStatus = false
+            } else{
+                self.internetStatus = true
+                if path.usesInterfaceType(.wifi){
+                    self.internetType = "WIFI"
+                } else {
+                    self.internetType = "CELL"
+                }
+            }
+        }
+        
+        monitor.start(queue: DispatchQueue.global())
         FirebaseApp.configure()
         return true
     }

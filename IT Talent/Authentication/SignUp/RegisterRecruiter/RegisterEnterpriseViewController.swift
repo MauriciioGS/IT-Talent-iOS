@@ -18,6 +18,7 @@ class RegisterEnterpriseViewController: UIViewController {
     
     private let signUpViewModel = SignUpViewModel()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +53,12 @@ class RegisterEnterpriseViewController: UIViewController {
         print(userRole)
         userProfile?.enterprise = userEnterprise
         userProfile?.role = userRole
-        signUpViewModel.saveUserProfile(user: userProfile!, userPass: userPass, context: context)
-        bind()
+        if appdel.internetStatus {
+            signUpViewModel.saveUserProfile(user: userProfile!, userPass: userPass, context: context)
+            bind()
+        } else {
+            showNoInternet()
+        }
     }
     
     private func bind() {
@@ -105,5 +110,16 @@ extension RegisterEnterpriseViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+}
+
+extension RegisterEnterpriseViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }

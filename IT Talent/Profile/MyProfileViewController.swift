@@ -31,14 +31,19 @@ class MyProfileViewController: UIViewController {
     
     private let profileViewModel = ProfileViewModel()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let appdel = UIApplication.shared.delegate as! AppDelegate
 
     private var userProfile: UserProfile?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileViewModel.getUser(context: context)
-        bindGetUser()
+        if appdel.internetStatus {
+            profileViewModel.getUser(context: context)
+            bindGetUser()
+        } else {
+            showNoInternet()
+        }
         
         updateButton.isEnabled = false
     }
@@ -178,8 +183,12 @@ class MyProfileViewController: UIViewController {
             showAlert(error)
         } else {
             userProfile!.resume = aboutTextView.text
-            profileViewModel.updateUser(user: userProfile!)
-            bindUserUpdate()
+            if appdel.internetStatus {
+                profileViewModel.updateUser(user: userProfile!)
+                bindUserUpdate()
+            } else {
+                showNoInternet()
+            }
         }
     }
     
@@ -327,5 +336,16 @@ extension MyProfileViewController {
             }
         }
         return nil
+    }
+}
+
+extension MyProfileViewController {
+    func showNoInternet() {
+        let alertController = UIAlertController(title: "Ops!",
+                                                message: "Lo sentimos, al parecer no hay conexión a internet. Para seguir utilizando la App se requiere una conexión",
+                                                preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Enterado", style: .default)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
 }
