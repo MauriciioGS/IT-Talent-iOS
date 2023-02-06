@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MyProfileViewController: UIViewController {
     
@@ -208,6 +209,13 @@ class MyProfileViewController: UIViewController {
     
     @IBAction func deleteProfile(_ sender: Any) {
         // TODO: borrar perfil / quizá cerrar sesión
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "closeSession", sender: nil)
+        } catch {
+            print("Error al cerrar sesión: \(error)")
+            showAlert("Ocurrió un error al intentar cerrar la sesión")
+        }
     }
     
 }

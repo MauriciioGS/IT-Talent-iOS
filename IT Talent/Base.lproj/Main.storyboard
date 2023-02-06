@@ -2487,7 +2487,7 @@
                                                 <rect key="frame" x="16" y="958" width="382" height="36"/>
                                                 <color key="tintColor" name="Primary"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Eliminar Cuenta" cornerStyle="large">
+                                                <buttonConfiguration key="configuration" style="tinted" title="Cerrar sesión" cornerStyle="large">
                                                     <fontDescription key="titleFontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -2609,6 +2609,7 @@
                         <outlet property="rolLabel" destination="Cht-4T-CMO" id="sgW-PU-Fwj"/>
                         <outlet property="rolPicker" destination="jkc-yQ-iv4" id="34O-Pb-bH8"/>
                         <outlet property="updateButton" destination="KoE-fD-vir" id="v8L-d1-jdY"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="closeSession" id="cMY-HL-jxl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehg-eJ-wtS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3265,7 +3266,7 @@
         <segue reference="V1Y-FC-ajE"/>
         <segue reference="qXZ-Kz-2uN"/>
         <segue reference="Gi0-E4-LQ6"/>
-        <segue reference="L1d-P1-3wz"/>
+        <segue reference="cMY-HL-jxl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Avatar" width="40" height="40"/>
