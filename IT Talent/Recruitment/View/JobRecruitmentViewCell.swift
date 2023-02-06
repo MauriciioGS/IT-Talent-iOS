@@ -16,7 +16,7 @@ class JobRecruitmentViewCell: UICollectionViewCell {
     @IBOutlet weak var applicantsLabel: UILabel!
     @IBOutlet weak var vacanciesLabel: UILabel!
     @IBOutlet weak var rejectedLabel: UILabel!
-    @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var actionButton: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
 

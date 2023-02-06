@@ -19,19 +19,22 @@
         <array key="NunitoSans-Regular.ttf">
             <string>NunitoSans-Regular</string>
         </array>
+        <array key="NunitoSans-SemiBold.ttf">
+            <string>NunitoSans-SemiBold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="jobRecCell" id="gTV-IL-0wX" customClass="JobRecruitmentViewCell" customModule="IT_Talent" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="325" height="202"/>
+            <rect key="frame" x="0.0" y="0.0" width="325" height="186"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="325" height="202"/>
+                <rect key="frame" x="0.0" y="0.0" width="325" height="186"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MyN-fs-GBr">
-                        <rect key="frame" x="8" y="8" width="309" height="186"/>
+                        <rect key="frame" x="8" y="8" width="309" height="170"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0P-kf-jkQ">
                                 <rect key="frame" x="12" y="11.999999999999998" width="132" height="17.333333333333329"/>
@@ -69,39 +72,38 @@
                                 <color key="textColor" name="Error"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKq-Ie-SH2">
-                                <rect key="frame" x="12" y="136.66666666666666" width="285" height="37.333333333333343"/>
-                                <color key="tintColor" name="Secondary"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Pasar a la siguiente etapa">
-                                    <fontDescription key="titleFontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="16"/>
-                                </buttonConfiguration>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hace 2 días" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NU-26-Tzx">
                                 <rect key="frame" x="228.66666666666666" y="12" width="68.333333333333343" height="14.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" name="Disable"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siguiente etapa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwB-iB-Ngd">
+                                <rect key="frame" x="12" y="136.66666666666666" width="285" height="20.666666666666657"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="15"/>
+                                <color key="textColor" name="Secondary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KKq-Ie-SH2" firstAttribute="top" secondItem="D8K-OT-PQ7" secondAttribute="bottom" constant="6" id="2Kp-Ga-RCr"/>
+                            <constraint firstAttribute="trailing" secondItem="kwB-iB-Ngd" secondAttribute="trailing" constant="12" id="3gz-BH-rAZ"/>
                             <constraint firstItem="vrL-tP-IMW" firstAttribute="top" secondItem="B0P-kf-jkQ" secondAttribute="bottom" constant="3" id="3lc-PQ-p32"/>
                             <constraint firstItem="vrL-tP-IMW" firstAttribute="leading" secondItem="MyN-fs-GBr" secondAttribute="leading" constant="12" id="4GG-hf-njE"/>
                             <constraint firstItem="Vv9-PO-5ZR" firstAttribute="top" secondItem="DlY-s2-NSw" secondAttribute="bottom" constant="3" id="A1C-KX-BIt"/>
+                            <constraint firstItem="kwB-iB-Ngd" firstAttribute="top" secondItem="D8K-OT-PQ7" secondAttribute="bottom" constant="6" id="Bgw-FG-rjt"/>
                             <constraint firstItem="DlY-s2-NSw" firstAttribute="leading" secondItem="MyN-fs-GBr" secondAttribute="leading" constant="16" id="Ctd-9m-jKv"/>
                             <constraint firstItem="B0P-kf-jkQ" firstAttribute="leading" secondItem="MyN-fs-GBr" secondAttribute="leading" constant="12" id="DXy-pJ-uxH"/>
-                            <constraint firstItem="KKq-Ie-SH2" firstAttribute="leading" secondItem="MyN-fs-GBr" secondAttribute="leading" constant="12" id="UGx-L2-c2D"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="D8K-OT-PQ7" secondAttribute="bottom" constant="12" id="J3d-3e-bd2"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kwB-iB-Ngd" secondAttribute="bottom" constant="12" id="RyJ-Iw-c7Y"/>
+                            <constraint firstItem="kwB-iB-Ngd" firstAttribute="leading" secondItem="MyN-fs-GBr" secondAttribute="leading" constant="12" id="WHU-fW-m2D"/>
                             <constraint firstItem="6NU-26-Tzx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B0P-kf-jkQ" secondAttribute="trailing" constant="6" id="WmM-LI-FW9"/>
                             <constraint firstItem="1f5-vV-ehD" firstAttribute="leading" secondItem="MyN-fs-GBr" secondAttribute="leading" constant="12" id="YHc-0u-vzX"/>
                             <constraint firstItem="1f5-vV-ehD" firstAttribute="top" secondItem="vrL-tP-IMW" secondAttribute="bottom" constant="3" id="iKL-zc-wRy"/>
-                            <constraint firstAttribute="trailing" secondItem="KKq-Ie-SH2" secondAttribute="trailing" constant="12" id="iY9-7P-MDJ"/>
                             <constraint firstItem="Vv9-PO-5ZR" firstAttribute="leading" secondItem="MyN-fs-GBr" secondAttribute="leading" constant="16" id="nt5-cY-yQj"/>
                             <constraint firstItem="D8K-OT-PQ7" firstAttribute="top" secondItem="Vv9-PO-5ZR" secondAttribute="bottom" constant="3" id="qpi-Hy-q0E"/>
                             <constraint firstItem="DlY-s2-NSw" firstAttribute="top" secondItem="1f5-vV-ehD" secondAttribute="bottom" constant="6" id="qxt-s7-JHL"/>
                             <constraint firstItem="B0P-kf-jkQ" firstAttribute="top" secondItem="MyN-fs-GBr" secondAttribute="top" constant="12" id="tS5-y5-hYl"/>
-                            <constraint firstAttribute="bottom" secondItem="KKq-Ie-SH2" secondAttribute="bottom" constant="12" id="uHY-zT-oSV"/>
                             <constraint firstItem="D8K-OT-PQ7" firstAttribute="leading" secondItem="MyN-fs-GBr" secondAttribute="leading" constant="16" id="wZG-cM-XhS"/>
                             <constraint firstItem="6NU-26-Tzx" firstAttribute="top" secondItem="MyN-fs-GBr" secondAttribute="top" constant="12" id="yGc-EK-WAZ"/>
                             <constraint firstAttribute="trailing" secondItem="6NU-26-Tzx" secondAttribute="trailing" constant="12" id="zz2-16-Ign"/>
@@ -116,9 +118,9 @@
                 <constraint firstItem="MyN-fs-GBr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Yqo-qO-K7d"/>
                 <constraint firstAttribute="bottom" secondItem="MyN-fs-GBr" secondAttribute="bottom" constant="8" id="hFa-aY-lnq"/>
             </constraints>
-            <size key="customSize" width="325" height="201"/>
+            <size key="customSize" width="325" height="186"/>
             <connections>
-                <outlet property="actionButton" destination="KKq-Ie-SH2" id="71A-ob-vxE"/>
+                <outlet property="actionButton" destination="kwB-iB-Ngd" id="hmR-6Z-Q16"/>
                 <outlet property="applicantsLabel" destination="DlY-s2-NSw" id="tjX-pa-MXA"/>
                 <outlet property="cointarnerView" destination="MyN-fs-GBr" id="F0i-xe-fnv"/>
                 <outlet property="enterpriseLabel" destination="vrL-tP-IMW" id="eNt-p0-RnV"/>
@@ -128,7 +130,7 @@
                 <outlet property="timeLabel" destination="6NU-26-Tzx" id="NL7-AB-mwO"/>
                 <outlet property="vacanciesLabel" destination="Vv9-PO-5ZR" id="qea-D9-OsB"/>
             </connections>
-            <point key="canvasLocation" x="342.30769230769232" y="42.29857819905213"/>
+            <point key="canvasLocation" x="342.30769230769232" y="36.611374407582936"/>
         </collectionViewCell>
     </objects>
     <resources>

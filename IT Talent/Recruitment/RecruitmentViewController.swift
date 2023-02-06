@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import MessageUI
 
 class RecruitmentViewController: UIViewController {
     
@@ -44,12 +45,13 @@ class RecruitmentViewController: UIViewController {
         super.viewDidLoad()
         
         recruitmentViewModel = RecruitmentViewModel(context)
-        recruitmentViewModel!.getAllJobs()
-        bindJobs()
-
-        
         setCollectionViews()
         setAnims()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        recruitmentViewModel!.getAllJobs()
+        bindJobs()
     }
     
     private func setCollectionViews() {
@@ -90,7 +92,7 @@ class RecruitmentViewController: UIViewController {
         noDataAnim1!.play()
         
         noDataAnim2 = .init(name: "no_data")
-        noDataAnim2!.frame = stage1ContainerView.bounds
+        noDataAnim2!.frame = stage2ContainerView.bounds
         noDataAnim2!.contentMode = .scaleAspectFit
         noDataAnim2!.loopMode = .loop
         noDataAnim2!.animationSpeed = 0.5
@@ -98,7 +100,7 @@ class RecruitmentViewController: UIViewController {
         noDataAnim2!.play()
         
         noDataAnim3 = .init(name: "no_data")
-        noDataAnim3!.frame = stage1ContainerView.bounds
+        noDataAnim3!.frame = stage3ContainerView.bounds
         noDataAnim3!.contentMode = .scaleAspectFit
         noDataAnim3!.loopMode = .loop
         noDataAnim3!.animationSpeed = 0.5
@@ -106,7 +108,7 @@ class RecruitmentViewController: UIViewController {
         noDataAnim3!.play()
         
         noDataAnim4 = .init(name: "no_data")
-        noDataAnim4!.frame = stage1ContainerView.bounds
+        noDataAnim4!.frame = stage4ContainerView.bounds
         noDataAnim4!.contentMode = .scaleAspectFit
         noDataAnim4!.loopMode = .loop
         noDataAnim4!.animationSpeed = 0.5
@@ -119,12 +121,16 @@ class RecruitmentViewController: UIViewController {
             DispatchQueue.main.async {
                 if let areJobsLoaded = self.recruitmentViewModel!.areJobsLoaded {
                     if areJobsLoaded {
+                        self.jobsStage1.removeAll()
                         self.recruitmentViewModel!.getJobsStage1()
                         self.bindJobsStage1()
+                        self.jobsStage2.removeAll()
                         self.recruitmentViewModel!.getJobsStage2()
                         self.bindJobsStage2()
+                        self.jobsStage3.removeAll()
                         self.recruitmentViewModel!.getJobsStage3()
                         self.bindJobsStage3()
+                        self.jobsStage4.removeAll()
                         self.recruitmentViewModel!.getJobsStage4()
                         self.bindJobsStage4()
                     } else {
@@ -141,6 +147,9 @@ class RecruitmentViewController: UIViewController {
                 if let jobs = self.recruitmentViewModel!.jobsStage1 {
                     if jobs.isEmpty {
                         print("No hay jobs status 0")
+                        self.stage1CollectionView.reloadData()
+                        self.stage1CollectionView.isHidden = true
+                        self.noDataAnim1!.isHidden = false
                     } else {
                         print("Jobs Stage 1 obtenidos")
                         self.jobsStage1 = jobs
@@ -161,6 +170,9 @@ class RecruitmentViewController: UIViewController {
                 if let jobs = self.recruitmentViewModel!.jobsStage2 {
                     if jobs.isEmpty {
                         print("No hay jobs status 1")
+                        self.stage2CollectionView.reloadData()
+                        self.stage2CollectionView.isHidden = true
+                        self.noDataAnim2!.isHidden = false
                     } else {
                         print("Jobs Stage 2 obtenidos")
                         self.jobsStage2 = jobs
@@ -181,6 +193,9 @@ class RecruitmentViewController: UIViewController {
                 if let jobs = self.recruitmentViewModel!.jobsStage3 {
                     if jobs.isEmpty {
                         print("No hay jobs status 2")
+                        self.stage3CollectionView.reloadData()
+                        self.stage3CollectionView.isHidden = true
+                        self.noDataAnim3!.isHidden = false
                     } else {
                         print("Jobs Stage 3 obtenidos")
                         self.jobsStage3 = jobs
@@ -201,6 +216,9 @@ class RecruitmentViewController: UIViewController {
                 if let jobs = self.recruitmentViewModel!.jobsStage4 {
                     if jobs.isEmpty {
                         print("No hay jobs status 2")
+                        self.stage4CollectionView.reloadData()
+                        self.stage4CollectionView.isHidden = true
+                        self.noDataAnim4!.isHidden = false
                     } else {
                         print("Jobs Stage 3 obtenidos")
                         self.jobsStage4 = jobs
@@ -215,8 +233,23 @@ class RecruitmentViewController: UIViewController {
         }
     }
     
-    func showAlert(_ titleAlert: String, _ messageAlert: String) {
-        
+    private func bindJobNextStage() {
+        recruitmentViewModel!.fetchJobChangeStage = {
+            DispatchQueue.main.async {
+                if let isUpdated = self.recruitmentViewModel!.showSuccess {
+                    if isUpdated {
+                        self.recruitmentViewModel!.getAllJobs()
+                        self.bindJobs()
+                    }
+                }
+            }
+        }
+    }
+    
+    private func showAlert(_ title: String, _ message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -266,7 +299,7 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
             jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
             jobCell!.rejectedLabel.isHidden = true
             jobCell!.timeLabel.text = job.time
-            jobCell!.actionButton.setTitle("Ver Solicitantes", for: .normal)
+            jobCell!.actionButton.text = "Ver Solicitantes"
             return jobCell!
         case stage3CollectionView:
             let job = jobsStage3[indexPath.row]
@@ -277,7 +310,7 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
             jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
             jobCell!.rejectedLabel.text = "0 rechazados"
             jobCell!.timeLabel.text = job.time
-            jobCell!.actionButton.setTitle("Ver Solicitantes", for: .normal)
+            jobCell!.actionButton.text = "Ver Solicitantes"
             return jobCell!
         case stage4CollectionView:
             let job = jobsStage4[indexPath.row]
@@ -298,20 +331,31 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case stage1CollectionView:
-            // create the alert
+            jobSelected = jobsStage1[indexPath.row]
+            jobSelected!.status += 1
+            
             let alert = UIAlertController(title: "Siguiente etapa: Entrevistas", message: "La siguiente etapa consiste en revisar los perfiles profesionales (CV) de los candidatos al puesto de Cargo.\nAl pasar a la segunda etapa se retirara el anuncio de empleo, por lo tanto no le aparecerá a nuevos aspirantes.\n¿Deseas pasar a la segunda etapa: Revisión de perfiles?", preferredStyle: UIAlertController.Style.alert)
 
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.default, handler: { action in
+            alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Siguiente etapa", style: UIAlertAction.Style.default, handler: { action in
+                guard MFMailComposeViewController.canSendMail() else {
+                    self.showAlert("Lo sentimos", "El dispositivo no puede enviar emails")
+                    self.recruitmentViewModel!.setNextStage(self.jobSelected!)
+                    self.bindJobNextStage()
+                    return
+                }
                 
-            }))
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "Continuar", style: UIAlertAction.Style.default, handler: { action in
-                
+                let composer = MFMailComposeViewController()
+                composer.mailComposeDelegate = self
+                composer.setToRecipients(self.jobSelected!.applicants)
+                composer.setSubject("Contacto oportunidad laboral")
+                self.present(composer, animated: true)
+                self.recruitmentViewModel!.setNextStage(self.jobSelected!)
+                self.bindJobNextStage()
             }))
 
-            // show the alert
             self.present(alert, animated: true, completion: nil)
+            
         case stage2CollectionView:
             jobSelected = jobsStage2[indexPath.row]
             performSegue(withIdentifier: "toApplicants", sender: self)
@@ -319,7 +363,7 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
             jobSelected = jobsStage3[indexPath.row]
             performSegue(withIdentifier: "toApplicants", sender: self)
         case stage4CollectionView:
-            return
+            showAlert("Lo sentimos", "Los reclutamientos pasados no pueden ser inspeccionados")
         default:
             return
         }
@@ -332,16 +376,40 @@ extension RecruitmentViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case stage1CollectionView:
-            return CGSizeMake(jobs1CellWidth, 202.0)
+            return CGSizeMake(jobs1CellWidth, 186.0)
         case stage2CollectionView:
-            return CGSizeMake(jobs2CellWidth, 202.0)
+            return CGSizeMake(jobs2CellWidth, 186.0)
         case stage3CollectionView:
-            return CGSizeMake(jobs3CellWidth, 202.0)
+            return CGSizeMake(jobs3CellWidth, 186.0)
         case stage4CollectionView:
-            return CGSizeMake(jobs4CellWidth, 202.0)
+            return CGSizeMake(jobs4CellWidth, 186.0)
         default:
-            return CGSizeMake(jobs1CellWidth, 202.0)
+            return CGSizeMake(jobs1CellWidth, 186.0)
         }
         
+    }
+}
+
+extension RecruitmentViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let _ = error {
+            controller.dismiss(animated: true, completion: nil)
+            return
+        }
+        switch result{
+        case .cancelled:
+            print("Email cancelado")
+        case .failed:
+            print("Error al enviar")
+        case .saved:
+            print("Guardado")
+            navigationController?.dismiss(animated: true, completion: nil)
+        case .sent:
+            print("Email enviado")
+            navigationController?.dismiss(animated: true, completion: nil)
+        @unknown default:
+            fatalError()
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
 }

@@ -94,6 +94,7 @@ class RecruitmentViewModel {
     }
     
     func getJobsStage1() {
+        jobsS1List.removeAll()
         DispatchQueue.main.async {
             if self.myJobs.isEmpty {
                 self.jobsStage1 = self.jobsS1List
@@ -120,6 +121,7 @@ class RecruitmentViewModel {
     }
     
     func getJobsStage2() {
+        jobsS2List.removeAll()
         DispatchQueue.main.async {
             if self.myJobs.isEmpty {
                 self.jobsStage2 = self.jobsS2List
@@ -146,6 +148,7 @@ class RecruitmentViewModel {
     }
     
     func getJobsStage3() {
+        jobsS3List.removeAll()
         DispatchQueue.main.async {
             if self.myJobs.isEmpty {
                 self.jobsStage3 = self.jobsS3List
@@ -172,6 +175,7 @@ class RecruitmentViewModel {
     }
     
     func getJobsStage4() {
+        jobsS4List.removeAll()
         DispatchQueue.main.async {
             if self.myJobs.isEmpty {
                 self.jobsStage4 = self.jobsS4List
@@ -183,6 +187,28 @@ class RecruitmentViewModel {
                     }
                 }
                 self.jobsStage4 = self.jobsS4List
+            }
+        }
+    }
+    
+    var fetchJobChangeStage : (() -> ()) = { }
+    
+    var showSuccess: Bool? {
+        didSet {
+            fetchJobChangeStage()
+        }
+    }
+    
+    func setNextStage(_ job: Job) {
+        db.collection("jobs").document(job.id!).updateData([
+            "status" : job.status
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+                self.showSuccess = false
+            } else {
+                print("Document successfully updated")
+                self.showSuccess = true
             }
         }
     }

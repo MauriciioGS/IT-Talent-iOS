@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import MessageUI
 
 class SelectApplicantsViewController: UIViewController {
     
@@ -21,6 +22,9 @@ class SelectApplicantsViewController: UIViewController {
     
     var jobSelected: Job?
     var listOfApplicants: [UserProfile] = []
+    var applicantsEmails: [String] = []
+    var numApplicants: Int = Int()
+    var dictionarySelectedIndexPath: [IndexPath: Bool] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +59,8 @@ class SelectApplicantsViewController: UIViewController {
         
         animContainerView.isHidden = false
         
+        actionButton.setTitle("\(numApplicants) A la siguiente etapa", for: .normal)
+        
         bind()
     }
     
@@ -72,7 +78,6 @@ class SelectApplicantsViewController: UIViewController {
                         self.animContainerView.isHidden = true
                         self.applicantsCollectionView.isHidden = false
                         self.applicantsCollectionView.reloadData()
-                        print(self.listOfApplicants)
                     }
                 } else {
                     print("Aqui")
@@ -82,8 +87,76 @@ class SelectApplicantsViewController: UIViewController {
     }
 
     @IBAction func toNextStage(_ sender: Any) {
+        if numApplicants != 0 {
+            var deleteNeededIndexPaths: [IndexPath] = []
+            for (key, value) in dictionarySelectedIndexPath {
+                if value {
+                    deleteNeededIndexPaths.append(key)
+                }
+            }
+            
+            for i in deleteNeededIndexPaths.sorted(by: { $0.item > $1.item }) {
+                applicantsEmails.append(listOfApplicants[i.row].email)
+            }
+        
+            applicantsEmails.append("")
+            jobSelected!.applicants = applicantsEmails
+            if jobSelected!.status == 2 {
+                jobSelected!.status = 4
+            } else {
+                jobSelected!.status += 1
+            }
+            selectApplicantsViewModel.setNewStage(jobSelected!)
+            bindNewStage()
+        } else {
+            showAlert("Por favor, selecciona a los solicitantes que pasan a la siguiente etapa.")
+        }
     }
     
+    private func bindNewStage() {
+        selectApplicantsViewModel.fetchNewApplicants = {
+            DispatchQueue.main.async {
+                if let _ = self.selectApplicantsViewModel.showSuccess {
+                    if self.jobSelected!.status == 4 {
+                        // create the alert
+                        let alert = UIAlertController(title: "Dales la bienvenida!", message: "Informale a las personas que fueron aceptadas y dales una calurosa bienvenida.\n¡De nuestra parte, nos queda desearte la mejor de las experiencias con estos talentos!", preferredStyle: UIAlertController.Style.alert)
+
+                        // add an action (button)
+                        alert.addAction(UIAlertAction(title: "Después", style: UIAlertAction.Style.default, handler: { action in
+                            self.dismiss(animated: true, completion: nil)
+                        }))
+                        // add an action (button)
+                        alert.addAction(UIAlertAction(title: "Enviar Correo", style: UIAlertAction.Style.default, handler: { action in
+                            guard MFMailComposeViewController.canSendMail() else {
+                                self.showAlert("El dispositivo no puede enviar emails")
+                                return
+                            }
+                            
+                            let composer = MFMailComposeViewController()
+                            composer.mailComposeDelegate = self
+                            composer.setToRecipients(self.jobSelected!.applicants)
+                            composer.setSubject("Contacto oportunidad laboral")
+                            self.present(composer, animated: true)
+                        }))
+
+                        // show the alert
+                        self.present(alert, animated: true, completion: nil)
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func showAlert(_ errorMessage: String) {
+        // create the alert
+        let alert = UIAlertController(title: "Ops!", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
 
@@ -103,14 +176,49 @@ extension SelectApplicantsViewController: UICollectionViewDelegate, UICollection
         applicant.experiences.forEach { xp in
             yearsXP += xp.yearsXp
         }
-        cell!.expYearsLabel.text = "\(yearsXP)"
+        cell!.expYearsLabel.text = "\(yearsXP) años de experiencia"
         return cell!
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        dictionarySelectedIndexPath[indexPath] = true
+        numApplicants += 1
+        actionButton.setTitle("\(numApplicants) A la siguiente etapa", for: .normal)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        dictionarySelectedIndexPath[indexPath] = false
+        numApplicants -= 1
+        actionButton.setTitle("\(numApplicants) A la siguiente etapa", for: .normal)
+    }
 }
 
 extension SelectApplicantsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: cellWidth!, height: 128.0)
+    }
+}
+
+extension SelectApplicantsViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let _ = error {
+            controller.dismiss(animated: true, completion: nil)
+            return
+        }
+        switch result{
+        case .cancelled:
+            print("Email cancelado")
+        case .failed:
+            print("Error al enviar")
+        case .saved:
+            print("Guardado")
+            navigationController?.dismiss(animated: true, completion: nil)
+        case .sent:
+            print("Email enviado")
+            navigationController?.dismiss(animated: true, completion: nil)
+        @unknown default:
+            fatalError()
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
 }

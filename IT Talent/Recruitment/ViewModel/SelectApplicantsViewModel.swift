@@ -49,4 +49,27 @@ class SelectApplicantsViewModel {
             }
         }
     }
+    
+    var fetchNewApplicants : (() -> ()) = { }
+    
+    var showSuccess: Bool? {
+        didSet {
+            fetchNewApplicants()
+        }
+    }
+    
+    func setNewStage(_ job: Job) {
+        db.collection("jobs").document(job.id!).updateData([
+            "applicants" : job.applicants,
+            "status" : job.status
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+                self.showSuccess = false
+            } else {
+                print("Document successfully updated")
+                self.showSuccess = true
+            }
+        }
+    }
 }

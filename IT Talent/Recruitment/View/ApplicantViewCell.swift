@@ -16,6 +16,8 @@ class ApplicantViewCell: UICollectionViewCell {
     @IBOutlet weak var expYearsLabel: UILabel!
     @IBOutlet weak var actionImageView: UIImageView!
     @IBOutlet weak var selectedIndicatorView: UIView!
+    @IBOutlet weak var containerView: UIView!
+    
     
     override var isHighlighted: Bool {
         didSet {
@@ -32,7 +34,15 @@ class ApplicantViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        containerView.layer.cornerRadius = 10
+        selectedIndicatorView.layer.cornerRadius = 10
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 4, height: 4)
+        self.layer.shadowRadius = 8
+        self.layer.masksToBounds = false
     }
 
 }

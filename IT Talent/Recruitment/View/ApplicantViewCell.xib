@@ -111,6 +111,7 @@
             <size key="customSize" width="362" height="128"/>
             <connections>
                 <outlet property="actionImageView" destination="xQV-aP-zza" id="tup-ua-2RZ"/>
+                <outlet property="containerView" destination="JKi-Gh-78v" id="lS9-NF-8YV"/>
                 <outlet property="expYearsLabel" destination="hKI-YC-2cm" id="WvY-Ff-a6Y"/>
                 <outlet property="locationLabel" destination="b4J-kF-QXx" id="Znz-f9-n7r"/>
                 <outlet property="profRoleLabel" destination="kHo-Dm-fHZ" id="U2E-ja-lnN"/>
