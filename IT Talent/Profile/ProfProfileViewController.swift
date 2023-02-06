@@ -60,7 +60,9 @@ class ProfProfileViewController: UIViewController {
         let alert = UIAlertController(title: "Ops!", message: errorMesssage, preferredStyle: UIAlertController.Style.alert)
 
         // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }))
 
         // show the alert
         self.present(alert, animated: true, completion: nil)
@@ -118,8 +120,10 @@ extension ProfProfileViewController: MFMailComposeViewControllerDelegate {
         switch result{
         case .cancelled:
             print("Email cancelado")
+            navigationController?.dismiss(animated: true)
         case .failed:
             print("Error al enviar")
+            navigationController?.dismiss(animated: true)
         case .saved:
             print("Guardado")
             navigationController?.dismiss(animated: true)

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="NunitoSans-Regular.ttf">
+            <string>NunitoSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="jobProcessCell" id="gTV-IL-0wX" customClass="JobProcessViewCell" customModule="IT_Talent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="383" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEL-ED-HVI">
+                        <rect key="frame" x="8" y="8" width="367" height="134"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHv-gy-Lf2">
+                                <rect key="frame" x="12" y="12" width="132" height="17"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
+                                <color key="textColor" name="TextBold"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre de la empresa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcA-8R-g3K">
+                                <rect key="frame" x="12.000000000000007" y="32" width="122.66666666666669" height="17"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="| Ciudad o región" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fu6-6Z-JaG">
+                                <rect key="frame" x="137.66666666666666" y="32" width="91" height="17"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EnterpriseImage" translatesAutoresizingMaskIntoConstraints="NO" id="lgp-rK-ebm">
+                                <rect key="frame" x="283" y="12" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="2Ow-06-MdP"/>
+                                    <constraint firstAttribute="width" constant="72" id="tei-eB-2MK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presencial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yM-tr-gJb">
+                                <rect key="frame" x="12.000000000000004" y="52" width="55.333333333333343" height="17"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="| Tiempo completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4s-7K-K3k">
+                                <rect key="frame" x="73.333333333333329" y="52" width="99.999999999999986" height="17"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revisión de perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgA-Uj-LJc">
+                                <rect key="frame" x="12" y="75" width="93.333333333333329" height="17"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
+                                <color key="textColor" name="Info"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading_ic" translatesAutoresizingMaskIntoConstraints="NO" id="lLZ-3J-kMj">
+                                <rect key="frame" x="111.33333333333333" y="72" width="23.999999999999986" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="pt7-zX-Rj2"/>
+                                    <constraint firstAttribute="width" constant="24" id="vsG-6d-tgv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hace 2 días" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gK-jH-LNa">
+                                <rect key="frame" x="11.999999999999996" y="104" width="62.666666666666657" height="17"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
+                                <color key="textColor" name="Disable"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bgA-Uj-LJc" firstAttribute="top" secondItem="0yM-tr-gJb" secondAttribute="bottom" constant="6" id="05q-rf-OhF"/>
+                            <constraint firstItem="0yM-tr-gJb" firstAttribute="top" secondItem="YcA-8R-g3K" secondAttribute="bottom" constant="3" id="7yo-2E-zX3"/>
+                            <constraint firstItem="lgp-rK-ebm" firstAttribute="top" secondItem="mEL-ED-HVI" secondAttribute="top" constant="12" id="9S1-TI-thm"/>
+                            <constraint firstItem="bgA-Uj-LJc" firstAttribute="leading" secondItem="mEL-ED-HVI" secondAttribute="leading" constant="12" id="AoA-Zi-ekI"/>
+                            <constraint firstItem="YcA-8R-g3K" firstAttribute="top" secondItem="MHv-gy-Lf2" secondAttribute="bottom" constant="3" id="BDa-Hf-xjT"/>
+                            <constraint firstItem="4gK-jH-LNa" firstAttribute="top" secondItem="bgA-Uj-LJc" secondAttribute="bottom" constant="12" id="CD1-eE-SKW"/>
+                            <constraint firstItem="a4s-7K-K3k" firstAttribute="leading" secondItem="0yM-tr-gJb" secondAttribute="trailing" constant="6" id="CdT-WH-LfV"/>
+                            <constraint firstItem="lLZ-3J-kMj" firstAttribute="leading" secondItem="bgA-Uj-LJc" secondAttribute="trailing" constant="6" id="EbW-Wf-uhm"/>
+                            <constraint firstItem="lgp-rK-ebm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MHv-gy-Lf2" secondAttribute="trailing" constant="6" id="FaQ-yQ-C42"/>
+                            <constraint firstItem="lgp-rK-ebm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lLZ-3J-kMj" secondAttribute="trailing" constant="32" id="JBw-Bh-qRG"/>
+                            <constraint firstAttribute="trailing" secondItem="lgp-rK-ebm" secondAttribute="trailing" constant="12" id="MGh-Fp-xS3"/>
+                            <constraint firstItem="lgp-rK-ebm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a4s-7K-K3k" secondAttribute="trailing" constant="12" id="W4I-Fa-vL0"/>
+                            <constraint firstItem="4gK-jH-LNa" firstAttribute="leading" secondItem="mEL-ED-HVI" secondAttribute="leading" constant="12" id="WKh-iw-zS8"/>
+                            <constraint firstItem="YcA-8R-g3K" firstAttribute="leading" secondItem="mEL-ED-HVI" secondAttribute="leading" constant="12" id="bsr-aG-5AD"/>
+                            <constraint firstItem="MHv-gy-Lf2" firstAttribute="top" secondItem="mEL-ED-HVI" secondAttribute="top" constant="12" id="h2M-t7-Q6q"/>
+                            <constraint firstItem="Fu6-6Z-JaG" firstAttribute="leading" secondItem="YcA-8R-g3K" secondAttribute="trailing" constant="3" id="oW9-fr-tC7"/>
+                            <constraint firstItem="lLZ-3J-kMj" firstAttribute="top" secondItem="a4s-7K-K3k" secondAttribute="bottom" constant="3" id="oyx-nQ-HBz"/>
+                            <constraint firstItem="Fu6-6Z-JaG" firstAttribute="top" secondItem="MHv-gy-Lf2" secondAttribute="bottom" constant="3" id="sBW-Ro-hta"/>
+                            <constraint firstItem="0yM-tr-gJb" firstAttribute="leading" secondItem="mEL-ED-HVI" secondAttribute="leading" constant="12" id="uTH-9Z-O0U"/>
+                            <constraint firstItem="lgp-rK-ebm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fu6-6Z-JaG" secondAttribute="trailing" constant="6" id="vAD-gR-dJN"/>
+                            <constraint firstItem="a4s-7K-K3k" firstAttribute="top" secondItem="YcA-8R-g3K" secondAttribute="bottom" constant="3" id="wMn-je-gw6"/>
+                            <constraint firstItem="MHv-gy-Lf2" firstAttribute="leading" secondItem="mEL-ED-HVI" secondAttribute="leading" constant="12" id="wmd-Km-Qod"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4gK-jH-LNa" secondAttribute="bottom" constant="12" id="zBx-Sh-bhK"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="mEL-ED-HVI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="OdW-j1-Myl"/>
+                <constraint firstAttribute="trailing" secondItem="mEL-ED-HVI" secondAttribute="trailing" constant="8" id="kJX-ex-xaZ"/>
+                <constraint firstItem="mEL-ED-HVI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="nHJ-Co-fQn"/>
+                <constraint firstAttribute="bottom" secondItem="mEL-ED-HVI" secondAttribute="bottom" constant="8" id="r81-IW-FnG"/>
+            </constraints>
+            <size key="customSize" width="383" height="150"/>
+            <connections>
+                <outlet property="containerView" destination="mEL-ED-HVI" id="CbV-nl-hFc"/>
+                <outlet property="enterpriseLabel" destination="YcA-8R-g3K" id="N6r-G9-iC4"/>
+                <outlet property="imageView" destination="lgp-rK-ebm" id="R3w-7e-z6M"/>
+                <outlet property="jobNameLabel" destination="MHv-gy-Lf2" id="4GJ-cq-6GZ"/>
+                <outlet property="locationLabel" destination="Fu6-6Z-JaG" id="YLL-qV-x8b"/>
+                <outlet property="modeLabel" destination="0yM-tr-gJb" id="X6v-WA-vu1"/>
+                <outlet property="statusIcon" destination="lLZ-3J-kMj" id="QpW-bk-MSE"/>
+                <outlet property="statusLabel" destination="bgA-Uj-LJc" id="NHX-So-Ri9"/>
+                <outlet property="timeLabel" destination="4gK-jH-LNa" id="pe9-YF-G6c"/>
+                <outlet property="typeLabel" destination="a4s-7K-K3k" id="ggW-za-6cZ"/>
+            </connections>
+            <point key="canvasLocation" x="385.38461538461536" y="24.170616113744074"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="EnterpriseImage" width="512" height="512"/>
+        <image name="Loading_ic" width="24" height="24"/>
+        <namedColor name="Disable">
+            <color red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Info">
+            <color red="0.070588235294117646" green="0.39215686274509803" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextBold">
+            <color red="0.0039215686274509803" green="0.13333333333333333" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
