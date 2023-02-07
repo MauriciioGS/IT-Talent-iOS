@@ -167,7 +167,7 @@ extension JobsViewController: UICollectionViewDataSource {
             jobCell!.publisherLabel.text = "Publicado por: \(job.nameRecruiter.split(separator: " ")[0])"
             jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
             jobCell!.applicantsLabel.text = "| \(job.applicants.count-1) Solicitantes"
-            jobCell!.timeLabel.text = job.time
+            jobCell!.timeLabel.text = Date().getRelativeTimeAbbreviated(date: job.date, time: job.time)
             return jobCell!
         } else {
             let jobCell = collectionView.dequeueReusableCell(withReuseIdentifier: "jobPastCell", for: indexPath) as? JobPastViewCell
@@ -183,7 +183,7 @@ extension JobsViewController: UICollectionViewDataSource {
             } else {
                 jobCell?.rejectedLabel.text = "\(job.applicants.count - (Int(job.vacancies) ?? 0)) Rechazados"
             }
-            jobCell!.timeLabel.text = job.time
+            jobCell!.timeLabel.text = Date().getRelativeTimeFull(date: job.date, time: job.time)
             return jobCell!
         }
     }

@@ -293,7 +293,7 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
             jobCell!.applicantsLabel.text = "\(job.applicants.count-1) Solicitantes"
             jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
             jobCell!.rejectedLabel.isHidden = true
-            jobCell!.timeLabel.text = job.time
+            jobCell!.timeLabel.text = Date().getRelativeTimeAbbreviated(date: job.date, time: job.time)
             return jobCell!
         case stage2CollectionView:
             let job = jobsStage2[indexPath.row]
@@ -303,7 +303,7 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
             jobCell!.applicantsLabel.text = "\(job.applicants.count-1) Solicitantes"
             jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
             jobCell!.rejectedLabel.isHidden = true
-            jobCell!.timeLabel.text = job.time
+            jobCell!.timeLabel.text = Date().getRelativeTimeAbbreviated(date: job.date, time: job.time)
             jobCell!.actionButton.text = "Ver Solicitantes"
             return jobCell!
         case stage3CollectionView:
@@ -314,7 +314,7 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
             jobCell!.applicantsLabel.text = "\(job.applicants.count-1) Solicitantes"
             jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
             jobCell!.rejectedLabel.text = "0 rechazados"
-            jobCell!.timeLabel.text = job.time
+            jobCell!.timeLabel.text = Date().getRelativeTimeAbbreviated(date: job.date, time: job.time)
             jobCell!.actionButton.text = "Ver Solicitantes"
             return jobCell!
         case stage4CollectionView:
@@ -325,7 +325,7 @@ extension RecruitmentViewController: UICollectionViewDelegate, UICollectionViewD
             jobCell!.applicantsLabel.isHidden = true
             jobCell!.vacanciesLabel.text = "\(job.applicants.count-1) Aceptados"
             jobCell!.rejectedLabel.isHidden = true
-            jobCell!.timeLabel.text = job.time
+            jobCell!.timeLabel.text = Date().getRelativeTimeFull(date: job.date, time: job.time)
             jobCell!.actionButton.isHidden = true
             return jobCell!
         default:
