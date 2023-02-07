@@ -61,7 +61,7 @@ class ApplyJobViewController: UIViewController {
         modalLabel.text = jobSelected!.mode
         typeLabel.text = "| \(jobSelected!.type)"
         applicantsLabel.text = "\(jobSelected!.applicants.count-1) Solicitantes"
-        timeLabel.text = jobSelected!.time
+        timeLabel.text = Date().getRelativeTimeFull(date: jobSelected!.date, time: jobSelected!.time)
         
         successAnim = .init(name: "mail_send")
         successAnim!.frame = succesAnimView.bounds

@@ -33,6 +33,8 @@ class JobsForTalentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(Date())
 
         if appdel.internetStatus {
             jobsViewModel = JobsTalentViewModel(context)
@@ -161,7 +163,7 @@ extension JobsForTalentViewController: UICollectionViewDelegate, UICollectionVie
         jobCell!.vacanciesLabel.text = "\(job.vacancies) Vacantes"
         jobCell!.applicantsLabel.text = "| \(job.applicants.count-1) Solicitantes"
         jobCell!.wageLabel.text = job.wage
-        jobCell!.timeLabel.text = job.time
+        jobCell!.timeLabel.text = Date().getRelativeTimeAbbreviated(date: job.date, time: job.time)
         return jobCell!
     }
 

@@ -60,7 +60,7 @@ class StatusPostulViewController: UIViewController {
         default:
             break
         }
-        timeLabel.text = job!.time
+        timeLabel.text = Date().getRelativeTimeFull(date: job!.date, time: job!.time)
     }
 
     @IBAction func contactRecruiter(_ sender: Any) {

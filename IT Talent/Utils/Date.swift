@@ -28,4 +28,29 @@ extension Date {
     func getYears(from date: Date) -> Int {
         return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
     }
+    
+    func getRelativeTimeAbbreviated(date: String, time: String) -> String {
+        let stringDate = "\(date) \(time)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let fromDate = dateFormatter.date(from: stringDate)
+        
+        let relFormatter = RelativeDateTimeFormatter()
+        relFormatter.unitsStyle = .abbreviated
+        let time = relFormatter.localizedString(for: fromDate!, relativeTo: Date())
+        
+        return time
+    }
+    func getRelativeTimeFull(date: String, time: String) -> String {
+        let stringDate = "\(date) \(time)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let fromDate = dateFormatter.date(from: stringDate)
+        
+        let relFormatter = RelativeDateTimeFormatter()
+        relFormatter.unitsStyle = .full
+        let time = relFormatter.localizedString(for: fromDate!, relativeTo: Date())
+        
+        return time
+    }
 }

@@ -160,7 +160,7 @@ extension PostulationsViewController: UICollectionViewDelegate, UICollectionView
             cell!.locationLabel.text = "| \(job.location)"
             cell!.typeLabel.text = "| \(job.type)"
             cell!.modeLabel.text = job.mode
-            cell!.timeLabel.text = job.time
+            cell!.timeLabel.text = Date().getRelativeTimeAbbreviated(date: job.date, time: job.time)
             switch job.status {
             case 0:
                 cell!.statusLabel.text = "Revisión de perfil"
@@ -185,7 +185,7 @@ extension PostulationsViewController: UICollectionViewDelegate, UICollectionView
             cell!.locationLabel.text = "| \(job.location)"
             cell!.typeLabel.text = "| \(job.type)"
             cell!.modeLabel.text = job.mode
-            cell!.timeLabel.text = job.time
+            cell!.timeLabel.text = Date().getRelativeTimeAbbreviated(date: job.date, time: job.time)
             cell!.statusLabel.text = "Aceptado"
             cell!.statusIcon.image = UIImage(named: "Ok_ic")
             cell!.statusLabel.textColor = UIColor(named: "Success")
