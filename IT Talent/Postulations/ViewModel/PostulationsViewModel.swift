@@ -60,6 +60,7 @@ class PostulationsViewModel {
     private func getPostulByUser(userEmail: String) {
         print("Obteniendo postulaciones...")
         myActivePostul.removeAll()
+        myPastPostul.removeAll()
         db.collection("jobs").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error: \(err)")

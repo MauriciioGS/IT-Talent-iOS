@@ -39,7 +39,9 @@ class PostulationsViewController: UIViewController {
         postulViewModel = PostulationsViewModel(context)
         setAnims()
         setCollectionViews()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if appdel.internetStatus {
             postulViewModel!.getMyActivePostul()
             bindActives()
@@ -101,12 +103,15 @@ class PostulationsViewController: UIViewController {
     }
     
     private func bindActives() {
+        activePostulations.removeAll()
+        pastPostulations.removeAll()
         postulViewModel!.fetchActivePostul = {
             DispatchQueue.main.async {
                 if let postulActives = self.postulViewModel!.activePostul {
                     if postulActives.isEmpty {
                         self.loadingAnim!.isHidden = true
                         self.noDataAnim!.isHidden = false
+                        self.activesCollectionView.reloadData()
                     } else {
                         self.loadingAnim!.isHidden = true
                         self.noDataAnim!.isHidden = true
@@ -120,6 +125,7 @@ class PostulationsViewController: UIViewController {
                     if postulPast.isEmpty {
                         self.loadingAnim2!.isHidden = true
                         self.noDataAnim2!.isHidden = false
+                        self.pastCollectionView.reloadData()
                     } else {
                         self.loadingAnim2!.isHidden = true
                         self.noDataAnim2!.isHidden = true
